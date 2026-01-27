@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prospect | Subscription Page</title>
+</head>
+<body>
+    <style>
+        @font-face {
+  font-display: swap;
+  font-family: FrameDeckBold;
+  font-style: normal;
+  font-weight: 700;
+  src: local("FrameDeckBold"), local("FrameDeckBold"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/FrameDeck-Bold-Web.ff4954b8f86a55e49dd57181b4889d75.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FrameDeckItalic;
+  font-weight: 400;
+  src: local("FrameDeckItalic"), local("FrameDeckItalic"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/FrameDeck-Italic-Web.6e92e5eff247427952c6fed71b8ff1e0.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FrameDeckRoman;
+  font-weight: 400;
+  src: local("FrameDeckRoman"), local("FrameDeckRoman"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/FrameDeck-Roman-Web.92d5cae1c0d98998c2643cf8f6475dd0.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FrameDeckSemibold;
+  font-style: normal;
+  font-weight: 700;
+  src: local("FrameDeckSemibold"), local("FrameDeckSemibold"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/FrameDeck-Semibold-Web.f5f7dfc20ec4cd7fed8d7083c532d76c.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FrameHeadBold;
+  font-style: normal;
+  font-weight: 700;
+  src: local("FrameHeadBold"), local("FrameHeadBold"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/FrameHead-Bold-Web.4a03f209a48971e08cc4d1e727addd0c.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FrameHeadMedium;
+  font-style: normal;
+  font-weight: 400;
+  src: local("FrameHeadMedium"), local("FrameHeadMedium"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/FrameHead-Medium-Web.f562dc1bffc340b52be373ff1a446d4b.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FrameHeadRoman;
+  font-weight: 400;
+  src: local("FrameHeadRoman"), local("FrameHeadRoman"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/FrameHead-Roman-Web.69f60818d238fd2057dd35434a88e0b1.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FrameHeadSemibold;
+  font-style: normal;
+  font-weight: 700;
+  src: local("FrameHeadSemibold"), local("FrameHeadSemibold"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/FrameHead-Semibold-Web.621f15b8eb26e23f13620634dace20ff.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FrameTextBold;
+  src: local("FrameTextBold"), local("FrameTextBold"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/FrameText-Bold-Web.62fc65fb024b950ea5164ffebca947a5.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FrameTextRoman;
+  font-weight: 400;
+  src: local("FrameTextRoman"), local("FrameTextRoman"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/FrameText-Roman-Web.2eaa9ca7930c82a4ab5291dd9bdbcfe1.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FrameTextRomanDropcap;
+  font-weight: 400;
+  src: local("FrameTextRoman"), local("FrameTextRoman"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/FrameText-Roman-Web-Dropcap.a3633ffff5aad515bd26b730aeb33384.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FrameTextSemibold;
+  font-style: normal;
+  font-weight: 700;
+  src: local("FrameTextSemibold"), local("FrameTextSemibold"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/FrameText-Semibold-Web.1b357a238c9b4b45cd826cdcfbcf4dd3.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: SharpGroteskMedium19;
+  font-weight: 300 600;
+  src: local("SharpGroteskMedium19"), local("SharpGroteskMedium19"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/SharpGroteskMedium19.613deb0d743237f2f3b3e80f93e2d065.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: SharpGroteskMediumItalic19;
+  font-style: normal;
+  font-weight: 300 900;
+  src: local("SharpGroteskMediumItalic19"), local("SharpGroteskMediumItalic19"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/SharpGroteskMediumItalic19.4fd821e52177287899ab0b3ff1044826.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: SharpGroteskSmBold18;
+  font-style: normal;
+  font-weight: 300 900;
+  src: local("SharpGroteskSmBold18"), local("SharpGroteskSmBold18"),
+    url(https://assets.prospectmagazine.co.uk/prod/assets/SharpGroteskSmBold18.c76b65659b941bd2b52a34474ede5a84.woff)
+      format("woff");
+}
+@font-face {
+    font-display: swap;
+    font-family: SharpGroteskSmBold18;
+    font-weight: 300 900;
+    src: local("SharpGroteskSmBold18"),local("SharpGroteskSmBold18"),url(https://assets.prospectmagazine.co.uk/prod/assets/SharpGroteskSmBold18.0120b171a6452dcb1f97c4c93f9bba7e.woff2) format("woff2"),url(https://assets.prospectmagazine.co.uk/prod/assets/SharpGroteskSmBold18.c5172bc7a94224e94d348e08d30f011e.ttf) format("truetype")
+}
+@font-face {
+    font-display: swap;
+    font-family: SharpGroteskMedium19;
+    font-weight: 300 600;
+    src: local("SharpGroteskMedium19"),local("SharpGroteskMedium19"),url(https://assets.prospectmagazine.co.uk/prod/assets/SharpGroteskMedium19.a14b5f61059f5b67bb843d3bbd7f2aad.woff2) format("woff2"),url(https://assets.prospectmagazine.co.uk/prod/assets/SharpGroteskMedium19.2a22cb71d926772fa7127dd249881117.ttf) format("truetype")
+}
+@font-face {
+    font-display: swap;
+    font-family: FrameTextRoman;
+    font-weight: 400;
+    src: local("FrameTextRoman"),local("FrameTextRoman"),url(https://assets.prospectmagazine.co.uk/prod/assets/FrameText-Roman-Web.f6e89e8fb25516a8e4d7aa926922a9c4.woff2) format("woff2"),url(https://assets.prospectmagazine.co.uk/prod/assets/FrameText-Roman-Web.16f347c5223d2dc42986fb1b9a079d76.ttf) format("truetype")
+}
+@font-face {
+    font-display: swap;
+    font-family: FrameTextBold;
+    src: local("FrameTextBold"),local("FrameTextBold"),url(https://assets.prospectmagazine.co.uk/prod/assets/FrameText-Bold-Web.1ac319663dce74b6840949b0e57ec4a2.woff2) format("woff2"),url(https://assets.prospectmagazine.co.uk/prod/assets/FrameText-Bold-Web.a7a18dd9d4244e7764837d97a5993e85.ttf) format("truetype")
+}
+
+/*MAIN*/
+* { 
+  font-family: "Frame Text", FrameTextBold, FrameText-Bold, serif;
+  color: #000;
+}
+h1, h2, h3, h4, h5, h6, p, span { 
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+.subs-plan-section { 
+  padding: 30px;
+}
+.header-section { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+img.prospect-logo { 
+  width: 165px; 
+}
+.header-section h2 {
+  text-align: center;
+  line-height: 1.2;
+}
+.package-card-section { 
+  display: flex; 
+  justify-content: center;
+  width: 95%; 
+  margin: 0 auto;
+  max-width: 720px;
+  min-width: 540px;
+  gap: 15px; 
+}
+fieldset { 
+  padding: 0;
+}
+.plan-card { 
+  border-radius: 12px; 
+  padding: 10px 30px 30px;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  width: 50%;
+  justify-content: flex-end;
+}
+.plan-card.digital { 
+  border: 4px solid #D74A31;
+  background: #D74A3112;
+  margin-top: -11px;
+}
+.plan-card.digi-print { 
+  border: 4px solid #D9D9D9; 
+}
+legend { 
+  background: #D74A31; 
+  color: #fff; 
+  font-size: 13px;
+  border-radius: 8px;
+  padding: 3px;
+  width: 110px;
+  display: flex; 
+  justify-content: center;
+  text-align: right;
+  font-family: "work sans";
+  font-weight: 500;
+}
+.package-price-heading { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 10px;
+  margin-bottom: 27px;
+  width: 100%;
+}
+.plan-card h2 { 
+  font-weight: 700; 
+  font-size: 28px;
+  line-height: 1.2;
+}
+.plan-card h3 { 
+  font-weight: 700;
+  font-size: 20px; 
+  line-height: 1.2;
+}
+.grey-text, strike { 
+  color: #929292; 
+}
+span.price-styling { 
+  font-size: 24px;
+}
+.plan-card.digital a { 
+  color: #fff; 
+  background: #D74A31;
+  transition: background 0.15s ease-in, color 0.15s ease-in, font-weight 0.15s ease-in;
+}
+.plan-card.digital a:hover {
+  background: #fff;
+  color: #D74A31;
+  font-weight: 600;
+}
+.plan-card.digi-print a {
+  color: #D74A31;
+  font-weight: 600;
+  transition: background 0.15s ease-in, color 0.15s ease-in, font-weight 0.15s ease-in;
+}
+.plan-card.digi-print a:hover {
+  color: #fff;
+  background: #D74A31;
+  font-weight: 400;
+}
+a.pn-prospect__subs-btn { 
+  font-family: "work sans";
+  border: 3px solid #D74A31;
+  text-decoration: none; 
+  border-radius: 12px;
+  width: 100%;
+  height: 38px;
+  justify-content: center;
+  display: flex; 
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 22px;
+}
+.whats-included-sctn { 
+  width: 90%; 
+}
+.wi-dropdown-title {
+  display: none;
+}
+.digi__included-toggle, 
+.print-digi__included-toggle { 
+  display: none;
+}
+ul { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+  padding: 0;
+}
+ul li { 
+  font-size: 14px;
+  display: flex; 
+}
+ul li svg { 
+  flex-shrink: 0; 
+  margin: 3px 5px 0 0;
+  background: #D74A31;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  padding: 3px;
+}
+svg.cross { 
+  padding: 4px;
+  background: #929292;
+}
+p.font-order { 
+  margin: 0; 
+}
+.about-card { 
+  width: 100%;
+}
+.about-card-content { 
+  width: 85%;
+  max-width: 800px;
+  margin: 0 auto; 
+  gap: 6vw;
+  display: flex;
+  padding: 30px 0px;
+  align-items: center;
+}
+.copy-details { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+  justify-content: center;
+  padding: 40px 0px;
+}
+.about-card img { 
+  height: 170px; 
+}
+.about-card:nth-child(1) { 
+  border-top: 1px solid #EEEEEE;
+}
+.about-card:nth-child(2) { 
+  background: #D74A3112;
+}
+.about-card-content.row-reverse { 
+  flex-direction: row-reverse; 
+}
+.about-card h3 { 
+  font-size: 20px;
+}
+.about-card h4 { 
+  font-size: 12px;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+/* FAQ SECTION */
+.faqs-section { 
+  background: #D74A3112;
+}
+.faqs-content {
+    width: 85%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 0px;
+}
+.header-component { 
+  margin-bottom: 55px;
+}
+.header-component h2 {
+  text-align: center;
+}
+.faq-answers { 
+  width: 80%; 
+  margin: 0 auto;
+}
+.q1-question,
+.q2-question,
+.q3-question,
+.q4-question { 
+  border-bottom: 1px solid #BBBBBB;
+  padding-bottom: 20px;
+}
+.faq-answers h3 { 
+  font-size: 14px;
+}
+.faq-answers h4 { 
+  font-size: 13px;
+}
+.q1-toggle,
+.q2-toggle,
+.q3-toggle,
+.q4-toggle {
+  display: inline-flex;
+}
+/* EXPANDABLE STYLING FAQS */
+.unbutton {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+.q1-toggle, 
+.q2-toggle,
+.q3-toggle,
+.q4-toggle {
+  position: relative;
+  width: 100%;
+  height: 38px;
+  margin-bottom: 28px;
+  margin-left: -10px;
+}
+.q1-toggle::after,
+.q2-toggle::after,
+.q3-toggle::after,
+.q4-toggle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  margin: auto;
+  border: 0;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: rotate(45deg);
+}
+.faq-answer__expanded .q1-toggle,
+.faq-answer__expanded .q2-toggle,
+.faq-answer__expanded .q3-toggle,
+.faq-answer__expanded .q4-toggle {
+  margin-top: 5px;
+  transform: rotateX(180deg) rotateY(0deg);
+  transform-origin: right;
+}
+.expandable-faq-function {
+  display: flex;
+  flex-direction: column;
+  margin-top: -50px;
+}
+/* EXPANDABLE FUNCTION */
+ .q1-answer, 
+ .q2-answer, 
+ .q3-answer,
+ .q4-answer  { 
+   display: none;
+}
+.faq-answer__expanded .q1-answer,
+.faq-answer__expanded .q2-answer,
+.faq-answer__expanded .q3-answer,
+.faq-answer__expanded .q4-answer {
+  display: block;
+  padding-bottom: 35px; 
+}
+
+@media screen and (max-width: 700px) { 
+  .package-card-section { 
+    gap: 10px;
+  }
+  .plan-card { 
+    padding: 10px 15px 30px; 
+  }
+  .about-card-content { 
+    padding: 10px 0px;
+  }
+  .about-card img { 
+    height: 140px;
+  } 
+  .faq-answers { 
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) { 
+ /* dynamic shift package section */
+  .package-card-section { 
+    flex-direction: column; 
+    gap: 20px;
+    max-width: 480px;
+    min-width: 300px;
+  }
+  .plan-card { 
+    width: 100%;
+  }
+  .plan-card.digi-print { 
+    padding-top: 22px;
+  }
+  .about-card img { 
+    height: 125px;
+  } 
+}
+
+@media screen and (max-width: 550px) {   
+    img.prospect-logo {
+    width: 145px;
+  }
+  .header-section { 
+    gap: 15px; 
+    margin-bottom: 5px;
+    padding: 0px 30px;
+  }
+  /* SCROLL FUNCTION COMPONENTS AND STYLING */
+  .subs-plan-section { 
+    padding: 30px 0px 15px;
+  }
+  #container {
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */ 
+  }
+  #container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+  }
+  #parent {
+    width: 182vw; 
+    max-width: 870px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+  }
+  #page-color-spots { 
+    display: flex; 
+    justify-content: center;
+    gap: 4px;
+    margin-top: 10px;
+  }
+  #page-1-spot { 
+    background: #D74A31;
+    border-radius: 50%;
+    width: 50%;
+    height: 10px;
+    width: 10px;
+  }
+  #page-2-spot { 
+    background: #BBBBBB;
+    border-radius: 50%;
+    width: 50%;
+    height: 10px;
+    width: 10px;
+  }
+  .package-card-section { 
+    flex-direction: row;
+    max-width: unset;
+    min-width: unset;
+    gap: 10px;
+  }
+  .plan-card { 
+    min-width: 270px;
+    max-width: 330px;
+    width: 80vw;
+  }
+  legend { 
+    width: 85px; 
+    padding: 0;
+  }
+  .plan-card h2 { 
+    font-size: 22px;
+  }
+  .plan-card h3 { 
+    font-weight: 500;
+  }
+   .package-price-heading { 
+    gap: 1px; 
+    margin-bottom: 14px; 
+  }
+  a.pn-prospect__subs-btn { 
+    width: 95%;
+    margin-bottom: 20px;
+  }
+  ul { 
+    gap: 4px;
+  }
+/* ABOUT SECTION DYNAMIC RESTRUCTURE */
+  .about-section { 
+    padding: 10px 30px;
+  }
+  .about-card-content, 
+  .about-card-content.row-reverse { 
+    flex-direction: column-reverse;
+    gap: 10px;
+    padding: 24px 0px;
+    width: 95%;
+  }
+  .about-card:nth-child(2) { 
+    background: #fff;
+  }
+  .copy-details { 
+    padding: 10px 0px;
+    max-width: 400px;
+    text-align: center;
+    width: 100%;
+  }
+  .faq-answers { 
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 420px) { 
+  .copy-details { 
+    text-align: left;
+  }
+}
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<div class="pn-prospect__selling-page">
+<section class="subs-plan-section">
+  <div class="header-section">
+      <img class="prospect-logo" src="https://cdn-qssneunxgpshared.azureedge.net/ordersiteppl-cms-assets/prospect_logo-big.png">
+      <h2>
+        Choose the best subscription for&nbsp;you
+      </h2>
+  </div>
+  <div id="container">
+    <div id="parent">
+  <div class="package-card-section">
+    <fieldset class="plan-card digital">
+      <legend>
+        Best Value
+      </legend>
+      <div class="package-price-heading">
+        <h2>
+          Digital
+        </h2>
+        <h3>
+          <strike>£x</strike>&nbsp;&nbsp;<span class="price-styling">£x/</span>month
+        </h3>
+      </div>
+      <a class="pn-prospect__subs-btn" href="https://subscription.prospectmagazine.co.uk/prospect-magazine">Subscribe Now</a>
+      <div class="whats-included-sctn">
+            <ul>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#fff" stroke="#fff"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>Website access and digital-only journalism</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#fff" stroke="#fff"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>The mobile app - on iOS and Android</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#fff" stroke="#fff"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>Exclusive newsletters and podcasts</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#fff" stroke="#fff"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg><p class="font-order">Discounted tickets to <i>Prospect</i> events</p></li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#fff" stroke="#fff"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>The full 28-year digitised archive</li>
+              <li><svg class="cross" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 320.591 320.591" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z" fill="#fff" opacity="1" data-original="#fff" class=""></path><path d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z" fill="#fff" opacity="1" data-original="#fff" class=""></path></g></svg><span class="grey-text">10 print editions per year delivered to your door</span></li>
+            </ul>
+         </div>
+    </fieldset>
+    <div class="plan-card digi-print">
+      <div class="package-price-heading">
+        <h2>
+          Digital & Print
+        </h2>
+        <h3>
+          <strike>£x</strike>&nbsp;&nbsp;<span class="price-styling">£x</span>/month
+        </h3>
+      </div>
+      <a class="pn-prospect__subs-btn" href="https://subscription.prospectmagazine.co.uk/prospect-magazine">Subscribe Now</a>
+       <div class="whats-included-sctn">
+            <ul>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#fff" stroke="#fff"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>Website access and digital-only journalism</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#fff" stroke="#fff"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>The mobile app - on iOS and Android</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#fff" stroke="#fff"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>Exclusive newsletters and podcasts</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#fff" stroke="#fff"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg><p class="font-order">Discounted tickets to <i>Prospect</i> events</p></li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#fff" stroke="#fff"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>The full 28-year digitised archive</li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#fff" stroke="#fff"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>10 print editions per year delivered to your door</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="page-color-spots">
+      <div id="page-1-spot"></div>
+      <div id="page-2-spot"></div>
+    </div>
+</section>
+<section class="about-section">
+  <div class="about-card">
+   <div class="about-card-content">
+    <div class="copy-details">
+      <h3>
+        Established and trusted
+      </h3>
+      <h4>
+        Launched in 1995, <em>Prospect</em> is the UK’s outstanding monthly current affairs title - the best writers, robust debate and considered reflection on the biggest issues of our time. Politically independent, with no party-political affiliation or agenda.
+      </h4>
+    </div>
+    <img class="" src="https://media.prospectmagazine.co.uk/prod/images/original/ee30e9acecdb-newsletteradonisheader.png">
+   </div>
+  </div>
+  <div class="about-card">
+   <div class="about-card-content row-reverse">
+    <div class="copy-details">
+      <h3>
+        Home of fine-writing
+      </h3>
+      <h4>
+        Edited by former Guardian editor Alan Rusbridger, we publish in print and digital; producing newsletters, podcasts and events. Our journalism spans politics, science, foreign affairs, economics, climate and the environment, philosophy and the arts.
+      </h4>
+    </div>
+    <img class="" src="https://media.prospectmagazine.co.uk/prod/images/original/ee30e9acecdb-newsletteradonisheader.png">
+  </div>
+  </div>
+  <div class="about-card">
+   <div class="about-card-content">
+    <div class="copy-details">
+      <h3>
+        Escape the echo chamber
+      </h3>
+      <h4>
+        <em>Prospect</em> has established itself as producing must-read/listen-to journalism with key figures in society, business, politics, government, journalism and academia. Subscribe to <em>Prospect</em> and you will feel informed about the main issues of the day. 
+      </h4>
+    </div>
+    <img class="" src="https://media.prospectmagazine.co.uk/prod/images/original/ee30e9acecdb-newsletteradonisheader.png">
+  </div> 
+ </div>
+</section>
+<section class="faqs-section">
+  <div class="faqs-content">
+  <div class="header-component">
+    <h2>
+      FAQs
+    </h2>
+  </div>
+  <div class="faq-answers">
+    <div class="q1-question">
+        <h3>
+          How do I access digital content?
+        </h3>
+     </div>
+     <div class="expandable-faq-function">
+        <button class="q1-toggle unbutton" type="button" external-event="more-info-close">
+        </button>
+        <div class="q1-answer">
+          <h4>
+            Your subscription gives you full access to the <em>Prospect</em> website and app. <em>Prospect</em> is renowned for mastery of the written word, our digital offering also features other content formats—like podcasts—so you can enjoy <em>Prospect</em> in the way that best suits you.
+          </h4>
+        </div>
+      </div>
+     <div class="q2-question">
+        <h3>
+          How soon can I access digital content?
+        </h3>
+     </div>
+     <div class="expandable-faq-function">
+        <button class="q2-toggle unbutton" type="button" external-event="more-info-close">
+        </button>
+        <div class="q2-answer">
+          <h4>
+            If you place your order on this website, you will have instant access. Orders placed via the telephone or post will begin within 24 working hours. <br><br> Accessing the website as a subscriber is very straightforward. Once your order is placed you will receive an email containing all the details you need.
+          </h4>
+        </div>
+      </div>
+     <div class="q3-question">
+        <h3>
+          What devices can I use?
+        </h3>
+     </div>
+     <div class="expandable-faq-function">
+        <button class="q3-toggle unbutton" type="button" external-event="more-info-close">
+        </button>
+        <div class="q3-answer">
+          <h4>
+            You can use the <em>Prospect</em> website on any desktop, tablet or mobile device. The app is available via your app store on iOS or Android.
+          </h4>
+        </div>
+      </div>
+     <div class="q4-question">
+        <h3>
+          How do I cancel my subscription?
+        </h3>
+     </div>
+     <div class="expandable-faq-function">
+        <button class="q4-toggle unbutton" type="button" external-event="more-info-close">
+        </button>
+        <div class="q4-answer">
+          <h4>
+            You will receive our round-up newsletter to your inbox automatically every Saturday morning. You can sign up for our other newsletters, like The Insider written by Andrew Adonis, on our website.
+          </h4>
+        </div>
+      </div>
+    </div>
+ </div>
+</section>
+</div>
+<script>
+	document.querySelector('.q1-toggle').addEventListener('click', event => {
+		event.target.parentNode.classList.toggle('faq-answer__expanded');
+	});
+  
+  document.querySelector('.q2-toggle').addEventListener('click', event => {
+		event.target.parentNode.classList.toggle('faq-answer__expanded');
+	});
+  
+  document.querySelector('.q3-toggle').addEventListener('click', event => {
+		event.target.parentNode.classList.toggle('faq-answer__expanded');
+	});
+  
+  document.querySelector('.q4-toggle').addEventListener('click', event => {
+		event.target.parentNode.classList.toggle('faq-answer__expanded');
+	});
+ 
+  
+  // Get the container element
+var container = document.getElementById("container");
+
+// Get the spot elements
+var page1Spot = document.getElementById("page-1-spot");
+var page2Spot = document.getElementById("page-2-spot");
+
+// Add scroll event listener to the container
+container.addEventListener("scroll", function() {
+  // Calculate the percentage scrolled
+  var scrollPercentage = (container.scrollLeft / (container.scrollWidth - container.clientWidth)) * 100;
+
+  // Change spot colors based on scroll percentage
+  if (scrollPercentage >= 50) {
+    page1Spot.style.background = "#BBBBBB";
+    page2Spot.style.background = "#D74A31";
+  } else {
+    page1Spot.style.background = "#D74A31";
+    page2Spot.style.background = "#BBBBBB";
+  }
+});
+</script>
+</body>
