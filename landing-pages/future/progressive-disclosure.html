@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><$MAG_NAME> Subscription</title>
+    <script language="JavaScript" src="../../DonorCookie.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous">
+
+    <!-- google font css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet">
+    <!-- custom styles for this page -->
+    <style>
+      @font-face {
+        font-family: Amsi;
+        src: url("https://w1.buysub.com/pubs/W0/TWJ/images/fonts/AmsiProNormal_Regular.otf")
+          format("opentype");
+      }
+      @font-face {
+        font-family: Amsi;
+        src: url("https://w1.buysub.com/pubs/W0/TWJ/images/fonts/AmsiProNormal_Bold.otf")
+          format("opentype");
+        font-weight: bold;
+      }
+
+      /* mobile first */
+
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        color: #000000;
+        background-color: #ffffff;
+      }
+      .jumbotron {
+        padding: 0px;
+        background-color: #e41b12;
+        margin-bottom: 0px;
+        border-radius: 0px;
+        display: none;
+      }
+
+      .jumbotron .container {
+        padding: 0px;
+      }
+
+      .boxy {
+        border: 1px solid #ee1c25;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .version {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: "Amsi", "Roboto", sans-serif;
+        padding-bottom: 5px;
+      }
+
+      .term {
+        font-size: 16px;
+        line-height: 1.3em;
+      }
+
+      .highlight a,
+      .errors {
+        color: #cc0000;
+      }
+      img.logo {
+        width: 186px;
+        display: block;
+      }
+      img.pack {
+        padding-top: 16px;
+        width: 250px;
+      }
+      .mktg {
+        font-size: 22px;
+        font-weight: 500;
+        padding: 20px 10px;
+      }
+      .subheader {
+        font-size: 25px;
+        font-weight: 700;
+        margin: 30px 0 22px;
+      }
+      .mob {
+        display: inline;
+      }
+      .break {
+        display: none;
+      }
+      .container {
+        max-width: 900px;
+      }
+      .steps {
+        background-color: #d3251e;
+        color: #ffffff;
+        padding: 11px;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: "Amsi", "Roboto", sans-serif;
+        width: 100%;
+        text-align: left;
+        border: none;
+      }
+
+      .highlight {
+      }
+
+      .form-control {
+        font-size: 18px;
+      }
+      .form-control::placeholder {
+        color: #303742;
+      }
+      .custom-select {
+        color: #303742;
+        padding-left: 0.5rem;
+        font-size: 18px;
+      }
+      .border-right {
+        color: #555;
+      }
+      .btn-custom {
+        background-color: #e93f33;
+        color: #fff;
+      }
+      .btn-custom:hover {
+        background-color: #d22317;
+      }
+      .ftr-img.container {
+        max-width: 1200px;
+      }
+      footer,
+      .footer {
+        font-size: 15px;
+        background-color: #eeeeee;
+      }
+      footer .container {
+        max-width: 800px;
+      }
+      footer a,
+      .footer a,
+      .autorenew a {
+        color: #303742;
+        text-decoration: underline;
+      }
+      a.phone,
+      .autorenew a {
+        text-decoration: none;
+      }
+
+      /* PRODUCT CARD & SHOW HIDE TEST CSS */
+      .strike-price {
+        color: #9ca3af;
+        text-decoration: line-through;
+      }
+      .plan-cards {
+        display: flex;
+        width: 98%;
+        margin: 0 auto;
+        justify-content: center;
+        gap: 23px;
+        max-width: 777px;
+        margin: 33px auto 40px;
+      }
+      .rowtest {
+        flex: 1;
+        border-radius: 16px;
+        border: solid 1.3px #7f7d7d;
+        padding: 4px;
+        box-shadow: 0px 9px 28px 0px #00000040;
+      }
+      label.plan-card {
+        display: flex;
+        height: 100%;
+        margin-bottom: 0;
+      }
+      .plan-card-content {
+        cursor: pointer;
+        padding: 16px 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100%;
+        position: relative;
+      }
+      .best-offer {
+        position: absolute;
+        top: -20px;
+        right: 10px;
+        width: 147px;
+        height: 31px;
+        background: #cc0000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 26px;
+      }
+      .best-offer h6 {
+        color: white;
+        font-weight: 700;
+        margin: 0;
+      }
+      .title-select {
+        display: flex;
+        gap: 13px;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+      .title-select h1 {
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 1.33;
+        margin: 0;
+      }
+      .title-select input {
+        accent-color: #cc0000;
+        width: 32px;
+        height: 32px;
+      }
+      .plan-card-content h3 {
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 20px;
+        color: #585c66;
+        margin-bottom: 0;
+      }
+      .highlight-card {
+        background: #fdf5f8;
+        border: 3px solid #d3251e;
+      }
+      .plan-card-content h5 {
+        font-size: 15px;
+        color: #cc0000;
+        line-height: 1.6;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+      .promo-price {
+        font-size: 20px;
+        line-height: 20px;
+      }
+
+      /* BENEFIT BLOCK CSS */
+      .benefit-block h1 {
+        text-align: center;
+        color: #585c66;
+        font-weight: 700;
+        font-size: 25px;
+      }
+      .ben-img-bullet {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin: 30px auto 50px;
+        width: 95%;
+      }
+      .product-pack-img {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex: 1;
+        width: 100%;
+      }
+      .product-pack-img img {
+        height: auto;
+      }
+      img.i-one {
+        max-width: 212px;
+      }
+      img.i-two {
+        max-width: 233px;
+        width: 100%;
+      }
+      .red-font {
+        color: #cc0000;
+        font-weight: 700;
+      }
+      .subs-bullet {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex: 1.6;
+      }
+      .subs-bullet ul {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 0;
+        margin: 0;
+      }
+      .subs-bullet ul li {
+        font-size: 15px;
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        text-align: left;
+        line-height: 1.2;
+        margin-bottom: 0;
+        color: #333333;
+      }
+      .subs-bullet ul li::before {
+        left: 0;
+        font-family: "icons";
+        margin-right: 5px;
+        content: "\2714";
+        color: #cc0000;
+      }
+      .grey-font {
+        color: #b7b7b7;
+      }
+      br.incl {
+        display: none;
+      }
+      .selected {
+        border: 3px solid #d3251e;
+        background-color: #fdf5f8;
+        padding: 2px;
+      }
+      #P {
+        display: none;
+      }
+      #B {
+        display: block;
+      }
+
+      /* ACCORDION CSS */
+      h2.accordion-header {
+        font-size: 18px;
+        margin-bottom: 0;
+      }
+      .accordion-button.completed {
+        background-color: #00b050 !important;
+        color: white !important;
+        position: relative;
+      }
+      .accordion-button:disabled {
+        border: 2px solid #d9d9d9;
+        color: #d9d9d9;
+        background: white;
+        padding: 19px 11px;
+      }
+      .accordion-item {
+        margin-bottom: 26px;
+      }
+      .accordion-item:has(.accordion-collapse.collapse.show) {
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        box-shadow: 0px 0px 4px 0px #cc0000;
+        padding-bottom: 24px;
+      }
+      .accordion-item:has(.accordion-button.editing) {
+        box-shadow: 0px 0px 4px 0px #757575 !important;
+      }
+      .accordion-item:has(.accordion-button.validation-error) {
+        box-shadow: 0px 0px 4px 0px #cc0000 !important;
+      }
+      .accordion-button.validation-error {
+        background-color: #cc0000 !important;
+        color: white !important;
+      }
+      .btn-incomplete {
+        background-color: #757575 !important;
+        border-color: #757575 !important;
+        cursor: pointer !important;
+        opacity: 0.85 !important;
+      }
+      .next-button {
+        background-color: #fdf5f8;
+        color: #cc0000;
+        border: 2px solid #cc0000;
+        padding: 6px 32px;
+        font-weight: bold;
+        border-radius: 8px;
+        font-size: 14.4px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .next-button:hover {
+        background-color: #dc3545;
+        color: white;
+      }
+      .doneeInfo.accordion-body,
+      .billing-body {
+        padding: 23px 16px 0;
+      }
+      h6.selected-package {
+        margin-bottom: 0;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        white-space: pre-line;
+      }
+      h6.selected-package.show-border {
+        border-top: 1px solid white;
+        width: 230px;
+        padding-top: 6px;
+        margin-top: 4px;
+        margin-left: 20px;
+        margin-bottom: -5px;
+      }
+      #submitSection {
+        margin-bottom: 57px;
+      }
+      .edit-button {
+        margin-left: auto;
+        background: none;
+        border: none;
+        color: white;
+        padding: 4px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        letter-spacing: 0.5px;
+      }
+
+      .edit-button:hover {
+        background-color: #f8f9fa;
+      }
+      .accordion-button:active,
+      .accordion-button:focus,
+      .next-button:active,
+      .next-button:focus {
+        outline: none !important;
+      }
+
+      .accordion-button.completed .edit-button {
+        display: inline-block !important;
+        position: absolute;
+        top: 8px;
+        right: 0px;
+      }
+      .edit-button:hover {
+        background: none;
+        border: none;
+        color: white;
+      }
+
+      /* Loader hidden by default */
+
+      button span.loader {
+        display: none;
+        height: 20px;
+        width: 20px;
+      }
+      button:disabled span.loader {
+      }
+      .btn-custom:disabled {
+        background-color: #757575;
+        border-color: #757575;
+        cursor: not-allowed;
+        opacity: 0.65;
+      }
+      .btn-custom:disabled:hover {
+        color: white;
+      }
+      /* Loader */
+      .loader {
+        width: 40px;
+        height: 40px;
+        border: 3px solid #fff;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        animation: rotation 0.75s linear infinite;
+      }
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .alert.alert-success.container-week {
+        margin: 15px auto;
+      }
+
+      #hd-mobile {
+        height: auto;
+        width: 100%;
+        max-width: 1000px;
+        display: block;
+        align-content: center;
+        margin: 0px auto;
+        padding: 0px;
+      }
+      #hd-desktop {
+        display: none;
+      }
+
+      /* medium devices (tablets, 768px and up) */
+      @media (min-width: 500px) {
+        #hd-desktop {
+          height: auto;
+          width: 100%;
+          display: block;
+          align-content: center;
+          margin: 0px auto;
+          padding: 0px;
+        }
+        #hd-mobile {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        .title-select {
+          gap: 9px;
+        }
+        .title-select input {
+          width: 27px;
+          height: 27px;
+        }
+        .title-select h1 {
+          font-size: 21.5px;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        img.logo {
+          display: inline;
+          width: 105px;
+        }
+        img.pack {
+          width: 140px;
+          padding-top: 5px;
+        }
+        .subheader {
+          font-size: 20px;
+          line-height: 1.3;
+          margin: 16px 0 20px;
+        }
+        .mktg {
+          font-size: 16px;
+          padding: 20px 0 10px;
+        }
+        .footnote {
+          text-align: left;
+        }
+        .mob {
+          display: none;
+        }
+
+        /* PRODUCT BLOCK TEST CSS */
+        .plan-cards {
+          flex-direction: column;
+          max-width: 450px;
+          width: 90%;
+          gap: 35px;
+          margin: 20px auto 40px;
+        }
+        .ben-img-bullet {
+          flex-direction: column;
+          gap: 32px;
+        }
+        .product-pack-img {
+          justify-content: center;
+        }
+        img.i-one,
+        img.i-two {
+          max-width: 285px;
+        }
+      }
+      @media screen and (max-width: 420px) {
+        .break {
+          display: block;
+        }
+        br.incl {
+          display: block;
+        }
+        img.gold-seal {
+          width: 50px;
+          right: -39px;
+        }
+        .offer-selectors {
+          max-width: 255px;
+        }
+        .ben-img-bullet {
+          margin: 22px auto;
+        }
+        .accordion-button.completed .edit-button {
+          bottom: 8px;
+          top: auto;
+          font-size: 12px;
+        }
+        .accordion-item {
+          margin-bottom: 23px;
+        }
+        .doneeInfo.accordion-body,
+        .billing-body {
+          padding: 19px 7px 0;
+        }
+        .form-check-label {
+          font-size: 16px;
+        }
+        .mb-3.copy-bill {
+          margin-bottom: 0 !important;
+          margin-top: 8px;
+        }
+      }
+      @media screen and (max-width: 350px) {
+        h6.selected-package { 
+          font-size: 12px;
+        }
+        .accordion-button.completed .edit-button { 
+          bottom: 3px;
+        }
+        .steps { 
+          font-size: 16px;
+        }
+      }
+    </style>
+
+    <%@ include file="google_analytics.jsp" %> 
+	<%@ include file="gtm_head.jsp" %>
+	<%@ include file="VWO_headtag_TWJ.jsp" %>
+		
+  </head>
+
+  <body>
+    <%@ include file="gtm_body.jsp" %>
+
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <div class="col-12">
+            <img
+              src="https://subscribe.theweekjunior.com/pubs/W0/TWJ/images/2025/jan25-hd-3covs.png"
+              class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main role="main">
+      <div id="accordion" class="container" style="background-color: #ffffff">
+        <form
+          method="post"
+          action="/servlet/Transaction"
+          id="engage"
+          name="convertible_form"
+          class="needs-validation"
+          novalidate>
+          <input type="hidden" name="cds_country" value="United States">
+          <input
+            type="hidden"
+            name="cds_donee1_country"
+            value="United States">
+          <input
+            type="hidden"
+            name="cds_term_value"
+            value="0"
+            checked="checked">
+          <input
+            type="hidden"
+            name="cds_response_key"
+            id="cds_response_key"
+            value="">
+
+          <div class="row mb-1">
+            <div class="col-12">
+              <div class="row mb-1">
+                <div class="col-12">
+                  <div class="mktg">
+                    <img
+                      class="logo"
+                      src="https://cdn.mos.cms.futurecdn.net/flexiimages/qpqtc15w4t1728033996.svg">
+                    <img
+                      class="pack"
+                      src="https://subscribe.theweekjunior.com/pubs/W0/TWJ/images/2026/26ttp_FG_200w.png"
+                      style="
+                        float: right;
+                        padding-left: 20px;
+                        padding-bottom: 10px;
+                      "
+                      alt="Your free gift">
+                    <p class="subheader">
+                      The magazine kids<br class="break">
+                      can't wait to&nbsp;read!
+                    </p>
+                    Give a gift today and send the
+                    <b>first 6 issues RISK FREE</b>. After that, your gift
+                    recipient will receive 19 more issues (25 in all). Your gift
+                    recipient will also
+                    <b>get a FREE GIFT &mdash; our
+                      <i>TRICKY &amp; TWISTY Puzzles!</i></b>
+                    <span class="mob">too!</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="font-size: 0.75em; text-align: center; font-weight: 500"
+                class="mb-4 mt-2">
+                <p class="footnote">
+                  <strong>If you are under 18 years old</strong>, your parent or
+                  guardian must fill out this subscription form for you.
+                </p>
+              </div>
+
+              <#IFNOTEMPTY_ERROR_ALL>
+              <div class="mb-1 mt-1 errors">
+                <b><$ERROR_ALL></b>
+              </div>
+              <#ENDIF>
+            </div>
+          </div>
+          <div class="accordion" id="subscriptionAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button steps step1"
+                  type="button"
+                  id="step1Header">
+                  1. Choose your subscription
+                  <h6 class="selected-package" id="selectedPackageDisplay"></h6>
+                  <span
+                    class="edit-button"
+                    onclick="editStep(1, event)"
+                    style="display: none">Edit</span>
+                </button>
+              </h2>
+              <div
+                id="step1"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#subscriptionAccordion">
+                <div class="accordion-body">
+                  <div class="plan-cards">
+                    <div class="rowtest one">
+                      <label class="plan-card">
+                        <div class="plan-card-content">
+                          <div class="title-select">
+                            <input
+                              type="RADIO"
+                              name="cds_donee1_term_value"
+                              value="1"
+                              title="P">
+                            <h1>PRINT</h1>
+                          </div>
+                          <h3>
+                            25 issues for
+                            <span class="strike-price">$59</span>
+                            <span class="promo-price">$49</span>
+                          </h3>
+                          <h5>+ FREE GIFT</h5>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="rowtest two selected">
+                      <label class="plan-card">
+                        <div class="plan-card-content">
+                          <div class="best-offer">
+                            <h6>BEST DEAL</h6>
+                          </div>
+                          <div class="title-select">
+                            <input
+                              type="RADIO"
+                              name="cds_donee1_term_value"
+                              value="2"
+                              title="B"
+                              checked>
+                            <h1>PRINT + DIGITAL</h1>
+                          </div>
+                          <h3>
+                            25 issues for
+                            <span class="strike-price">$69</span>
+                            <span class="promo-price">$59</span>
+                          </h3>
+                          <h5>+ FREE GIFT</h5>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div id="P" class="benefit-block show-hide">
+                    <h1>
+                      Your exclusive
+                      <span class="red-font">Print</span> benefits
+                    </h1>
+                    <div class="ben-img-bullet">
+                      <div class="product-pack-img">
+                        <img
+                          class="i-one"
+                          src="https://w1.buysub.com/pubs/W0/TWJ/images/2024/CD24_format_print.png">
+                      </div>
+                      <div class="subs-bullet">
+                        <ul>
+                          <li>
+                            <span>Get 25 weekly issues and <b>save 67%</b> off the
+                              single copy price.</span>
+                          </li>
+                          <li>
+                            <span><span class="red-font">FREE GIFT!</span>
+                              <em>Tricky &amp; Twisty Puzzles!</em> &mdash; a book of our
+                              favorite puzzles.</span>
+                          </li>
+                          <li>
+                            <span><b>Risk-Free Trial Guarantee:</b> If
+                              <em>The Week Junior</em> is not for you, let us know
+                              know and we'll cancel your subscription, the 6 issues <br>
+							  and puzzle book are yours to keep.</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="B" class="benefit-block show-hide">
+                    <h1>
+                      Your exclusive<br class="incl">
+                      <span class="red-font">Print & Digital</span> benefits
+                    </h1>
+                    <div class="ben-img-bullet">
+                      <div class="product-pack-img">
+                        <img
+                          class="i-two"
+                          src="https://w1.buysub.com/pubs/W0/TWJ/images/2024/CD24_format_bundle_bd.png">
+                      </div>
+                      <div class="subs-bullet">
+                        <ul>
+                          <li>
+                            <span>25 weekly issues,
+                              <span class="red-font">Print + Digital</span>, and
+                              <b>save 61%</b> off the single copy price.</span>
+                          </li>
+                          <li>
+                            <span><b>Digital access for on-the-go!</b> Get full
+                              access to our mobile app and digital
+                              archive.</span>
+                          </li>
+                          <li>
+                            <span><span class="red-font">FREE GIFT!</span>
+                              <em>Tricky & Twisty Puzzles!</em> &mdash; a book of our
+                              favorite puzzles.</span>
+                          </li>
+                          <li>
+                            <span><b>Risk-Free Trial Guarantee:</b> If
+                              <em>The Week Junior</em> is not for you, let us know
+                              know and we'll cancel your subscription, the 6 issues <br>
+							  and puzzle book are yours to keep.</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center mt-4">
+                  <button
+                    type="button"
+                    class="next-button"
+                    onclick="goToStep(2)">
+                    NEXT: GIFT RECIPIENT
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button steps step2 collapsed"
+                  type="button"
+                  id="step2Header"
+                  disabled>
+                  2. Gift recipient
+                  <h6 class="selected-package" id="recipientDisplay"></h6>
+                  <span
+                    class="edit-button"
+                    onclick="editStep(2, event)"
+                    style="display: none">Edit</span>
+                </button>
+              </h2>
+              <div
+                id="step2"
+                class="accordion-collapse collapse"
+                data-bs-parent="#subscriptionAccordion">
+                <div id="donee_info">
+                  <div
+                    class="doneeInfo accordion-body"
+                    data-parent="#donee_info">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="mb-3">
+                          <label for="cds_donee1_name" class="sr-only">Child's Name</label>
+                          <input
+                            type="text"
+                            name="cds_donee1_name"
+                            class="form-control doneeField"
+                            id="cds_donee1_name"
+                            maxlength="27"
+                            placeholder="Child's Name"
+                            required>
+                          <div class="invalid-feedback">
+                            Please enter your recipient's name.
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="cds_donee1_address_1" class="sr-only">Address 1</label>
+                          <input
+                            type="text"
+                            name="cds_donee1_address_1"
+                            class="form-control doneeField"
+                            id="cds_donee1_address_1"
+                            maxlength="27"
+                            placeholder="Address 1"
+                            required>
+                          <div class="invalid-feedback">
+                            Please enter your recipient's address.
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="cds_donee1_address_2" class="sr-only">Address 2</label>
+                          <input
+                            type="text"
+                            name="cds_donee1_address_2"
+                            class="form-control"
+                            id="cds_donee1_address_2"
+                            maxlength="27"
+                            placeholder="Address 2">
+                          <div class="invalid-feedback">
+                            Please enter your recipient's address.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="mb-3">
+                          <label for="cds_donee1_city" class="sr-only">City</label>
+                          <input
+                            type="text"
+                            name="cds_donee1_city"
+                            class="form-control doneeField"
+                            id="cds_donee1_city"
+                            maxlength="13"
+                            placeholder="City"
+                            required>
+                          <div class="invalid-feedback">
+                            Please enter your recipient's city.
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="cds_donee1_state" class="sr-only">State</label>
+                          <select
+                            name="cds_donee1_state"
+                            class="custom-select doneeField"
+                            id="cds_donee1_state"
+                            required>
+                            <option value="">State</option>
+                            <$CDS_DONEE1_STATE_LIST>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select your recipient's state.
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="cds_donee1_zip" class="sr-only">Zip Code</label>
+                          <input
+                            type="text"
+                            name="cds_donee1_zip"
+                            class="form-control doneeField"
+                            id="cds_donee1_zip"
+                            maxlength="5"
+                            placeholder="Zip Code"
+                            required>
+                          <div class="invalid-feedback">
+                            Please enter your recipient's zip code.
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 mb-3 copy-bill">
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="copyAddr"
+                            value="Y">
+                          <label
+                            class="form-check-label no-validation-style"
+                            for="copyAddr">Copy this address to billing information</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center mt-4">
+                      <button
+                        type="button"
+                        class="next-button"
+                        onclick="goToStep(3)">
+                        NEXT: PAYMENT INFORMATION
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PAYMENT INFO -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button steps step3 collapsed"
+                  type="button"
+                  id="step3Header"
+                  disabled>
+                  3. Payment Information
+                  <h6 class="selected-package" id="paymentDisplay"></h6>
+                  <span
+                    class="edit-button"
+                    onclick="editStep(3, event)"
+                    style="display: none">Edit</span>
+                </button>
+              </h2>
+              <div
+                id="step3"
+                class="accordion-collapse collapse"
+                data-parent="#accordion"
+                data-bs-parent="#subscriptionAccordion">
+                <div class="accordion-body">
+                  <&CDS_PAYMENT_COMPONENT_ERROR>
+                  <div style="display: none"><$PAY_TYPES></div>
+                  <div id="helper"><&CDS_PAYMENT_CAPTURE></div>
+                  <%@ include file="pc-basic_no_ar_bs_val.jsp" %>
+                  <!-- END PAYMENT INFO -->
+                  <div class="text-center mt-4">
+                    <button
+                      type="button"
+                      class="next-button"
+                      onclick="goToStep(4)">
+                      NEXT: BILLING INFORMATION
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- BILLING INFO  -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button steps step4 collapsed"
+                  type="button"
+                  id="step4Header"
+                  disabled>
+                  4. Billing Information
+                  <h6 class="selected-package" id="billingDisplay"></h6>
+                  <span
+                    class="edit-button"
+                    onclick="editStep(4, event)"
+                    style="display: none">Edit</span>
+                </button>
+              </h2>
+              <div
+                id="step4"
+                class="accordion-collapse collapse"
+                data-parent="#accordion"
+                data-bs-parent="#subscriptionAccordion">
+                <div class="billing-body accordion-body">
+                  <div class="row donorInfo">
+                    <div class="col-sm-6">
+                      <div class="mb-3">
+                        <label for="cds_name" class="sr-only">Full Name</label>
+                        <input
+                          type="text"
+                          name="cds_name"
+                          class="form-control donorField"
+                          id="cds_name"
+                          maxlength="27"
+                          placeholder="Full Name"
+                          required>
+                        <div class="invalid-feedback">
+                          Please enter your name.
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="cds_address_1" class="sr-only">Address 1</label>
+                        <input
+                          type="text"
+                          name="cds_address_1"
+                          class="form-control donorField"
+                          id="cds_address_1"
+                          maxlength="27"
+                          placeholder="Address 1"
+                          required>
+                        <div class="invalid-feedback">
+                          Please enter your address.
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="cds_address_2" class="sr-only">Address 2</label>
+                        <input
+                          type="text"
+                          name="cds_address_2"
+                          class="form-control donorField"
+                          id="cds_address_2"
+                          maxlength="27"
+                          placeholder="Address 2">
+                        <div class="invalid-feedback">
+                          Please enter your address.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="mb-3">
+                        <label for="cds_city" class="sr-only">City</label>
+                        <input
+                          type="text"
+                          name="cds_city"
+                          class="form-control donorField"
+                          id="cds_city"
+                          maxlength="13"
+                          placeholder="City"
+                          required>
+                        <div class="invalid-feedback">
+                          Please enter your city.
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="cds_state" class="sr-only">State</label>
+                        <select
+                          name="cds_state"
+                          class="custom-select donorField"
+                          id="cds_state"
+                          required>
+                          <option value="">State</option>
+                          <$CDS_STATE_LIST>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select your state.
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="cds_zip" class="sr-only">Zip Code</label>
+                        <input
+                          type="text"
+                          name="cds_zip"
+                          class="form-control donorField"
+                          id="cds_zip"
+                          maxlength="5"
+                          placeholder="Zip Code"
+                          required>
+                        <div class="invalid-feedback">
+                          Please enter your zip.
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="cds_email" class="sr-only">Email Address</label>
+                        <input
+                          type="text"
+                          name="cds_email"
+                          class="form-control donorField"
+                          id="cds_email"
+                          maxlength="50"
+                          placeholder="Email Address"
+                          required>
+                        <div class="invalid-feedback">
+                          Please enter your email address.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-center mt-4">
+                    <button
+                      type="button"
+                      class="next-button"
+                      onclick="goToStep(5)">
+                      NEXT: FINAL STEP
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END BILLING INFO  -->
+            <!-- SUBMIT  -->
+            <div class="submit">
+              <div class="col-12">
+                <div id="submitSection" style="display: none">
+                  <div style="display: block; text-align: center">
+                    To continue with your order, please check the box below and
+                    click Submit Order<br><br>
+                  </div>
+
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      name="autorenew"
+                      id="autorenew"
+                      value=""
+                      class="form-check-input"
+                      aria-label="Check the box to agree to our Preferred Subscriber Automatic Renewal Program and order"
+                      required>
+                    <label
+                      class="form-check-label no-validation-style"
+                      for="autorenew"
+                      style="font-size: 15px; line-height: 20px">
+                      <b><i>The Week Junior</i>'s Preferred Subscriber Automatic
+                        Renewal Program:</b>
+                      By checking this box, I authorize my gift order to
+                      <i>The Week Junior</i> to continue bi-annually until I
+                      cancel unless noted differently in the original offer. I
+                      will receive notice approximately 30 days prior to
+                      charging the payment method on file or an e-bill is sent,
+                      by the email then on file, stating my renewal date, term
+                      and price (currently $49, $59.95, $69) and how I can
+                      cancel my subscription or change preferences at any time
+                      by calling <b>1-800-444-7792</b> or visiting
+                      <b>Service.TheWeekJunior.com</b>. If I cancel my
+                      subscription, I will receive a refund for any unmailed
+                      copies on the original payment method used when ordering.
+                    </label>
+                    <div
+                      class="invalid-feedback mt-3"
+                      style="font-size: 18px; font-weight: bold">
+                      <center>
+                        Please check the box above and click Submit Order below.
+                      </center>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    id="Submit"
+                    class="mb-3 btn btn-lg btn-custom"
+                    name="send"
+                    disabled>
+                    <span class="loader" aria-label="processing..."></span>
+                    <span class="text">Submit Order</span>
+                  </button>
+
+                  <p class="small">
+                    <b>Please wait while order processes. Do not click the back
+                      button, orders will not go through.</b>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END SUBMIT  -->
+        </form>
+      </div>
+      <!-- end accordion -->
+
+      <footer style="padding-top: 10px">
+        <div class="container">
+          <div>
+            <p>Offer valid in U.S. only</p>
+          </div>
+          <%@ include file="include_ftr_sub_RF6.jsp" %>
+        </div>
+      </footer>
+    </main>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
+
+    <script>
+      $(document).ready(function () {
+        
+        // copy shipping address to billing address
+        $("#copyAddr").on("change", function () {
+          if ($(this).is(":checked")) {
+            $("#cds_address_1").val($("#cds_donee1_address_1").val());
+            $("#cds_address_2").val($("#cds_donee1_address_2").val());
+            $("#cds_city").val($("#cds_donee1_city").val());
+            $("#cds_state").val($("#cds_donee1_state").val());
+            $("#cds_zip").val($("#cds_donee1_zip").val());
+          } else {
+            $(".donorField").val("");
+          }
+        });
+      });
+      
+      // form validation
+      (function () {
+        "use strict";
+        // Helper function to update the key
+        function updateKey() {
+          // Get the current key from the hidden field or the original value
+          var rkey = $("#cds_response_key").val() || "<$RECEIVED_RESPONSE_KEY>";
+          if (!rkey) {
+            var responseKey = "<$RESPONSE_KEY>";
+            var parsedKey = responseKey
+              .replace("<!-- RESPONSE KEY:  ", "")
+              .replace(" -->", "");
+            var key = parsedKey;
+          } else {
+            var key = rkey;
+          }
+          // Update the key with the selected offer
+          var title =
+            $("input[name='cds_donee1_term_value']:checked").attr("title") ||
+            "";
+          var order_key = key.substring(0, 4) + title + key.substr(5);
+          console.log("Updated key:", key);
+          console.log("Generated order_key:", order_key);
+          // Persist the updated key
+          $("#cds_response_key").val(order_key);
+          sessionStorage.setItem("responseKey", order_key);
+          // Update the URL parameter with the new key
+          var updatedURL = new URL(window.location.href);
+          updatedURL.searchParams.set("cds_response_key", order_key);
+          history.replaceState(null, "", updatedURL);
+        }
+
+        // Restore response key from session storage on page load
+        window.addEventListener("load", function () {
+          var storedKey = sessionStorage.getItem("responseKey");
+          if (storedKey) {
+            $("#cds_response_key").val(storedKey);
+            var updatedURL = new URL(window.location.href);
+            updatedURL.searchParams.set("cds_response_key", storedKey);
+            history.replaceState(null, "", updatedURL);
+          }
+          // Attach event listener for offer selection changes
+          $("input[name='cds_donee1_term_value']").on("change", function () {
+            updateKey();
+          });
+
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName("needs-validation");
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener(
+              "submit",
+              function (event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  var errorElements =
+                    document.querySelectorAll("input:invalid");
+                  $(errorElements[0]).closest(".collapse").addClass("show");
+                  $("html, body").animate(
+                    {
+                      scrollTop: $(errorElements[0]).offset().top - 200,
+                    },
+                    500
+                  );
+                } else {
+                  setTimeout(function () {
+                    $("input[name=send], button[name=send]").prop(
+                      "disabled",
+                      true
+                    );
+                  }, 0);
+
+                  // Recalculate and persist the key before submission
+                  updateKey();
+                }
+                form.classList.add("was-validated");
+              },
+              false
+            );
+          });
+        });
+      })();
+
+      $(document).ready(function () {
+        $("input[name=cds_donee1_term_value]").change(function () {
+          var test = $(this).attr("title");
+          $(".show-hide").hide();
+          $("#" + test).show();
+          $("div.selected").removeClass("selected");
+          $(this).closest(".rowtest.one").addClass("selected");
+          $(this).closest(".rowtest.two").addClass("selected");
+        });
+      });
+    </script>
+
+    <script>
+      let currentStep = 1;
+      let selectedPackageName = "";
+      let submitSectionShown = false;
+      let isEditing = false;
+
+      // Initialize
+      document.addEventListener("DOMContentLoaded", () =>
+        updateSelectedPackageDisplay()
+      );
+
+      function selectPackage(packageType) {
+        document
+          .querySelectorAll(".subscription-option")
+          .forEach((opt) => opt.classList.remove("selected"));
+        event.currentTarget.classList.add("selected");
+        event.currentTarget.querySelector('input[type="radio"]').checked = true;
+        selectedPackageName =
+          packageType === "print" ? "PRINT" : "PRINT & DIGITAL";
+        updateSelectedPackageDisplay();
+      }
+
+      function updateSelectedPackageDisplay() {
+        document.getElementById("selectedPackageDisplay").textContent =
+          selectedPackageName;
+      }
+
+      // Validation helper
+      function validateFields(selector) {
+        const requiredFields = document.querySelectorAll(selector);
+        let isValid = true;
+
+        requiredFields.forEach((field) => {
+          const isEmpty =
+            field.tagName === "SELECT" ? !field.value : !field.value.trim();
+
+          field.classList.toggle("is-invalid", isEmpty);
+          if (isEmpty) isValid = false;
+        });
+
+        return isValid;
+      }
+
+      // Update header display
+      function updateHeader(id, text) {
+        const el = document.getElementById(id);
+        el.textContent = text;
+        el.classList.add("show-border");
+      }
+
+      // Accordion control
+      function toggleAccordion(stepNum, show) {
+        const collapse = new bootstrap.Collapse(
+          document.getElementById(`step${stepNum}`),
+          { toggle: false }
+        );
+        show ? collapse.show() : collapse.hide();
+      }
+
+      function goToStep(stepNumber) {
+        // First, check if the button that triggered this is a DONE button
+        const clickedButton = event?.target;
+        if (
+          clickedButton &&
+          clickedButton.getAttribute("data-editing") === "true"
+        ) {
+          const editingStep = parseInt(clickedButton.getAttribute("data-step"));
+
+          // Remove validation error class AND was-validated class AND editing class
+          $('#step${editingStep}Header').removeClass("validation-error");
+          $('#step${editingStep}').removeClass("was-validated");
+          $('#step${editingStep}Header').removeClass("editing");
+
+          // Update the header for the edited step before closing
+          if (editingStep === 1) {
+            const radio = document.querySelector(
+              'input[name="cds_donee1_term_value"]:checked'
+            );
+            selectedPackageName =
+              radio?.getAttribute("title") === "P"
+                ? "PRINT"
+                : "PRINT & DIGITAL";
+            updateSelectedPackageDisplay();
+            document
+              .getElementById("selectedPackageDisplay")
+              .classList.add("show-border");
+          } else if (editingStep === 2) {
+            const childName =
+              document.getElementById("cds_donee1_name").value || "";
+            const zipCode =
+              document.getElementById("cds_donee1_zip").value || "";
+            // Build the display string with only the fields that have values
+            const displayParts = [];
+            if (childName) displayParts.push(childName);
+            if (zipCode) displayParts.push(zipCode);
+            updateHeader("recipientDisplay", displayParts.join(", "));
+          } else if (editingStep === 3) {
+            updateHeader("paymentDisplay", "Secure Payment");
+          } else if (editingStep === 4) {
+            const fullName = document.getElementById("cds_name").value || "";
+            const zipCode = document.getElementById("cds_zip").value || "";
+            const email = document.getElementById("cds_email").value || "";
+            // Build the display string with only the fields that have values
+            const line1Parts = [];
+            if (fullName) line1Parts.push(fullName);
+            if (zipCode) line1Parts.push(zipCode);
+            const line1 = line1Parts.join(", ");
+            const displayText =
+              line1 && email ? '${line1}\n${email}' : line1 || email;
+            updateHeader("billingDisplay", displayText);
+          }
+
+          // Just collapse the step that was being edited
+          toggleAccordion(editingStep, false);
+
+          // Reset button text back to original
+          const buttonTexts = {
+            1: "NEXT: GIFT RECIPIENT",
+            2: "NEXT: PAYMENT INFORMATION",
+            3: "NEXT: BILLING INFORMATION",
+            4: "NEXT: SUBMIT",
+          };
+          clickedButton.textContent = buttonTexts[editingStep];
+          clickedButton.removeAttribute("data-editing");
+          clickedButton.removeAttribute("data-step");
+
+          // Stop here - don't do anything else
+          return;
+        }
+
+        // Validation
+        if (currentStep === 2 && !validateFields("#step2 [required]")) {
+          document.querySelector("#step2").classList.add("was-validated");
+          return;
+        }
+
+        if (
+          currentStep === 4 &&
+          !validateFields("#step4 .donorInfo [required]")
+        ) {
+          document.querySelector("#step4").classList.add("was-validated");
+          const firstInvalid = document.querySelector("#step4 .is-invalid");
+          if (firstInvalid) {
+            setTimeout(() => {
+              firstInvalid.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+              firstInvalid.focus();
+            }, 100);
+          }
+          return;
+        }
+
+        // Update headers based on transition
+        const transitions = {
+          2: {
+            from: 1,
+            action: () => {
+              const radio = document.querySelector(
+                'input[name="cds_donee1_term_value"]:checked'
+              );
+              selectedPackageName =
+                radio?.getAttribute("title") === "P"
+                  ? "PRINT"
+                  : "PRINT & DIGITAL";
+              updateSelectedPackageDisplay();
+              document
+                .getElementById("selectedPackageDisplay")
+                .classList.add("show-border");
+            },
+          },
+          3: {
+            from: 2,
+            action: () => {
+              const childName =
+                document.getElementById("cds_donee1_name").value || "";
+              const zipCode =
+                document.getElementById("cds_donee1_zip").value || "";
+              const displayParts = [];
+              if (childName) displayParts.push(childName);
+              if (zipCode) displayParts.push(zipCode);
+              updateHeader("recipientDisplay", displayParts.join(", "));
+            },
+          },
+          4: {
+            from: 3,
+            action: () => updateHeader("paymentDisplay", "Secure Payment"),
+          },
+          5: {
+            from: 4,
+            action: () => {
+              const fullName = document.getElementById("cds_name").value || "";
+              const zipCode = document.getElementById("cds_zip").value || "";
+              const email = document.getElementById("cds_email").value || "";
+              const line1Parts = [];
+              if (fullName) line1Parts.push(fullName);
+              if (zipCode) line1Parts.push(zipCode);
+              const line1 = line1Parts.join(", ");
+              const displayText =
+                line1 && email ? '${line1}\n${email}' : line1 || email;
+              updateHeader("billingDisplay", displayText);
+            },
+          },
+        };
+
+        if (transitions[stepNumber]?.from === currentStep) {
+          transitions[stepNumber].action();
+        }
+
+        // VWO tracking
+        const events = {
+          2: "subTypeSelected",
+          3: "giftRecipientComp",
+          4: "paymentInfo",
+          5: "billingInfo",
+        };
+        if (events[stepNumber]) {
+          window.VWO = window.VWO || [];
+          VWO.event =
+            VWO.event ||
+            function () {
+              VWO.push(["event"].concat([].slice.call(arguments)));
+            };
+          console.log("VWO Event Fired: " + events[stepNumber]);
+          VWO.event(events[stepNumber]);
+        }
+
+        // Collapse current step and mark complete
+        if (currentStep >= 1 && currentStep <= 4) {
+          toggleAccordion(currentStep, false);
+          document
+            .getElementById('step${currentStep}Header')
+            ?.classList.add("completed");
+        }
+
+        currentStep = stepNumber;
+
+        // Handle step 5 (submit section)
+        if (stepNumber === 5) {
+          document.getElementById("submitSection").style.display = "block";
+          submitSectionShown = true;
+          setTimeout(
+            () =>
+              document
+                .getElementById("submitSection")
+                .scrollIntoView({ behavior: "smooth", block: "start" }),
+            350
+          );
+          return;
+        }
+
+        // Open next step
+        const nextHeader = document.getElementById('step${stepNumber}Header');
+        if (nextHeader) {
+          nextHeader.disabled = false;
+          toggleAccordion(stepNumber, true);
+          setTimeout(
+            () =>
+              nextHeader.scrollIntoView({ behavior: "smooth", block: "start" }),
+            350
+          );
+        }
+      }
+
+      function editStep(stepNumber, event) {
+        event.stopPropagation();
+
+        // Remove validation error class AND was-validated class when editing
+        $('#step${stepNumber}Header').removeClass("validation-error");
+        $('#step${stepNumber}').removeClass("was-validated");
+
+        // Add editing class to indicate this is an edit action
+        $('#step${stepNumber}Header').addClass("editing");
+
+        // Open the step being edited (don't close anything else)
+        toggleAccordion(stepNumber, true);
+
+        // Change the button text to "DONE" for this specific step
+        const buttonSelector = '#step${stepNumber} .next-button';
+        const button = document.querySelector(buttonSelector);
+        if (button) {
+          button.textContent = "DONE";
+          button.setAttribute("data-editing", "true");
+          button.setAttribute("data-step", stepNumber);
+        }
+
+        setTimeout(
+          () =>
+            document
+              .getElementById('step${stepNumber}Header')
+              .scrollIntoView({ behavior: "smooth", block: "start" }),
+          350
+        );
+      }
+
+      $(document).ready(function () {
+        function checkFormCompletion() {
+          // Check if autorenew checkbox is checked
+          const checkboxChecked = $("#autorenew").is(":checked");
+
+          // Check all required fields in the form
+          let allFieldsFilled = true;
+          $("form.needs-validation [required]").each(function () {
+            // Skip the checkbox itself in this check
+            if (this.id !== "autorenew") {
+              if ($(this).is("select")) {
+                if (!$(this).val() || $(this).val() === "") {
+                  allFieldsFilled = false;
+                  return false; // break
+                }
+              } else {
+                if (!$(this).val() || $(this).val().trim() === "") {
+                  allFieldsFilled = false;
+                  return false; // break
+                }
+              }
+            }
+          });
+
+          // Update button state
+          if (checkboxChecked && allFieldsFilled) {
+            // All fields filled and checkbox checked - enable button
+            $("#Submit").prop("disabled", false);
+            $("#Submit").removeClass("btn-incomplete");
+          } else if (checkboxChecked && !allFieldsFilled) {
+            // Checkbox checked but missing fields - make button grey but clickable
+            $("#Submit").prop("disabled", false);
+            $("#Submit").addClass("btn-incomplete");
+          } else {
+            // Checkbox not checked - disable button
+            $("#Submit").prop("disabled", true);
+            $("#Submit").removeClass("btn-incomplete");
+          }
+        }
+
+        // Monitor the checkbox
+        $("#autorenew").on("change", checkFormCompletion);
+
+        // Monitor all required fields for changes
+        $("form.needs-validation [required]").on(
+          "input change",
+          checkFormCompletion
+        );
+
+        // Handle submit button click when incomplete
+        $("#Submit").on("click", function (e) {
+          if ($(this).hasClass("btn-incomplete")) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Find all incomplete sections
+            const incompleteSections = [];
+
+            // Check each step for missing required fields
+            for (let step = 1; step <= 4; step++) {
+              const stepSelector =
+                step === 4
+                  ? '#step${step} .donorInfo [required]'
+                  : '#step${step} [required]';
+              const requiredFields = $(stepSelector);
+              let stepIncomplete = false;
+
+              requiredFields.each(function () {
+                if ($(this).is("select")) {
+                  if (!$(this).val() || $(this).val() === "") {
+                    stepIncomplete = true;
+                  }
+                } else {
+                  if (!$(this).val() || $(this).val().trim() === "") {
+                    stepIncomplete = true;
+                  }
+                }
+              });
+
+              if (stepIncomplete) {
+                incompleteSections.push(step);
+              }
+            }
+
+            // Open all incomplete sections and set them to edit mode
+            incompleteSections.forEach((step) => {
+              toggleAccordion(step, true);
+              // Add validation styling
+              $('#step${step}').addClass("was-validated");
+
+              // Add error class to header to make it red
+              $('#step${step}Header').addClass("validation-error");
+
+              // Change button to DONE for each incomplete section
+              const buttonSelector = '#step${step} .next-button';
+              const button = $(buttonSelector);
+              if (button.length) {
+                button.text("DONE");
+                button.attr("data-editing", "true");
+                button.attr("data-step", step);
+              }
+            });
+
+            // Scroll to first incomplete section
+            if (incompleteSections.length > 0) {
+              setTimeout(() => {
+                document
+                  .getElementById('step${incompleteSections[0]}Header')
+                  .scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+              }, 350);
+            }
+          }
+        });
+
+        // Initial check
+        checkFormCompletion();
+      });
+    </script>
+  </body>
+</html>
