@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monocle | Subscription Page</title>
+</head>
+<body>
+    <style>
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("https://monocle.com/wp-content/themes/monocle/dist/fonts/helvetica-neue/HelveticaNeueRoman.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("https://monocle.com/wp-content/themes/monocle/dist/fonts/helvetica-neue/HelveticaNeueItalic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("https://monocle.com/wp-content/themes/monocle/dist/fonts/helvetica-neue/HelveticaNeueBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Plantin";
+  src: url("https://monocle.com/wp-content/themes/monocle/dist/fonts/plantin/Plantin.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Plantin";
+  src: url("https://monocle.com/wp-content/themes/monocle/dist/fonts/plantin/PlantinBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Plantin";
+  src: url("https://monocle.com/wp-content/themes/monocle/dist/fonts/plantin/PlantinItalic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "monocons";
+  src: url("https://monocle.com/wp-content/themes/monocle/dist/fonts/monocons/monocons.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+  
+
+
+/*MAIN*/
+* { 
+  font-family: Plantin, "Plantin Pro", "Book Antiqua", Georgia, "Times New Roman", serif;
+  color: #000;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  font-variant-ligatures: normal;
+  font-variant-numeric: oldstyle-nums;
+}
+h1, h2, h3, h4, h5, h6, p, span { 
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+.title-overlay {
+  width: 100%; 
+  height: 50%;
+  position: relative;
+}
+.title-overlay video {
+  width: 100%; 
+  max-height: 600px;
+  object-fit: cover;
+}
+.main-title-sub {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  position: absolute;
+  z-index: 2;  
+  top: 0; 
+  bottom: 0; 
+  left: 0; 
+  right: 0;
+}
+.main-title-sub h1 {
+  font-size: 54px; 
+  font-weight: 500; 
+  text-align: center;
+  color: white;
+}
+.main-title-sub h1.mob {
+  display: none; 
+}
+a.pn-monocle__main-subscription-btn {
+  text-decoration: none; 
+  background: black; 
+  display: flex; 
+  color: white;
+  align-items: center; 
+  justify-content: center; 
+  height: 48px;
+  font-size: 24px; 
+  font-weight: 700;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition: 0.1s ease-in background;
+  margin-top: 19px;
+  padding: 12px 36px;
+}
+a.pn-monocle__main-subscription-btn:hover {
+}
+
+/* SUBSCRIPTION PACKAGE SECTION */
+.pn-monocle__subs-plan-section.mobile {
+  display: none; 
+}
+.subs-plan-section { 
+  padding: 30px;
+}
+.header-section { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px;
+  align-items: center;
+  margin: 38px 0 65px;
+}
+.header-section h2 {
+  font-family: Plantin, "Plantin Pro", "Book Antiqua", Georgia, "Times New Roman", serif;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 34px;
+  font-weight: 500;
+}
+.package-card-section { 
+  display: flex; 
+  justify-content: center;
+  width: 95%; 
+  margin: 0 auto;
+  max-width: 960px;
+  min-width: 540px;
+  gap: 32px; 
+}
+.plan-card-outer {
+  width: 33%;
+}
+.plan-card { 
+  border-radius: 6px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: flex-start;
+  background: #F1F1F1;
+  height: 100%;
+  max-height: calc(100% - 30px);
+}
+.plan-card.print-digi { 
+  border: 1px solid #000; 
+  border-top: 0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.top-ribbon { 
+  display: flex;
+  margin-top: -41px;
+  width: 100%;
+}
+.ribbon-label { 
+  background: #FFCD29; 
+  color: black; 
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  padding: 6px 8px 10px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  display: flex; 
+  justify-content: center;
+  font-weight: 600;
+  width: 100%;
+  font-variant: small-caps;
+  max-height: 41px;
+}
+.package-price-heading { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 16px;
+  padding: 28px 0;
+  width: 100%;
+  background: #000;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.plan-card.print-digi .package-price-heading {
+  border-radius: 0;
+}
+.plan-card h2, .plan-card h2 em { 
+  font-weight: 500; 
+  font-size: 28px;
+  line-height: 1.2;
+  color: #fff;
+  height: 33px;
+  margin: 0;
+}
+.plan-card h3, .plan-card h3 span { 
+  font-weight: 300;
+  font-size: 20px; 
+  line-height: 1.2;
+  color: #fff;
+  margin: 0;
+}
+.plan-card h3 span { 
+  font-size: 24px;
+}
+span.grey-text, .grey-text b, strike { 
+  color: #929292; 
+  line-height: 1.2;
+}
+span.price-styling { 
+  font-size: 24px;
+}
+.plan-card-content {
+  padding: 30px 20px 30px;
+  min-height: 475px;
+}
+a.pn-monocle__subs-btn { 
+  background: #FFCD29;
+  text-decoration: none; 
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  padding-top: 1px;
+  width: 100%;
+  height: 40px;
+  justify-content: center;
+  display: flex; 
+  align-items: center;
+  margin-bottom: 22px;
+  transition: 0.1s background ease-in;
+  color: black;
+}
+a.pn-monocle__subs-btn:hover {
+  background: black;
+  color: white;
+  text-decoration: underline;
+}
+/* IMAGE HOVER */
+.expand-gift {
+  display: none;
+  position: absolute;
+  width: 300px;
+  height: 225.5px;
+  background: white; 
+  border: 1px solid black; 
+  padding: 0px;
+  margin-top: 5px;
+    object-fit: cover;
+}
+img.image-pop {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+#bundle { 
+  display: none;
+}
+a.card-one-hov:hover+div.expand-gift {
+  display: block;
+}
+a.card-two-hov:hover+div.expand-gift {
+  display: block;
+}
+p.see-more {
+  cursor: pointer;
+  font-weight: 700;
+  margin: 0;
+  font-size: 13px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.small-text.grey,
+.small-text.grey span.font-monocons {
+  color: #f7f7f7;
+  text-align: center;
+}
+span.font-monocons,
+.benefits ul span.font-monocons {
+  font-family: "monocons";
+  font-size: 14px;
+}
+.whats-included-sctn { 
+  width: 90%; 
+}
+.wi-dropdown-title {
+  display: none;
+}
+.digi__included-toggle, 
+.print-digi__included-toggle { 
+  display: none;
+}
+ul { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; 
+  padding: 0;
+}
+ul li { 
+  font-size: 16px;
+  line-height: 1.3;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: flex-start;
+}
+ul li b, ul li span {
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+span.small-text {
+  font-size: 12px;
+  line-height: 1.2;
+}
+span.font-monocons {
+  font-family: "monocons";
+}
+img.tick { 
+  flex-shrink: 0; 
+  margin: 5px 5px 0 0;
+  width: 15px;
+  height: 13px;
+}
+svg.cross { 
+  margin: 3px 6px 0 0;
+  flex-shrink: 0;
+}
+
+
+/* ABOUT SECTION */
+p.font-order { 
+  margin: 0; 
+}
+.subheader-two {
+  margin: 0px 5px;
+}
+.subheader-two h4 {
+  font-family: Plantin, "Plantin Pro", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  text-align: center;
+}
+
+.about-section { 
+  background: #F1F1F1;
+  margin-top: 46px;
+  padding-top:32px;
+}
+
+.about-card { 
+  display: flex;
+  width: 80%;
+  max-width: 1120px;
+  background: #F1F1F1;
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+}
+.about-card-content { 
+  width: 100%;
+  margin: 0 auto; 
+  gap: 4vw;
+  display: flex;
+  padding: 32px 0px;
+  align-items: center;
+}
+.copy-details { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 5px; 
+  justify-content: center;
+  padding: 40px 0px;
+}
+.about-card img.one,
+.about-card img.two,
+.about-card img.three,
+.about-card img.four { 
+  width: 50%;
+  object-fit: cover;
+  object-position: top left;
+  max-width: 400px;
+}
+.about-card:nth-child(2), .about-card:nth-child(4) { 
+  background: #F1F1F1;
+}
+.about-card-content.row-reverse { 
+  flex-direction: row-reverse; 
+  justify-content: flex-end;
+}
+.about-card h3 { 
+  font-size: 27px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.about-card h4 { 
+  font-size: 19px;
+  font-weight: 200;
+  line-height: 1.2;
+}
+
+/* CONTACT SECTION */
+.pn-monocle__contact-section {
+  padding: 55px 0 45px;
+}
+.subheader-three {
+}
+.subheader-three h3 {
+  font-size: 28px; 
+  margin: 10px 10px 30px;
+  text-align: center;
+}
+.contact-blocks {
+  max-width: 736px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex; 
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.contact-block {
+  display: flex; 
+  flex-direction: column;
+  gap: 15px;
+  background: white;
+  align-items: center;
+  padding: 15px;
+  flex-grow: 1;
+  flex-basis: 300px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.contact-header h6 {
+  font-size: 16px; 
+  margin: 0;
+}
+.icon-background {
+  background: black; 
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.icon-background img {
+  width: 17px;
+  height: 17px;
+  margin-left: 7px;
+  margin-top: 7px;
+}
+.contact-tele-email a {
+  font-size: 18px;
+  text-decoration: none; 
+  color: black;
+}
+.contact-tele-email a:hover {
+  text-decoration: underline;
+  background: none;
+  color: black;
+}
+
+.info-time {
+  display: flex;
+  margin: 0 auto;
+  }
+
+.info-time p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.35em;
+  color: #555;
+  text-align: center;
+  display: flex;
+  margin: 0 auto;
+}
+/* FAQ SECTION */
+.faqs-content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 0px;
+    background: #F1F1F1;
+}
+.header-component { 
+  margin-bottom: 55px;
+}
+.header-component h2 {
+  font-size: 36px;
+  text-align: center;
+  font-family: Plantin, "Plantin Pro", "Book Antiqua", Georgia, "Times New Roman", serif;
+}
+.faq-answers { 
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+a.faq-contact {
+  color: #F07060;
+  font-style: italic;
+  text-decoration: none; 
+  transition: 0s linear text-decoration;
+}
+a.faq-contact:hover {
+  text-decoration: underline;
+}
+.q1-question,
+.q2-question,
+.q3-question,
+.q4-question { 
+  border-bottom: 1px solid #BBBBBB;
+  padding-bottom: 20px;
+}
+.faq-answers h3 { 
+  font-size: 18px;
+}
+.faq-answers h4 { 
+  font-size: 15px;
+}
+.q1-toggle,
+.q2-toggle,
+.q3-toggle,
+.q4-toggle {
+  display: inline-flex;
+}
+/* EXPANDABLE STYLING FAQS */
+.unbutton {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+.q1-toggle, 
+.q2-toggle,
+.q3-toggle,
+.q4-toggle {
+  position: relative;
+  width: 100%;
+  height: 38px;
+  margin-bottom: 28px;
+  margin-left: 0px;
+}
+.q1-toggle::after,
+.q2-toggle::after,
+.q3-toggle::after,
+.q4-toggle::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 8px;
+  bottom: 0;
+  width: 6px;
+  height: 6px;
+  margin: auto;
+  border: 0;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+}
+span.black-spot {
+  background: black;
+  width: 23px;
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  bottom: 0;
+  border-radius: 50%;
+  height: 23px;
+  pointer-events: none;
+}
+.faq-answer__expanded .q1-toggle,
+.faq-answer__expanded .q2-toggle,
+.faq-answer__expanded .q3-toggle,
+.faq-answer__expanded .q4-toggle {
+  margin-top: 5px;
+  transform: rotateX(180deg) rotateY(0deg);
+  transform-origin: right;
+}
+.expandable-faq-function {
+  display: flex;
+  flex-direction: column;
+  margin-top: -50px;
+}
+/* EXPANDABLE FUNCTION */
+ .q1-answer, 
+ .q2-answer, 
+ .q3-answer,
+ .q4-answer  { 
+   display: none;
+}
+.faq-answer__expanded .q1-answer,
+.faq-answer__expanded .q2-answer,
+.faq-answer__expanded .q3-answer,
+.faq-answer__expanded .q4-answer {
+  display: block;
+  padding-bottom: 35px; 
+}
+
+.about-card:nth-child(4) { 
+  border: none;
+}
+
+/* Gift section */
+.gift-button-container {
+  margin-top: 20px;
+}
+  
+.gift-button {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #f1f1f1f1;
+  padding: 10px;
+  border-radius: 6px;    
+}
+
+.gift-button a {
+  font-family: inherit;
+}
+
+@media screen and (max-width: 900px) { 
+  .package-card-section { 
+    gap: 10px;
+    margin-bottom: 0px;
+  }
+  .about-card h3 {
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+  .about-card h4 {
+    font-size: 14px;
+  }
+}
+
+.title-overlay video {
+  width: 100%; 
+  position: relative;
+}
+
+@media screen and (max-width: 850px) { 
+  .plan-card-content {
+    padding: 15px 15px 25px;
+    min-height: 400px;
+  }
+  ul li, ul li b, ul li span { 
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .header-section {
+    margin: 18px 0 65px; 
+  }
+  .header-section h2 {
+    font-size: 27px;
+  }
+  .plan-card h2 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 700px) { 
+  .about-card-content { 
+    padding: 10px 0px;
+    width:100%;
+  }
+  .option-referral p {
+    font-size: 27px; 
+  }
+  .faq-answers { 
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 660px) { 
+  .about-section {
+    margin-top: 0px;
+  }
+  .main-title-sub h1 {
+    font-size: 32px;
+  }
+ .pn-monocle__subs-plan-section.desktop {
+   display: none; 
+  }
+ .pn-monocle__subs-plan-section.mobile {
+   display: block;
+  }
+ a.pn-monocle__main-subscription-btn {
+   font-size: 16px;
+   height: 42px; 
+   width: 170px;
+   margin-top: 5px;
+  }
+  .header-section {
+    margin: 12px 0 30px; 
+  }
+  .header-section h2 { 
+    font-size: 24px; 
+  }
+  /* SUBSCRIPTION PACKAGE SECTION */
+
+.offer-selectors { 
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width: 87%;
+  border-bottom: 1px solid #D0D0D0;
+}
+.selector { 
+  width: 50%;
+}
+label.memb-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: none; 
+  border: none !important;
+  border: 3px solid #fff;
+  cursor: pointer;
+  font-style: italic;
+}
+input.plan-select { 
+  opacity: 0;
+  width: 0px;
+}
+input.plan-select:checked { 
+  opacity: 0;
+  width: 0px;
+}
+.selector span { 
+  padding: 14px 0px 8px;
+  font-weight: 500;
+  width: 100%;
+  color: #D0D0D0;
+  text-align: center;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+input.plan-select:checked+span { 
+  font-weight: 500;
+  border-bottom: 4px solid black;
+  color: black;
+  padding: 14px 0 4px;
+}
+#dc-11 { 
+  display: block; 
+}
+#dc-12 { 
+  display: none; 
+}
+.pn-hex__digi-subs-content { 
+  background: #fff;
+}
+.offer-plan-sctn { 
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 22px 0px 25px;
+  width: 87%;
+  max-width: 400px;
+}
+.plan-card { 
+  background: #fff;
+  height: auto;
+}
+.plan-cards {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column-reverse;
+}
+.benefits { 
+  margin-left: 20px;
+}
+.plan-card-content { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  min-height: auto;
+  padding: 0;
+  width: 100%;
+}
+input.pn-monocle-term__price {
+  width: 16px;
+}
+input.pn-monocle-term__price:checked { 
+  accent-color: #000;
+}
+.title-select { 
+  display: flex; 
+  align-items: flex-start;
+  gap: 5px;
+}
+.title-select h2 b { 
+  font-family: Plantin, "Plantin Pro", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  }
+.title-select.prem { 
+  border-top: 1px solid #D0D0D0;
+  padding-top: 12px;
+}
+.radio-title { 
+  display: flex;
+  justify-content: space-between;
+}
+.plan-card-content h2 { 
+  font-size: 20px;
+  margin-top: -3px;
+  color: black;
+  height: auto;
+}
+.plan-card-content h4  { 
+  font-weight: 400;
+  font-size: 17px;
+}
+.plan-card-content.digital { 
+}
+.grey-title { 
+  color: #686060;
+  text-decoration: line-through;
+  font-size: 15px;
+}
+a.pn-monocle__subs-btn, a.pn-monocle__subs-btn:visited { 
+  color: #000;
+  width: 151px;
+  height: 28px;
+  font-family: "Helvetica Neue";
+  background: #FFCD29;
+  padding: 9px 10px 10px;
+  text-align: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: normal;
+  transition: background .15s ease-out;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+a:hover { 
+  background:#20447D;
+  color: #fff;
+}
+.benefits { 
+  padding: 0 0px 15px; 
+}
+.benefits ul { 
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.benefits li { 
+  font-family: Plantin, "Plantin Pro", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 7;
+  display: flex; 
+  gap: 5px;
+  align-items: flex-start;
+}
+.benefits ul span, .benefits ul span a { 
+  font-size: 14px;
+  font-family: Plantin, "Plantin Pro", "Book Antiqua", Georgia, "Times New Roman", serif;
+}
+span.grey-font { 
+  color: #D0D0D0;
+  text-decoration: line-through;
+  font-family: Plantin, "Plantin Pro", "Book Antiqua", Georgia, "Times New Roman", serif;
+}
+.benefits ul a { 
+  font-family: "Helvetica Neue"; 
+  color: black;
+  text-decoration: underline;
+}
+.benefits ul a:hover { 
+  background: none; 
+}
+.benefits svg {
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.most-popular {
+    justify-content: flex-end;
+  z-index: 1;
+  position: relative;
+  display: none;
+}
+.most-popular h6 { 
+    font-size: 10px;
+    background: #FFCD29;
+    width: 75px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 0;
+    text-align: center;
+  margin: 0;
+}
+a.card-one-hov:hover+div.expand-gift {
+  display: block;
+}
+a.card-two-hov:hover+div.expand-gift {
+  display: block;
+}
+
+/* IMAGE HOVER */
+.expand-gift {
+  display: none;
+  position: absolute;
+   width: 260px;
+  height: 195.5px;
+  background: white; 
+  border: 1px solid black; 
+  padding: 0px;
+  margin-top: 5px;
+  object-fit: cover;
+}
+img.image-pop {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+  
+  /* ABOUT SECTION REDESIGN */
+  .about-cards { 
+    display: flex; 
+    flex-wrap: wrap; 
+    background: #f1f1f1;
+    padding: 10px 20px; 
+    width: 100%;
+  }
+  .about-card {
+    width: 100%;
+  }
+  .about-card-content.row-reverse {
+    flex-direction: column-reverse;
+    width:100%;
+  }
+  .about-card-content {
+    flex-direction: column-reverse;
+    width: 100%; 
+  }
+  .about-card img.one,
+  .about-card img.two,
+  .about-card img.three,
+  .about-card img.four {
+    width: 100%;
+  }
+  .copy-details { 
+    padding: 17px 0 35px;
+  }
+ 
+  /* ABOUT SECTION old design 
+  .about-card img.one {
+    width: 32%;
+  }
+  .about-card img.two {
+    width: 28%;
+  }
+  .about-card img.three {
+    width: 24%;
+  }
+  .about-card img.four {
+    width: 50%;
+    height: auto;
+    margin: 9px 0 0 28px;
+  }
+  .about-card:nth-child(4) .copy-details {
+    padding-top: 20px; 
+  }
+  .about-card h4 {
+    font-size: 14px;
+  }
+  .about-card h3 {
+    font-size: 19px;
+  }
+  .about-card-content {
+    gap: 6vw;
+  }
+}
+  */
+}
+
+
+@media screen and (max-width: 450px) {
+  .main-title-sub h1 {
+    font-size: 22px;
+  }
+  .plan-card-content h2 {
+    font-size: 14px;
+    margin-top: -2px;
+  }
+  .offer-plan-sctn {
+    max-width: 340px;
+    padding: 15px 0 25px;
+  }
+  .selector span { 
+    font-size: 16px;
+  }
+  .benefits li { 
+    font-size: 14px;
+  }
+  .plan-card { 
+    padding: 0 14px;
+  }
+  a.pn-monocle__subs-btn, a.pn-monocle__subs-btn:visited { 
+    width: 250px;
+    margin-left: 34px;
+  }
+  /* ABOUT SECTION DYNAMIC RESTRUCTURE */
+  .subheader-two {
+    margin: 0px 5px; 
+  }
+  .subheader-two h4 {
+    font-size: 18px;
+  }
+  .about-card-content, 
+  .about-card-content.row-reverse { 
+    flex-direction: column-reverse;
+    padding: 22px 0px;
+    width: 100%;
+    align-items: center;
+  }
+  .about-card img.one,
+  .about-card img.two,
+  .about-card img.three,
+  .about-card img.four {
+    width: 100%;
+    height: 200px;
+  }
+  .about-card img.four {
+    margin: 0;
+  }
+  .about-card:nth-child(4) .copy-details {
+    padding: 0;
+  }
+  .image-outer {
+    display: flex; 
+    justify-content: center;
+  }
+  .copy-details  { 
+    width: 100%;
+    padding: 0;
+  }
+  .header-component {
+    margin-bottom: 40px;
+  }
+  .header-component h2 {
+    font-size: 20px;
+  }
+  .faq-answers h3 {
+    font-size: 17px;
+  }
+  .faq-answers h4 {
+    font-size: 14px;
+  }
+}
+    </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+<div class="pn-monocle__selling-page">
+  <section class="pn-monocle__image-subs-overlay">
+    <div class="title-overlay">
+      <div class="main-title-sub">
+        <h1 class="desktop">Unlock the world with MONOCLE and stay inspired</h1>
+        <h1 class="mob">Unlock the world with MONOCLE and stay inspired</h1>
+      </div>
+      <video autoplay muted loop playsinline id="monocleSubVideo">
+        <source src="https://monocle.com/wp-content/uploads/2025/03/monocle-subscription-film.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+  <section class="pn-monocle__subs-plan-section desktop">
+    <div class="header-section">
+      <h2>CHOOSE YOUR SUBSCRIPTION&nbsp;PLAN</h2>
+    </div>
+    <div id="container">
+      <div id="parent">
+        <div class="package-card-section">
+          <div class="plan-card-outer">
+            <div class="plan-card premium">
+              <div class="package-price-heading">
+                <h2>Premium</h2>
+                <h3><span class="price">£230</span> a year</h3>
+              </div>
+              <div class="plan-card-content">
+                <a class="pn-monocle__subs-btn" href="#" data-monocle="premium" external-event="premium-subscribe-click">SUBSCRIBE</a>
+                <div class="whats-included-sctn">
+                  <ul>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>Unlimited access on any device, including digital edition</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>Our digital archive</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>Monocle City Guides online</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>10% discount Monocle shop and conferences</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>Subscriber-only events</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>10 issues and 4 special editions delivered to your door, anywhere in the world</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/><span>Exclusive Monocle gift:<br /><span class="small-text">Leather document/laptop case (forest green), Treuleben <span class="font-monocons">X</span> Monocle</span>
+                                              <a class="card-one-hov">
+                          <p class="see-more small-text">View gift</p>
+                        </a>
+                        <div class="expand-gift"> 
+                          <img class="image-pop" src="https://monocle.com/wp-content/uploads/2025/03/premium-subs-gift.jpg">
+                        </div></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="plan-card-outer">
+            <div class="top-ribbon">
+              <span class="ribbon-label">most popular</span>
+            </div>
+            <div class="plan-card print-digi">
+              <div class="package-price-heading">
+                <h2>Print <em>&</em> Digital</h2>
+                <h3><span class="price">£160</span> a year</h3>
+              </div>
+              <div class="plan-card-content">
+                <a class="pn-monocle__subs-btn" href="#" data-monocle="print_and_digital" external-event="print-and-digital-subscribe-click">SUBSCRIBE</a>
+                <div class="whats-included-sctn">
+                  <ul>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>Unlimited access on any device, including digital edition</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>Our digital archive</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>Monocle City Guides online</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>10% discount Monocle shop and conferences</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>Subscriber-only events</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/><span>10 issues and 4 special editions delivered to your door, anywhere in the world</span></li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/><span>Exclusive Monocle gift:<br /><span class="small-text">Tote bag</span>
+                                              <a class="card-two-hov">
+                          <p class="see-more small-text">View gift</p>
+                        </a>
+                        <div class="expand-gift"> 
+                          <img class="image-pop" src="https://monocle.com/wp-content/uploads/2025/03/print-digital-subs-gift.jpg">
+                        </div></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="gift-button-container">
+              <div class="gift-button">
+                Buy as a gift? <a href="https://monocle-staging.go-vip.net/shop/product/print-digital-gift-subscription/">Click here</a>
+              </div>
+            </div>
+          </div>
+          <div class="plan-card-outer">
+            <div class="plan-card digital">
+              <div class="package-price-heading">
+                <h2>Digital</h2>
+                <h3><span class="price">£120</span> a year</h3>
+              </div>
+              <div class="plan-card-content">
+                <a class="pn-monocle__subs-btn" href="#" data-monocle="digital" external-event="digital-subscribe-click">SUBSCRIBE</a>
+                <div class="whats-included-sctn">
+                  <ul>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>Unlimited access on any device, including digital edition</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>Our digital archive</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>Monocle City Guides online</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>10% discount Monocle shop and conferences</li>
+                    <li><img class="tick" src="https://monocle.com/wp-content/uploads/2025/04/check.png"/>Subscriber-only events</li>
+                    <li><svg class="cross" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" x="0" y="0" viewBox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M4.59 59.41a2 2 0 0 0 2.83 0L32 34.83l24.59 24.58a2 2 0 0 0 2.83-2.83L34.83 32 59.41 7.41a2 2 0 0 0-2.83-2.83L32 29.17 7.41 4.59a2 2 0 0 0-2.82 2.82L29.17 32 4.59 56.59a2 2 0 0 0 0 2.82z" fill="#929292" opacity="1" data-original="#929292"></path></g></svg><span class="grey-text">10 issues and 4 special editions delivered to your door, anywhere in the world</span></li>
+                    <li><svg class="cross" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" x="0" y="0" viewBox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M4.59 59.41a2 2 0 0 0 2.83 0L32 34.83l24.59 24.58a2 2 0 0 0 2.83-2.83L34.83 32 59.41 7.41a2 2 0 0 0-2.83-2.83L32 29.17 7.41 4.59a2 2 0 0 0-2.82 2.82L29.17 32 4.59 56.59a2 2 0 0 0 0 2.82z" fill="#929292" opacity="1" data-original="#929292"></path></g></svg><span class="grey-text">Exclusive Monocle gift</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pn-monocle__subs-plan-section mobile">
+  <div class="product-offers">
+    <div class="offer-selectors">
+        <div class="selector">
+          <label class="memb-select">
+            <input class="plan-select" type="radio" name="action" value="dc-11" checked/>
+              <span>Print & Digital</span>
+          </label>
+        </div>
+        <div class="selector">
+          <label class="memb-select">
+            <input class="plan-select" type="radio" name="action" value="dc-12"/>
+              <span>Digital Only</span>
+          </label>
+        </div>
+      </div>
+    <div id="dc-11" class="show-hide">
+        <div class="pn-hex__digi-subs-content">
+          <div class="offer-plan-sctn">
+            <div class="plan-cards">
+              <label class="plan-card monthly">
+                <div class="plan-card-content">
+                  <div class="title-select prem">
+                    <input type="radio" name="packageToggle" class="pn-monocle-term__price" value="premium">
+                    <h2>
+                      <b>Premium:</b> £230 a year
+                    </h2>
+                  </div>
+                  <div class="benefits">
+                    <ul>
+                      <li><span>Upgrade your tote bag for a 
+                        <a class="card-one-hov">leather document/laptop&nbsp;case</a>
+                        <div class="expand-gift"> 
+                          <img class="image-pop" src="[%% gift-one-image-expand %%]">
+                        </div>(forest green), Treuleben <span class="font-monocons">X</span> Monocle</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </label>
+              <label class="plan-card annual">
+                <div class="plan-card-content">
+                  <div class="radio-title">
+                  <div class="title-select">
+                      <input type="radio" name="packageToggle" class="pn-monocle-term__price" value="bundle" checked>
+                      <h2>
+                        <b>Print & Digital:</b> £160 a year
+                      </h2>
+                    </div>
+                    <div class="most-popular">
+                      <h6>
+                        Most popular
+                      </h6>
+                    </div>
+                  </div>
+                  <div class="benefits">
+                  <ul>
+                      <li>10 issues + 4 specials delivered worldwide</li>
+                      <li>Unlimited digital + archive access</li>
+                      <li>Monocle City Guides online</li>
+                      <li>10% off Monocle shop & conferences</li>
+                      <li>Subscriber-only events</li>
+                      <li><span>Exclusive
+                        <a class="card-one-hov">tote bag gift</a>
+                        <div class="expand-gift"> 
+                          <img class="image-pop" src="[%% gift-two-image-expand %%]">
+                        </div></span></li>
+                    </ul>
+                 </div>
+                  </div>
+                </label>
+              </div>
+            <div class="show-hide-2" id="premium">
+              <a class="pn-monocle__subs-btn" href="#" data-monocle="premium" external-event="premium-subscribe-click">SUBSCRIBE</a>
+            </div>
+            <div class="show-hide-2" id="bundle">
+              <a class="pn-monocle__subs-btn" href="#" data-monocle="print_and_digital" external-event="print-and-digital-subscribe-click">SUBSCRIBE</a>
+            </div>
+            </div>
+      </div>
+    </div>
+    <div id="dc-12" class="show-hide">
+        <div class="pn-hex__digi-subs-content">
+          <div class="offer-plan-sctn">
+              <label class="plan-card">
+                  <div class="plan-card-content digital">
+                  <div class="title-select">
+                    <input type="radio" name="2" class="pn-monocle-term__price" value="0" checked>
+                      <h2>
+                        <b>Digital:</b> £120 a year
+                      </h2>
+                    </div>
+                    <div class="benefits">
+                  <ul>
+                      <li>Unlimited digital + archive access</li>
+                      <li>Monocle City Guides online</li>
+                      <li>10% off Monocle shop & conferences</li>
+                      <li>Subscriber-only events</li>
+                      <li><span class="grey-font">10 issues + 4 specials delivered worldwide</span></li>
+                      <li><span class="grey-font">Exclusive tote bag gift</span></li>
+                    </ul>
+                 </div>
+                </div>
+              </label>
+              <a class="pn-monocle__subs-btn" href="#" data-monocle="digital" external-event="digital-subscribe-click">[%% package-cta %%]</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="about-section">
+    <div class="subheader-two">
+      <h4>MORE THAN JUST A SUBSCRIPTION</h4>
+    </div>
+    <div class="about-cards">
+      <div class="about-card">
+        <div class="about-card-content row-reverse">
+          <div class="copy-details">
+            <h3>Exclusive access to Monocle events and global community</h3>
+            <h4>As a Monocle subscriber, you’re invited to join us in person – at book launches, panel talks, cocktails and conferences. Meet our team, connect with others and swap ideas.</h4>
+          </div>
+          <img class="one" src="https://monocle.com/wp-content/uploads/2025/03/monocle-events.jpg" />
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-content">
+          <div class="copy-details">
+            <h3>The best in journalism</h3>
+            <h4>Each Monocle issue takes you somewhere new – from Stockholm start-ups to São Paulo design studios. With eight global bureaux and 40 correspondents, we deliver sharp reporting, fresh ideas and a unique global perspective.</h4>
+          </div>
+          <img class="two" src="https://monocle.com/wp-content/uploads/2025/03/monocle-podcasts-radio.jpeg" />
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-content row-reverse">
+          <div class="copy-details">
+            <h3>Join us in our own spaces globally</h3>
+            <h4 class="shortened">Monocle’s shops and cafés in London, Zürich, Paris, Toronto, Hong Kong and Tokyo offer great coffee, smart products and lively company – perfect for browsing, meeting fellow readers or catching up with our team.</h4>
+          </div>
+          <img class="three" src="https://monocle.com/wp-content/uploads/2025/03/monocle-cafe-paris.png" />
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-content">
+          <div class="copy-details">
+            <h3>Exclusive subscriber perks and Monocle shop discount</h3>
+            <h4>Subscribers enjoy 10% off at all Monocle shops and online. You will also unlock subscriber discounts on conference tickets and receive an exclusive gift when you join.</h4>
+          </div>
+          <img class="three" src="https://monocle.com/wp-content/uploads/2025/03/monocle-shop.jpeg" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pn-monocle__contact-section">
+    <div class="subheader-three">
+      <h3>Have a question about our subscription packages?</h3>
+    </div>
+    <div class="contact-blocks">
+      <div class="contact-block">
+        <div class="contact-header">
+          <div class="icon-background">
+            <img class="phone" src="https://monocle.com/wp-content/uploads/2025/04/phone.png" />
+          </div>
+          <h6>Call us</h6>
+        </div>
+        <div class="contact-tele-email">
+          <a class="contact" href="tel:+44 (0) 20 7725 4349">+44 (0) 20 7725 4349</a>
+        </div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-header">
+          <div class="icon-background">
+            <img class="envelope" src="https://monocle.com/wp-content/uploads/2025/04/envelope-open.png" />
+          </div>
+          <h6>Email us</h6>
+        </div>
+        <div class="contact-tele-email">
+          <a class="contact" href="mailto:subscriptions@monocle.com">subscriptions@monocle.com</a>
+        </div>
+      </div>
+                <div class="info-time">
+            <p>Customer service is open from 08.30 to 18.30 UK time, Monday to Friday</p>
+          </div>
+    </div>
+  </section>
+  <section class="faqs-section">
+    <div class="faqs-content">
+      <div class="header-component">
+        <h2>FREQUENTLY ASKED QUESTIONS</h2>
+      </div>
+      <div class="faq-answers">
+        <div class="q1-question">
+          <h3>When does my subscription start?</h3>
+        </div>
+        <div class="expandable-faq-function">
+          <button class="q1-toggle unbutton" type="button" external-event="more-info-close">
+            <span class="black-spot"></span>
+          </button>
+          <div class="q1-answer">
+            <h4>
+              If you subscribe between now and 3 July, your print subscription will start with the Entrepreneurs 9 edition. 
+              Digital access is available from the day you subscribe. Please note, delivery timings vary per location. 
+              To learn more about timings please visit our <a class="faq-contact" href="https://monocle.com/faqs/">FAQs</a>.
+            </h4>
+          </div>
+        </div>
+        <div class="q2-question">
+          <h3>How can I receive the next published issue?</h3>
+        </div>
+        <div class="expandable-faq-function">
+          <button class="q2-toggle unbutton" type="button" external-event="more-info-close">
+            <span class="black-spot"></span>
+          </button>
+          <div class="q2-answer">
+            <h4>
+              You are able to order back issues not included in your subscription under the 'Print' section. 
+              Refer to print section <a class="faq-contact" href="https://monocle.com/shop/print-magazines-newspapers/">here</a>.
+            </h4>
+          </div>
+        </div>
+        <div class="q3-question">
+          <h3>When will I receive my subscription gift?</h3>
+        </div>
+        <div class="expandable-faq-function">
+          <button class="q3-toggle unbutton" type="button" external-event="more-info-close">
+            <span class="black-spot"></span>
+          </button>
+          <div class="q3-answer">
+            <h4>
+              Your gift is allocated depending on the package you have signed up to and should arrive with the first issue of your 
+              subscription. Please note, packages containing a gift may incur customs charges.
+            </h4>
+          </div>
+        </div>
+        <div class="q4-question">
+          <h3>How can I manage my account details?</h3>
+        </div>
+        <div class="expandable-faq-function">
+          <button class="q4-toggle unbutton" type="button" external-event="more-info-close">
+            <span class="black-spot"></span>
+          </button>
+          <div class="q4-answer">
+            <h4>
+              Your account details, including auto-renewal, delivery address and personal details can be viewed under your Account Page.
+              Please contact <a class="faq-contact" href="mailto:subscriptions@monocle.com">subscriptions@monocle.com</a> if you need to 
+              make any changes. Please note, our Subscriptions Team cannot amend delivery details once your issue has dispatched. 
+              We recommend reaching out as early as possible to ensure there are no gaps on your subscription. 		
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  document.querySelector(".q1-toggle").addEventListener("click", (event) => {
+    event.target.parentNode.classList.toggle("faq-answer__expanded");
+  });
+
+  document.querySelector(".q2-toggle").addEventListener("click", (event) => {
+    event.target.parentNode.classList.toggle("faq-answer__expanded");
+  });
+
+  document.querySelector(".q3-toggle").addEventListener("click", (event) => {
+    event.target.parentNode.classList.toggle("faq-answer__expanded");
+  });
+
+  document.querySelector(".q4-toggle").addEventListener("click", (event) => {
+    event.target.parentNode.classList.toggle("faq-answer__expanded");
+  });
+
+  $(document).ready(function () {
+    $("input[name=action]").change(function () {
+      var test = $(this).val();
+      $(".show-hide").hide();
+      $("#" + test).show();
+    });
+  });
+  
+   $(document).ready(function () {
+    $("input[name=packageToggle]").change(function () {
+      var test = $(this).val();
+      $(".show-hide-2").hide();
+      $("#" + test).show();
+    });
+  });
+  
+  
+
+  const monocleConfig = {
+    premium: {
+      action: "monocle:addToCart",
+      swellId: "675085075c15680013b30cca",
+      planId: "675084e1148d8fa83ffd8126",
+    },
+    print_and_digital: {
+      action: "monocle:addToCart",
+      swellId: "67a4e41c6a74b900120dc2e4",
+      planId: "67a4e30bff55688a8c70e663",
+    },
+    digital: {
+      action: "monocle:addToCart",
+      swellId: "67d3092ac17e300012a75488",
+      planId: "67a4e30bff55688a8c70e663",
+    },
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll("[data-monocle]");
+    if (elements.length) {
+      elements.forEach((el) => {
+        el.addEventListener("click", (evt) => {
+          evt.preventDefault();
+          const key = el.getAttribute("data-monocle");
+          if (key in monocleConfig) {
+            window.top.postMessage({ ...monocleConfig[key] }, "*");
+          }
+        });
+      });
+    }
+  });
+</script>
+</body>
+</html>
