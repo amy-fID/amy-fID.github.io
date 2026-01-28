@@ -1,0 +1,2762 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,height=device-height"
+      id="viewp"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <title>The Week Subscription</title>
+    <link rel="stylesheet" href="resources/styles/TWEdesktoptest.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <style>
+        /* font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.container-test {
+  height: 1000px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  font-family: Montserrat, Arial, Helvetica, Sans-Serif;
+}
+
+.main-flex-wrapper { 
+  display: flex;
+  flex-direction: row;
+  max-width: 1085px;
+  margin: 0 auto;
+  align-items: flex-end;
+  width: 95%;
+}
+.header-banner { 
+    padding: 8px;
+    background-color: #DF0A14;
+    height: auto;
+    display: flex; 
+    justify-content: center;
+}
+.logo { 
+    padding: 5px;
+}
+img.logo { 
+    vertical-align: middle;
+}
+
+.ad-placeholder {
+    padding: 28px 15px 30px;
+    gap: 11px; 
+    background: #efefef;
+    display: none;
+}
+.header-ad-content {
+    width: 95%;
+    max-width: 480px;
+    margin: 0 auto;
+    gap: 11px; 
+    display: flex; 
+    align-items: center;
+}
+
+.ad-placeholder p {
+    margin-bottom: 0;
+    font-size: 13.5px;
+}
+
+/* STICKY FOOTER */
+.footer-sticky {
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  padding: 12px 10px 10px;
+  background-color: white;
+  box-shadow: 0px -10px 8.4px 0px #0000004d;
+  z-index: 1000;
+}
+
+.footer-sticky h2 {
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.footer-sticky h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.footer-sticky span.offer-price {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+a.anch-style {
+  text-decoration: none !important;
+  color: transparent !important;
+}
+
+.mainwrapper.fixed .footer-sticky {
+  position: fixed;
+  display: block;
+}
+
+.mainwrapper {
+  position: relative;
+}
+
+.mainwrapper .footer-sticky {
+  display: none;
+  position: absolute;
+  background: #fff;
+  left: 0;
+}
+
+/* CAROUSEL SECTION */
+
+.container.nopad { 
+  padding: 0;
+}
+h2.carousel-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  max-width: 300px;
+  margin: 0 auto 13px;
+}
+
+.red-font {
+  color: #df0a14;
+}
+
+.carousel {
+  margin: 0 auto;
+}
+
+.carousel-caption.d-md-block p {
+  font-size: 13.8px;
+  line-height: 1.2;
+  margin-bottom: 0px;
+}
+
+.carousel-caption.d-md-block h6 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.w-100.incl-img {
+  object-fit: cover;
+  margin: 0 auto 30px;
+  width: 54% !important;
+}
+
+.carousel-control-prev {
+  justify-content: flex-start !important;
+  align-items: flex-end !important;
+  bottom: 15px !important;
+  left: 96px !important;
+}
+
+.carousel-control-next {
+  align-items: flex-end !important;
+  justify-content: flex-end !important;
+  bottom: 15px !important;
+  right: 96px !important;
+}
+
+.carousel-control-prev-icon {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none"><rect x="8.87573" y="14.1201" width="1.67356" height="9.20458" transform="rotate(135 8.87573 14.1201)" fill="%23AEADAD"/><rect x="7.61182" width="1.67356" height="9.20458" transform="rotate(45 7.61182 0)" fill="%23AEADAD"/><rect x="2.38" y="7.68201" width="1.63147" height="1.73443" transform="rotate(135 2.38 7.68201)" fill="%23AEADAD"/></svg>') !important;
+}
+
+.carousel-control-next-icon {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none"><rect y="1.18335" width="1.67356" height="9.20458" transform="rotate(-45 0 1.18335)" fill="%23AEADAD"/><rect x="1.26392" y="15.3035" width="1.67356" height="9.20458" transform="rotate(-135 1.26392 15.3035)" fill="%23AEADAD"/><rect x="6.49573" y="7.62146" width="1.63147" height="1.73443" transform="rotate(-45 6.49573 7.62146)" fill="%23AEADAD"/></svg>') !important;
+}
+
+.carousel-indicators {
+  margin-bottom: 15px;
+  gap: 17px;
+  position: relative !important;
+  bottom: 14px !important;
+  margin-left: 25% !important;
+  margin-right: 25% !important;
+  margin-top: 7px;
+}
+
+.carousel-indicators li {
+  width: 17px !important;
+  height: 17px !important;
+  border-radius: 50%;
+  background-color: #aeadad !important;
+  border-top: 5px solid transparent !important;
+  border-bottom: 5px solid transparent !important;
+}
+
+.carousel-caption {
+  top: 0px;
+  position: relative !important;
+  color: black !important;
+  padding: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+  justify-content: center;
+}
+
+/* INCLUDED IN ORDER SECTION */
+
+h3.included-subheader {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 34.5px;
+  font-weight: 700;
+  max-width: 804px;
+  margin: 20px auto 0;
+}
+hr.included-divider {
+  border-top: 1px solid #df0a14;
+  margin: 8px auto;
+  width: 81%;
+}
+
+.accordion.access-accord {
+  max-width: 480px;
+  margin: 0 auto;
+  width: 95%;
+  float: right;
+}
+
+.card.access-card {
+  border: 1.5px solid #333333;
+  border-radius: 15px;
+  margin: 50px 0 27px;
+  max-width: 474px;
+  box-shadow: 0px 4.3px 4.3px 0px #00000040;
+  right: 34px; 
+  position: relative;
+  
+}
+
+.mdi-chevron-down {
+  margin: 0px 5px 0 0;
+}
+
+.mdi-chevron-up {
+  margin: 5px 5px 0 0;
+}
+
+.mdi-chevron-down::before {
+  content: " ";
+  display: inline-block;
+  border-bottom: 2px solid #df0a14;
+  border-right: 2px solid #df0a14;
+  height: 12px;
+  width: 12px;
+  transform: rotate(-315deg);
+}
+
+.mdi-chevron-up::before {
+  content: " ";
+  display: inline-block;
+  border-bottom: 2px solid #df0a14;
+  border-right: 2px solid #df0a14;
+  height: 12px;
+  width: 12px;
+  transform: rotate(-135deg);
+}
+
+.card-header.access-header {
+  background-color: transparent;
+  border-bottom: none;
+  padding: 12px;
+}
+
+.card-details h4 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.33;
+  margin-bottom: 0;
+}
+
+.card-details h5 {
+  font-size: 23px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.card-details h5 span.offer-price {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.card-details p {
+  font-size: 13px;
+  line-height: 1.5;
+  font-style: italic;
+  font-weight: 300;
+  color: #555555;
+  margin-bottom: 0;
+}
+
+.card-body.access-body {
+  border-top: 1px solid #d0d0d0;
+  padding: 6px 0;
+  margin: 0px 18px;
+}
+
+.btn-link {
+  color: black !important;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  text-decoration: none !important;
+}
+
+.btn:focus {
+  box-shadow: none !important;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.feature-description {
+  margin-bottom: 8px;
+  margin-right: 6px;
+  font-size: 17.2px;
+}
+
+.feature-status {
+  text-align: right;
+  white-space: nowrap;
+  color: #555;
+  font-size: 13px;
+  margin-top: -5px;
+}
+
+/* EMAIL SECTION */
+
+#sf1 { 
+  max-width: 1030px; 
+  margin: 55px auto 0;
+  padding-left: 15px; 
+  padding-right: 15px;
+  width: 95%;
+}
+#sf2 { 
+  max-width: 1138px;
+  margin: 0 auto;
+}
+.email-preferences {
+  max-width: 443px;
+  width: 95%;
+}
+
+h3.email-subheader {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 12px !important;
+}
+
+.btn-primary.main, 
+.btn-primary.footer-btn.main {
+  display: none;
+}
+
+.btn-primary.footer-btn,
+.btn-primary.emailpref-btn,
+.btn-primary.main {
+  background-color: #df0a14;
+  width: 238px;
+  margin: 0 auto;
+  color: white;
+  border: none;
+  border-radius: 0px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Montserrat, Arial, Helvetica, Sans-Serif;
+  font-weight: 700;
+  font-size: 12px;
+  transition: 0.15sec ease-in background-color;
+}
+
+.btn-primary.footer-btn:hover,
+.btn-primary.footer-btn:focus,
+.btn-primary.footer-btn:active,
+.btn-primary.emailpref-btn:hover,
+.btn-primary.emailpref-btn:focus,
+.btn-primary.emailpref-btn:active,
+.btn-primary.main:hover,
+.btn-primary.main:focus,
+.btn-primary.main:active {
+  background-color: #c82502 !important;
+}
+
+.btn-primary.emailpref-btn {
+    margin: 20px auto 25px;
+    width: 639px !important;
+}
+
+.btn.emailpref-btn.disabled {
+  background: #df0a14;
+}
+
+.form-control {
+  font-family: Montserrat, Arial, Helvetica, Sans-Serif;
+  font-size: 16px;
+  line-height: 32px;
+  padding: 0 0 0 4px;
+  border-color: #ccc;
+}
+
+.billingform input[type=radio],
+.title-select input[type="radio"],
+.email-preferences input[type="radio"] {
+  -webkit-appearance: none;
+  border: 1px solid black;
+  border-radius: 50%;
+  outline: none;
+}
+
+.billingform input[type=radio],
+.email-preferences input[type="radio"] {
+  width: 17px;
+  height: 17px;
+}
+
+.billingform {
+  display: flex;
+  gap: 20px;
+  max-width: 1030px;
+  margin: 30px auto 0;
+}
+
+.title-select input[type="radio"] {
+  width: 26px;
+  height: 26px;
+}
+
+.billingform input[type=radio]:before,
+.title-select input[type="radio"]:before,
+.email-preferences input[type="radio"]:before {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 60%;
+  margin: 20% auto;
+  border-radius: 50%;
+}
+
+.billingform input[type=radio]:checked:before,
+.title-select input[type="radio"]:checked:before,
+.email-preferences input[type="radio"]:checked:before {
+  background: #df0a14;
+}
+
+.emailprefs.col {
+  padding: 0;
+}
+
+.emailprefs.col-md-4 {
+  max-width: 100%;
+}
+
+.emailprefs .row-nopad { 
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.emailprefs .radio-inline {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.radio-inline.main { 
+    margin-bottom: 3px;
+}
+
+.radio-inline input {
+  margin-bottom: -3px;
+}
+
+.yes-op {
+  margin-right: 20px;
+}
+
+.form-group.tandcs {
+  margin: 10px 0 5px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.tandcs p.first {
+  margin: 0 0 5px;
+}
+
+.tandcs p {
+  margin: 0;
+  text-align: left;
+}
+
+.error {
+  color: #c52020;
+  font-weight: 300;
+  margin-top: 2px;
+}
+
+.form-control.error {
+  border-color: #c52020;
+}
+
+.btn-primary:disabled {
+  background-color: #df0a14 !important;
+  border-color: #df0a14 !important;
+}
+
+.full-width { 
+  width: 100%; 
+}
+.row.sub-btn { 
+  margin: 0 auto;
+}
+
+/* PRODUCT SELECT SECTION */
+.first-flex-item { 
+  width: 50% !important;
+}
+
+.main-header { 
+  margin-top: 20px;
+}
+
+.main-header h1 { 
+  text-align: center;
+  font-size: 38px; 
+  font-weight: 800;
+}
+
+.B {
+  display: block;
+}
+
+.D {
+  display: none;
+}
+
+#plan-cards {
+  display: flex;
+  max-width: 436px;
+  margin: 7px auto 11px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 33px;
+}
+
+.row-prod {
+  border-radius: 18.6px;
+  border: solid 2px #000000;
+  padding: 2px;
+  box-shadow: 0px 4.3px 4.3px 0px #00000040;
+}
+
+.highlight {
+  border: 4px solid #e90606;
+  padding: 0;
+  box-shadow: 0px 4.3px 4.3px 0px #00000073;
+}
+
+.plan-card {
+  width: 100%;
+  padding: 22px 17px 32px;
+  margin: 0;
+}
+
+.title-select {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.title-select h2 {
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.plan-card-content {
+  cursor: pointer;
+}
+
+.plan-card-content h3 {
+  font-size: 21px;
+  margin: 12px 0 2px;
+}
+
+.plan-card-content span.offer-price {
+  font-weight: 700;
+  font-size: 23.5px;
+}
+
+.plan-card-content p {
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.33;
+  margin: 0;
+  font-weight: 400;
+  color: #555555;
+}
+
+.plan-card-content h4 {
+  color: #333333;
+  font-size: 17px;
+  line-height: 24px;
+  border-top: 1px solid #d0d0d0;
+  padding: 6px 0 0;
+  margin: 6px 0 0;
+  font-weight: 400;
+}
+
+.payment-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 26px;
+}
+
+.btn-primary.main {
+  width: 285px;
+  margin-top: 16px;
+  height: 37px;
+  font-size: 14px;
+}
+
+p.cancel {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 2px;
+  margin-bottom: 0px
+}
+
+p.addit-subs { 
+  font-size: 16px; 
+  margin-bottom: 0; 
+  text-align: center;
+}
+p.addit-subs.desk { 
+  line-height: 1.18;
+}
+
+p.addit-subs a { 
+  color: #DF0A14;
+}
+
+hr.content-divider {
+  width: 95%;
+  display: none;
+}
+
+.best-offer {
+  margin-top: -38px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
+.best-offer p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14.5px;
+  background: #df0a14;
+  border: 1px solid #df0a14;
+  width: 214px;
+  color: white;
+  border-radius: 15px;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.card-body.billing {
+  border: none;
+  padding: 0; 
+}
+.mob { 
+  display: none;
+}
+svg.cardpay {
+  width: 74px;
+  height: 23.7px;
+}
+svg.applepay { 
+  width: 69px; 
+  height: 23px;
+}
+svg.amazonpay { 
+  width: 66px;
+  height: 12.7px;
+}
+svg.paypal { 
+  width: 51px; 
+  height: 23px;
+}
+
+
+/* BILLING SECTION COPY OVER */
+input#autorenew { 
+    accent-color: #df0a14;
+}
+
+#autorenew-error{text-align:center; font-size: 16px; padding-top: 10px; padding-bottom: 10px;}
+        
+footer {
+  padding: 10px;
+  font-size: 11px;
+  font-weight: 300;
+  border-top: 0px;
+  max-width: 1060px;
+  width: 100%;
+  margin: 0 auto;
+  border-top: 1px solid #cdcdcd;
+}
+footer p {
+  margin-bottom: 10px;
+}
+.head-banner {
+  padding: 8px;
+  background-color: #f43736;
+  height: auto;
+}
+.logobit {
+  margin-left: 14px;
+  padding: 5px;
+}
+.infobar {
+    background: #eee;
+    font-weight: 600; 
+    text-indent: -15px;
+    padding: 12px;
+    line-height: 21px; 
+    font-size: 17px;
+    text-align: center;
+}
+.infobar span,
+.txt-red {
+  color: #c82502;
+}
+.billing-details { 
+    width: 95% !important; 
+    margin: 0 auto; 
+    padding-left: 15px; 
+    padding-right: 15px;
+}
+.ar {
+  font-size: 14px;
+  margin: 0 auto 15px;
+  max-width: 98%;
+}
+.title {
+  width: 100%;
+}
+.subtype {
+  margin-top: 50px;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 0px;
+}
+.offerSelections label {
+  width: 100%;
+}
+.offerSelections label input[type="radio"] {
+  display: inline-block;
+  width: 8%;
+  max-width: 13px;
+  vertical-align: top;
+}
+.offerSelections label span {
+  display: inline-block;
+  width: 90%;
+  max-width: 250px;
+  text-align: left;
+}
+.eachChoice {
+  padding: 20px;
+  height: auto;
+  margin-top: 15px;
+  display: inline-block;
+  border-bottom: 0px;
+}
+.bestDeal::before {
+  content: "Best deal";
+  position: absolute;
+  top: -17px;
+  left: 30%;
+  display: block;
+  background-color: #fbdb00;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 6px 30px;
+}
+.bestDeal {
+  border: 3px solid #ff0000;
+}
+ul.offer-checklist {
+  margin-top: 15px;
+  list-style: none;
+  padding-left: 52px;
+  float: left;
+}
+ul.offer-checklist li {
+  position: relative;
+  margin: 10px 0;
+  font-weight: bold;
+  text-align: left;
+}
+ul.offer-checklist li::before {
+  content: " ";
+  position: absolute;
+  top: 4px;
+  left: -20px;
+  width: 15px;
+  height: 6px;
+  border-style: solid;
+  border-color: #93bd39;
+  border-width: 0;
+  border-left-width: 3px;
+  border-bottom-width: 3px;
+  transform: rotate(-45deg);
+}
+.description {
+  text-align: center;
+}
+#amazon {
+  display: none;
+}
+.img-amazon {
+  margin: 20px auto 30px;
+  max-width: 550px;
+  width: 100%;
+}
+.toplinks {
+  padding: 40px 0 20px;
+  margin-right: 10px;
+}
+.toplinks a:link,
+.toplinks a:hover,
+.toplinks a:visited {
+  color: #000;
+}
+.toplinks a,
+input[type="text"]::placeholder,
+input[type="email"]::placeholder {
+  text-transform: uppercase;
+}
+.ta-r {
+  text-align: right;
+}
+.fw-6 {
+  font-weight: 600;
+}
+.fs-15 {
+  font-size: 15px;
+}
+.fs-16 {
+  font-size: 16px;
+}
+.fs-20 {
+  font-size: 20px;
+}
+.td-u {
+  text-decoration: underline;
+}
+.pr-10 {
+  padding-right: 10px;
+}
+.pr-5 {
+  padding-right: 5px;
+}
+.va-t {
+  vertical-align: top;
+}
+.mr-7 {
+  margin-right: 7px;
+}
+.br-2 {
+  border-right: 2px solid black;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mr-10 {
+  margin-right: 10px !important;
+}
+.m-auto {
+  margin: 0 auto !important;
+}
+.mobile-hidden {
+  display: inline-block;
+}
+.mobile-visible {
+  display: none;
+}
+#walletWidgetDiv,
+#consentWidgetDiv,
+#addressBookWidgetDiv {
+  margin: 0 auto;
+  max-width: 400px;
+}
+.offers label > span {
+  font-weight: bold;
+}
+.price {
+  padding-left: 20px;
+}
+span.highlight {
+  color: #c82502;
+}
+.price .lgr {
+  font-size: 16px;
+  font-weight: bold;
+}
+#strike {
+  display: inline;
+  text-decoration: line-through;
+  color: #999;
+}
+.savings-dt {
+  display: block;
+  background-color: #000;
+  font-size: 12px;
+  color: #fff;
+  margin-left: 15px;
+  padding: 6px;
+  text-align: center;
+  max-width: 150px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.savings-dt.color2 {
+  background-color: #999;
+  font-weight: bold;
+}
+.savings-dt.color1 {
+  background-color: #f43736;
+  font-weight: bold;
+}
+.savings-arrow {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #000;
+  height: 0;
+  margin: 0 0 0 25px;
+  width: 0;
+}
+.savings-arrow.color2 {
+  border-bottom-color: #999;
+}
+.savings-arrow.color1 {
+  border-bottom-color: #f43736;
+}
+.comodo,
+.ssl {
+  margin-bottom: 25px;
+}
+.paymentform {
+  padding: 40px 20px 0;
+}
+.expChk {
+  border: 0.0625rem solid #d8d8d8;
+  padding: 2rem 1rem 0;
+  margin-bottom: 10px;
+}
+.expChk h4 {
+  line-height: 1rem;
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 1rem;
+  background-color: #fff;
+}
+.alert.alert-success.container-week {
+  margin: 15px auto;
+}
+.emailprefs .optins-text {
+  display: block;
+  padding-left: 25px;
+  text-indent: -17px;
+  margin-bottom: 10px;
+  font-weight: normal;
+  font-size: 13px;
+}
+.city-state, 
+.country-zip { 
+    display: flex;
+    gap: 20px; 
+}
+.item-flex-basis { 
+    flex: 1 1 auto;
+    width: 100%;
+}
+.optins-box {
+  width: 15px;
+  height: 13px;
+  padding: 0;
+  margin: 0;
+  vertical-align: bottom;
+  position: relative;
+  top: -2px;
+}
+button.subscribe-button { 
+    background: #E60003;
+    width: 288px; 
+    height: 69px;
+    font-size: 18px; 
+    letter-spacing: 4px; 
+    line-height: 25.7px;
+    color: white;
+    border: none;
+    font-weight: 700;
+}
+#ardirect { 
+  text-align: left; 
+  font-weight: 700;
+  font-size: 14px;
+}
+#ardirect span.red-font { 
+  color: #df0a14;
+}
+.flex-wrapper { 
+  display: flex;
+  gap: 20px;
+}
+.flex-1 { 
+  width: 50%;
+}
+.form-fields { 
+  width: 65%;
+}
+.emailprefs.second { 
+  width: 35%;
+}
+.emailprefs .bill { 
+  display: block;
+}
+.bill h6 {
+  font-size: 16px; 
+  font-weight: 500;
+  margin-bottom: 1px;
+}
+.flex { 
+  display: flex;
+  margin-bottom: 12px;
+}
+  
+  #arerror {color: black; text-align: center; padding-bottom: 10px; font-weight: 400;}
+  
+  @media screen and (max-width: 1024px) {
+    .container-week {
+      max-width: 960px;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .card.access-card {
+      right: -34px;
+    }
+  }
+
+@media screen and (max-width: 1050px) {
+  .title-select h2 {
+    font-size: 28px;
+  }
+  .plan-card-content h4 { 
+    font-size: 15px;
+    margin: 9px 0 2px;
+  }
+  .plan-card { 
+    padding: 18px 17px 15px;
+  }
+  .best-offer { 
+    margin-top: -32px;
+  }
+  .best-offer p { 
+    font-size: 12.5px;
+    padding: 4px; 
+    width: 194px;
+  }
+  h3.included-subheader { 
+    font-size: 28px;
+  }
+  #sf1 { 
+    margin: 35px auto 0;
+  }
+  .card.access-card { 
+    margin: 33px 0 27px;
+  }
+  .card.access-card {
+    max-width: 420px;
+  }
+  .card-details h4 { 
+    font-size: 24px;
+  }
+  .card-details h5 { 
+    font-size: 19px; 
+  }
+  .card-details h5 span.offer-price { 
+    font-size: 21px;
+  }
+  .feature-description { 
+    font-size: 14.2px;
+  }
+  .feature-status { 
+    font-size: 12px;
+  }
+  p.addit-subs { 
+    font-size: 15px;
+  }
+} 
+
+@media screen and (max-width: 991px) { 
+  .accordion.access-accord { 
+    max-width: 380px;
+  }
+  .card.access-card { 
+    right: -75px;
+    margin: 40px 0 27px;
+  }
+  .yes-op { 
+    margin-right: 5px;
+  }
+  .carousel-control-next { 
+    right: 75px !important; 
+  }
+  .carousel-control-prev { 
+    left: 75px !important; 
+  }
+}
+
+@media screen and (max-width: 886px) { 
+  .card.access-card { 
+    right: -26px;
+  }
+  .billingform { 
+    flex-direction: column;
+    width: 100%;
+  }
+  .form-fields, 
+  .emailprefs.second { 
+    width: 100%; 
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+/*MOBILE CARRY OVER */
+  .main-header h1 { 
+    font-size: 26px;
+    padding: 0 15px;
+  }
+  .btn-primary.main, 
+  .btn-primary.footer-btn.main { 
+    display: block;
+  }
+  hr.content-divider { 
+    display: block;
+  }
+  .main-flex-wrapper {
+    flex-direction: column;
+  }
+  .accordion.access-accord {
+    float: none;
+  }
+  h3.included-subheader { 
+    max-width: 320px;
+    font-size: 20px;
+    margin: 0px auto 0;
+  }
+  .first-flex-item { 
+    width: 100% !important;
+  }
+  #plan-cards { 
+    max-width: 480px; 
+    gap: 23px;
+    margin: 12px auto 11px;
+  }
+  p.addit-subs  { 
+    font-size: 8px;
+  }
+  .mob { 
+    display: block;
+  }
+  .desk { 
+    display: none;
+  }
+  .card.access-card {
+    margin: 32px 0 27px;
+    right: 0;
+  }
+  #sf1 {
+    margin: 0 auto;
+  }
+  h2.carousel-title { 
+    font-weight: 700;
+    font-size: 23px;
+  }
+  .title-select h2 { 
+    font-size: 23px;
+  }
+  .plan-card-content h3 { 
+    font-size: 16px;
+    margin: 5px 0 2px; 
+  }
+  .row-prod { 
+    border-radius: 8px;
+  }
+  .plan-card-content h4 { 
+    font-size: 13px;
+    line-height: 19px;
+  }
+  .plan-card-content p { 
+    font-size: 10px;
+  }
+  .plan-card { 
+    padding: 18px 17px 24px;
+  }
+  .carousel {
+    max-width: 480px;
+    margin: 0 auto;
+    width: 95%;
+  } 
+  .carousel-indicators li {
+    width: 11px !important;
+    height: 11px !important;
+    gap: 10px !important;
+    margin-bottom: 0; 
+    margin-top: 0;
+  }
+  .carousel-control-prev { 
+    left: 60px !important;
+  }
+  .carousel-control-next { 
+    right: 60px !important;
+  }
+  p.cancel { 
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  .payment-options { 
+    margin-top: 6px;
+  }
+  .card-details h4 {
+    font-size: 20px;
+    line-height: 27px;
+    margin-bottom: 5px;
+  }
+  .card-details h5 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    line-height: 16px;
+  }  
+  .card-details p {
+    font-size: 10px;
+    line-height: 12px;
+    margin-bottom: 0;
+  }
+  .email-preferences { 
+    margin: 0 auto;
+    max-width: 480px;
+  }
+  .btn-primary.emailpref-btn {
+    width: 238px !important;
+    margin: 20px auto 10px;
+  }
+  .feature-description { 
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .feature-status { 
+    font-size: 9px;
+  }
+  .feature-item { 
+    gap: 20px;
+  }
+  .plan-card-content span.offer-price { 
+    font-size: 18px;
+  } 
+  .best-offer p {
+    width: 162px; 
+    font-weight: 700; 
+    font-size: 11px; 
+    padding: 4px 0;
+  }
+  .best-offer {
+    margin-top: -31px; 
+  }
+  .carousel-caption.d-md-block p {
+    margin-bottom: 1rem;
+  }
+  .card-details h5 span.offer-price { 
+    font-size: 18px;
+  }
+  .tandcs p { 
+    text-align: center;
+  }
+  #ardirect { 
+    text-align: center;
+  }
+  svg.cardpay {
+    width: 56px;
+    height: 18px;
+  }
+  svg.applepay { 
+    width: 52px; 
+    height: 18px;
+  }
+  svg.amazonpay { 
+    width: 52px;
+    height: 10px;
+  }
+  svg.paypal { 
+    width: 39px; 
+    height: 18px;
+  }
+  .flex-wrapper { 
+    flex-direction: column;
+    gap: 0;
+  }
+  .flex-1 { 
+    width: 100%; 
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .subtype {
+    margin-top: 25px;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+  }
+  #US {
+    text-align: center;
+  }
+  .eachChoice {
+    width: 90%;
+    height: auto;
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+  }
+  .bestDeal {
+    border: 3px solid #ff0000;
+  }
+  ul.offer-checklist {
+    padding-left: 30px;
+  }
+  .toplinks {
+    padding: 20px 0px;
+    text-align: center !important;
+  }
+  .toplinks {
+    font-size: 11px;
+  }
+  .description h3 {
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  .img-amazon-m {
+    margin: 17px auto;
+  }
+  .mobile-hidden {
+    display: none;
+  }
+  .mobile-visible {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 767px) {
+  .offerSelections {
+    width: 100%;
+    max-width: 100%;
+  }
+  .offers label {
+    margin-top: 10px;
+  }
+  .savings-dt {
+    margin-left: 10px;
+    padding: 5px 0;
+    font-size: 11px;
+  }
+  .savings-arrow {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .fs-17-m {
+    font-size: 17px;
+  }
+  .price {
+    padding-left: 0;
+  }
+}
+  
+  
+  
+  /* Loader hidden by default */
+  
+button span.loader {
+  display: none;
+  height: 20px;
+  width: 20px;
+}
+  
+button:disabled span.loader {
+display: none;
+}        
+
+.subscribe-button span.text {
+  display: inline;
+  color: #ffffff !important;
+}
+  
+#Submit.disabled,
+#Submit:disabled
+{opacity:1; 
+color: #ffffff !important;    
+background-color: #cccccc !important;
+}
+    </style>
+    <section class="mainwrapper">
+      <div class="header-banner">
+        <div class="container-week">
+          <a
+            target="_blank"
+            href="https://theweek.com/?_gl=1*1d9j68t*_gcl_au*MzcwNDY4MDgzLjE3NDQxOTcyNzIuMTM5ODQ5Mjk1LjE3NDc5OTEwMDIuMTc0Nzk5MTAwMg..*_ga*MjEyNDM0MTA4My4xNzQ0MTk3Mjcy*_ga_N7FFZKR5JW*czE3NDgwMDAxMDAkbzM0JGcxJHQxNzQ4MDAxMjgwJGo1NSRsMCRoMCRkSUtGNHRzaFpfY2w5T3UyenJTdkVTNjB6U2FEbTFKbjF2Zw.."
+            title="The Week"
+            ><img
+              alt="The Week"
+              src="https://subscribe.theweek.com/pubs/W0/TWE/images/global/logo.png"
+              class="logo"
+          /></a>
+        </div>
+      </div>
+      <div class="ad-placeholder container-fluid">
+        <div class="header-ad-content">
+          <div class="ad-image-container">
+            <img
+              src="https://fpoimg.com/126x92?text=Preview&bg_color=dedede&text_color=8F8F8F"
+            />
+          </div>
+          <div class="header-ad-copy">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+      </div>
+      <form id="form1" name="form1" method="post" action="/servlet/Transaction">
+        <input type="hidden" name="cds_response_key" id="cds_response_key" value="" />     
+          <!-- on this page AR is requuired -->      
+          <input type="hidden" name="cds_autorenew_ind" value="C" />
+      <div class="main-header">
+          <h1>Choose your Subscription</h1>
+      </div>
+      <div class="main-flex-wrapper">
+      <div class="product-block-sctn container first-flex-item">
+        <div id="plan-cards">
+          <div class="row-prod one highlight">
+            <label class="plan-card one">
+              <div class="plan-card-content">
+                <div class="title-select">
+                  <input
+                    checked
+                    id="term2"
+                    title="D"
+                    value="2"
+                    class="pn-tne__plan-select"
+                    name="cds_term_value"
+                    type="radio"
+                    aria-label="The Week digital access. 6 weeks for just $1!"
+                  />
+                  <h2>Digital</h2>
+                </div>
+                <h3>6 weeks for just <span class="offer-price">$1</span></h3>
+                <p>Renews automatically for just $89/year</p>
+                <h4>
+                  Get unlimited access to our app, website and the digital magazine.
+                </h4>
+              </div>
+            </label>
+          </div>
+          <div class="row-prod two">
+            <label class="plan-card two">
+              <div class="plan-card-content">
+                <div class="best-offer">
+                  <p>MOST POPULAR</p>
+                </div>
+                <div class="title-select">
+                  <input
+                    id="term1"
+                    title="B"
+                    value="1"
+                    class="pn-tne__plan-select"
+                    name="cds_term_value"
+                    type="radio"
+                    aria-label="The Week print plus digital access. Less than $2.50 a week!"
+                  />
+                  <h2>Print + Digital</h2>
+                </div>
+                <h3>Less than <span class="offer-price">$2.50</span>/week</h3>
+                <p>Renews automatically for just $179/year</p>
+                <h4>
+                  Get weekly home delivery and access to the digital edition every Friday morning.
+                </h4>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="payment-options">
+          <svg
+            class="cardpay"
+            xmlns="http://www.w3.org/2000/svg"
+            width="56"
+            height="18"
+            viewBox="0 0 56 18"
+            fill="none"
+          >
+            <path
+              d="M19.522 3.5H7C6.17157 3.5 5.5 4.17157 5.5 5V12.55C5.5 13.3784 6.17157 14.05 7 14.05H19.522C20.3504 14.05 21.022 13.3784 21.022 12.55V5C21.022 4.17157 20.3504 3.5 19.522 3.5Z"
+              stroke="#6B6B6B"
+            />
+            <path
+              d="M5.78699 7.44202H21.522"
+              stroke="#6B6B6B"
+              stroke-width="4"
+            />
+            <path
+              d="M32.336 10.2601H31.526C31.046 10.8601 30.166 11.4801 29.096 11.4801C27.396 11.4801 25.966 10.0801 25.966 8.31005C25.966 6.58005 27.326 5.12005 29.096 5.12005C30.046 5.12005 31.016 5.67005 31.516 6.35005H32.316C32.006 5.62005 30.856 4.47005 29.096 4.47005C26.926 4.47005 25.236 6.15005 25.236 8.31005C25.236 10.4801 26.976 12.1301 29.106 12.1301C30.536 12.1301 31.836 11.3101 32.336 10.2601ZM39.393 12.0001L35.923 4.43005H35.843L32.363 12.0001H33.133L34.153 9.68005H37.583L38.593 12.0001H39.393ZM37.323 9.07005H34.393L35.873 5.83005L37.323 9.07005ZM44.98 6.96005C44.98 6.09005 44.53 5.30005 43.82 4.93005C43.45 4.73005 42.98 4.60005 41.87 4.60005H40V12.0001H40.72V9.18005H42.08L43.88 12.0001H44.76L42.86 9.11005C43.99 9.00005 44.98 8.25005 44.98 6.96005ZM44.26 6.93005C44.26 7.89005 43.55 8.57005 42.29 8.57005H40.71V5.25005H41.97C42.65 5.25005 43.09 5.28005 43.51 5.53005C43.98 5.82005 44.26 6.37005 44.26 6.93005ZM51.896 8.31005C51.896 7.33005 51.606 6.51005 51.106 5.89005C50.356 4.98005 49.216 4.60005 47.976 4.60005H45.796V12.0001H47.996C50.336 12.0001 51.896 10.6101 51.896 8.31005ZM51.166 8.31005C51.166 10.3501 49.836 11.3501 47.866 11.3501H46.526V5.25005H47.876C48.986 5.25005 49.886 5.59005 50.456 6.23005C50.916 6.74005 51.166 7.44005 51.166 8.31005Z"
+              fill="#6B6B6B"
+            />
+          </svg>
+          <svg
+            class="applepay"
+            xmlns="http://www.w3.org/2000/svg"
+            width="54"
+            height="18"
+            viewBox="0 0 54 18"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M37.7768 15.5464V14.2315C37.8945 14.2617 38.1587 14.2617 38.2918 14.2617C39.0275 14.2617 39.4248 13.9471 39.6678 13.1357C39.6678 13.1201 39.8076 12.6545 39.8076 12.6477L37.0112 4.73764H38.7334L40.6909 11.1672H40.7198L42.6793 4.73764H44.3571L41.4565 13.0519C40.795 14.9678 40.0294 15.5844 38.4239 15.5844C38.2918 15.5844 37.8935 15.5688 37.7768 15.5464ZM16.9859 2.85777C17.3832 2.35127 17.6532 1.66945 17.5818 0.973999C16.9994 1.00322 16.2897 1.36556 15.8798 1.87303C15.5105 2.30744 15.1836 3.01751 15.2694 3.68471C15.9223 3.74218 16.5741 3.35062 16.9859 2.85777ZM17.5741 3.81426C16.6262 3.75582 15.8191 4.36361 15.3668 4.36361C14.9136 4.36361 14.2203 3.84348 13.4701 3.85712C12.4942 3.87173 11.5888 4.43471 11.0931 5.33082C10.0739 7.12303 10.8241 9.78212 11.8144 11.2412C12.2965 11.963 12.8751 12.7578 13.6398 12.7295C14.362 12.7003 14.6455 12.2522 15.523 12.2522C16.3996 12.2522 16.6542 12.7295 17.4188 12.7149C18.2115 12.7013 18.7062 11.9932 19.1873 11.2695C19.7399 10.4464 19.9655 9.65257 19.98 9.60874C19.9655 9.59413 18.4516 9.00192 18.4371 7.22432C18.4236 5.73601 19.6261 5.0279 19.683 4.98406C19.0032 3.95939 17.9424 3.84348 17.5741 3.81426ZM25.8303 1.79997C27.8919 1.79997 29.3268 3.2503 29.3268 5.36101C29.3268 7.47855 27.862 8.93569 25.7782 8.93569H23.4967V12.6399H21.8478V1.79997H25.8303ZM23.4967 7.52432H25.3887C26.8245 7.52432 27.6412 6.73536 27.6412 5.36783C27.6412 4.00127 26.8245 3.2201 25.3964 3.2201H23.4967V7.52432ZM29.7578 10.3938C29.7578 9.01069 30.7954 8.16329 32.6362 8.05712L34.7557 7.93049V7.32173C34.7557 6.44218 34.1743 5.91621 33.2032 5.91621C32.2823 5.91621 31.7086 6.36718 31.5678 7.07335H30.0664C30.1551 5.6464 31.347 4.59445 33.2611 4.59445C35.1385 4.59445 36.3372 5.60842 36.3372 7.19316V12.6389H34.8136V11.3396H34.7779C34.3286 12.2191 33.3498 12.7743 32.3334 12.7743C30.8176 12.7743 29.7578 11.813 29.7578 10.3938ZM34.7557 9.67984V9.05647L32.8493 9.17627C31.8995 9.24445 31.3624 9.67303 31.3624 10.349C31.3624 11.0396 31.9217 11.4906 32.7761 11.4906C33.8869 11.4906 34.7557 10.7094 34.7557 9.67984Z"
+              fill="#6B6B6B"
+            />
+          </svg>
+          <svg
+            class="amazonpay"
+            xmlns="http://www.w3.org/2000/svg"
+            width="52"
+            height="10"
+            viewBox="0 0 52 10"
+            fill="none"
+          >
+            <path
+              d="M4.68555 6.4541C4.50581 6.29694 4.66602 6.08212 4.88086 6.2041C7.33261 7.59737 10.3631 8.43652 13.4961 8.43652C15.7543 8.42448 17.9876 7.97652 20.0684 7.11914C20.3901 6.98574 20.661 7.32675 20.3457 7.55859L19.9785 7.80664C18.0952 9.01932 15.5237 9.66302 13.2959 9.66309C10.1168 9.67895 7.04594 8.53458 4.68555 6.4541ZM18.8672 6.34961C19.9576 5.60119 21.7438 5.81476 21.9531 6.06738C22.1608 6.32021 21.8969 8.07136 20.875 8.90723C20.7177 9.03536 20.5678 8.96717 20.6377 8.79785C20.8542 8.27184 21.32 7.13334 21.1758 6.74219L21.1396 6.6748C20.896 6.3694 19.529 6.52952 18.915 6.60156C18.7281 6.62353 18.6992 6.4646 18.8672 6.34961ZM47.2393 0.203125C47.3211 0.195438 47.4032 0.214573 47.4736 0.255859C47.5337 0.321383 47.5774 0.399405 47.6006 0.484375L49.0918 4.51953L50.5303 0.484375C50.5534 0.399657 50.5964 0.321311 50.6562 0.255859C50.7091 0.224864 50.7691 0.206937 50.8301 0.203125H51.4873C51.5869 0.203157 51.6367 0.24575 51.6367 0.328125C51.626 0.414893 51.6002 0.499311 51.5615 0.578125L49.2197 6.40137C49.0274 6.87954 48.8054 7.22325 48.5537 7.43164C48.3021 7.64003 47.9719 7.74376 47.5645 7.74316C47.3599 7.74578 47.1558 7.72093 46.958 7.66992C46.8916 7.65597 46.8313 7.62166 46.7871 7.57129C46.7568 7.52358 46.739 7.46944 46.7344 7.41406V7.08789C46.7344 6.95627 46.7877 6.89062 46.8945 6.89062C46.9483 6.89301 47.0021 6.90008 47.0547 6.91113C47.1492 6.92703 47.2449 6.93359 47.3408 6.93164C47.5668 6.94554 47.791 6.8796 47.9707 6.74512C48.1198 6.62049 48.2546 6.39142 48.375 6.05859L48.5771 5.53125L46.5264 0.578125C46.4879 0.499279 46.4624 0.414904 46.4521 0.328125C46.4522 0.24562 46.5018 0.203125 46.6006 0.203125H47.2393ZM38.4053 0.0498047C38.724 0.0440047 39.0405 0.106329 39.332 0.232422C39.6068 0.355507 39.8476 0.54111 40.0342 0.773438C40.2373 1.03083 40.3876 1.32455 40.4766 1.6377C40.5842 2.00859 40.6361 2.39283 40.6309 2.77832C40.6358 3.17231 40.5804 3.56558 40.4658 3.94336C40.3699 4.26378 40.2127 4.56365 40.0029 4.82715C39.8079 5.06676 39.5602 5.26081 39.2783 5.39453C38.9822 5.52882 38.6584 5.59453 38.332 5.58789C37.7218 5.59774 37.1311 5.378 36.6826 4.97363V7.41113C36.6868 7.43934 36.684 7.46805 36.6748 7.49512C36.6656 7.52218 36.6505 7.5472 36.6299 7.56738C36.6092 7.5876 36.5834 7.60233 36.5557 7.61133C36.5279 7.6203 36.4986 7.62324 36.4697 7.61914H35.8408C35.8119 7.62328 35.7817 7.62032 35.7539 7.61133C35.7263 7.60235 35.7013 7.58744 35.6807 7.56738C35.66 7.54717 35.644 7.52225 35.6348 7.49512C35.6256 7.46809 35.6228 7.43929 35.627 7.41113V0.412109C35.623 0.383961 35.6265 0.355065 35.6357 0.328125C35.645 0.301306 35.6602 0.276886 35.6807 0.256836C35.7012 0.236748 35.7264 0.220995 35.7539 0.211914C35.7816 0.202845 35.8119 0.200173 35.8408 0.204102H36.3086C36.3388 0.201324 36.3695 0.204799 36.3984 0.213867C36.4272 0.222897 36.4537 0.23754 36.4766 0.256836C36.4995 0.276289 36.519 0.300449 36.5322 0.327148C36.5453 0.353681 36.5522 0.382677 36.5537 0.412109L36.6074 0.745117C36.8624 0.525564 37.1536 0.349792 37.4688 0.225586C37.7666 0.109624 38.0846 0.0498404 38.4053 0.0498047ZM2.44141 0.0136719C2.93566 0.0137342 3.58052 0.141701 3.96875 0.506836C4.33889 0.845363 4.40723 1.26871 4.41797 1.73535V3.75879C4.41797 4.22388 4.61576 4.42767 4.80176 4.67773C4.86651 4.76553 4.88083 4.87559 4.80176 4.94141C4.53946 5.15751 4.27986 5.37688 4.02344 5.59961L4.01562 5.59863C3.98306 5.62614 3.94225 5.64322 3.89941 5.64746C3.85652 5.65167 3.81296 5.64273 3.77539 5.62207C3.43849 5.34828 3.3775 5.22162 3.19434 4.96094C2.6362 5.51582 2.24117 5.68164 1.51953 5.68164C0.665001 5.6814 0.000158815 5.16609 0 4.13574C0 3.3308 0.449144 2.7834 1.07812 2.51465C1.62898 2.27849 2.3986 2.23484 2.9873 2.16992V2.04199C2.98731 1.80585 3.00623 1.52676 2.86426 1.32227C2.74028 1.13972 2.50521 1.06553 2.29492 1.06543C1.90755 1.06543 1.5621 1.25891 1.47754 1.66016C1.47233 1.70568 1.45144 1.74822 1.41895 1.78125C1.38649 1.81417 1.34411 1.83588 1.29785 1.84277L0.321289 1.73828C0.297444 1.73491 0.274511 1.72705 0.253906 1.71484C0.233277 1.70258 0.215241 1.68616 0.201172 1.66699C0.187047 1.64761 0.177024 1.62482 0.171875 1.60156C0.166785 1.57839 0.166256 1.55451 0.170898 1.53125C0.396553 0.365283 1.47527 0.0136719 2.44141 0.0136719ZM15.748 0.00976562C16.2415 0.00976562 16.8871 0.137674 17.2764 0.50293C17.6492 0.841479 17.7157 1.26465 17.7256 1.73145V3.75586C17.7256 4.22034 17.9234 4.42454 18.1094 4.6748C18.1776 4.76609 18.1917 4.87325 18.1045 4.93359C17.8969 5.10313 17.5283 5.41631 17.3262 5.5918C17.2934 5.61897 17.2528 5.63557 17.21 5.63965C17.1672 5.64369 17.1244 5.63473 17.0869 5.61426C16.7499 5.34034 16.6891 5.2165 16.5039 4.95312C15.9468 5.50795 15.5498 5.67474 14.8311 5.6748C13.9763 5.6748 13.3105 5.15885 13.3105 4.12891C13.3106 3.32308 13.7575 2.77655 14.3936 2.50781C14.9436 2.27164 15.714 2.2281 16.3027 2.16406V2.03809C16.3028 1.802 16.3215 1.52287 16.1787 1.31934C16.0583 1.13684 15.8186 1.06161 15.6094 1.06152C15.2222 1.06152 14.8785 1.25528 14.793 1.65625C14.7876 1.70173 14.7668 1.74434 14.7344 1.77734C14.7019 1.81031 14.6595 1.83184 14.6133 1.83887L13.6289 1.73535C13.6047 1.73206 13.5815 1.72427 13.5605 1.71191C13.5396 1.69955 13.521 1.6835 13.5068 1.66406C13.4926 1.64458 13.4827 1.62202 13.4775 1.59863C13.4724 1.57527 13.4728 1.55079 13.4775 1.52734C13.7042 0.360833 14.7821 0.00982378 15.748 0.00976562ZM25.5596 0.00683594C27.0667 0.00694746 27.8818 1.27129 27.8818 2.87793C27.8818 4.4311 26.9831 5.66297 25.5596 5.66309C24.0811 5.66309 23.2754 4.39845 23.2754 2.82422C23.2755 1.25012 24.091 0.00683594 25.5596 0.00683594ZM43.7852 0.0566406C44.4592 0.0566406 44.9561 0.192075 45.2754 0.461914C45.5947 0.731783 45.7552 1.15083 45.7559 1.71973V5.27246C45.7598 5.30063 45.7573 5.32949 45.748 5.35645C45.7388 5.38341 45.7227 5.4076 45.7021 5.42773C45.6815 5.44788 45.6566 5.46358 45.6289 5.47266C45.6013 5.4817 45.5718 5.48435 45.543 5.48047H45.041C45.0268 5.479 45.0127 5.47592 44.999 5.47168C44.9715 5.46313 44.9457 5.44915 44.9238 5.43066C44.9021 5.41226 44.8847 5.38952 44.8721 5.36426C44.8595 5.33897 44.852 5.31127 44.8506 5.2832L44.7969 4.93945C44.5462 5.1516 44.2601 5.32065 43.9512 5.43848C43.6582 5.55319 43.345 5.61199 43.0293 5.61328C42.5191 5.61321 42.1148 5.47317 41.8164 5.19238C41.5181 4.91155 41.3685 4.53553 41.3672 4.06445C41.3672 3.55869 41.5518 3.15454 41.9209 2.85254C42.29 2.55064 42.7868 2.3998 43.4111 2.40039C43.8635 2.40722 44.3137 2.46634 44.752 2.57617V1.89258C44.7519 1.51803 44.6662 1.25475 44.4961 1.10254C44.326 0.950435 44.0282 0.873683 43.6025 0.873047C43.0729 0.878176 42.5463 0.958132 42.04 1.11035L41.96 1.13672C41.9311 1.14675 41.9007 1.15196 41.8701 1.15234C41.7804 1.15228 41.7315 1.09023 41.7314 0.964844V0.686523C41.7246 0.616225 41.7404 0.54519 41.7754 0.483398C41.8213 0.433209 41.88 0.395594 41.9453 0.374023C42.2155 0.266807 42.4972 0.189522 42.7852 0.144531C43.1151 0.08614 43.4498 0.0566594 43.7852 0.0566406ZM10.7695 0.0244141C11.0323 -0.015303 11.3015 0.0141062 11.5488 0.109375C11.7962 0.204675 12.0134 0.363124 12.1777 0.567383C12.5001 0.995813 12.4336 1.62067 12.4336 2.16309V5.37598C12.4331 5.40048 12.428 5.42479 12.418 5.44727C12.4079 5.46982 12.3932 5.49076 12.375 5.50781C12.3568 5.52486 12.335 5.53794 12.3115 5.54688C12.288 5.55581 12.2625 5.56012 12.2373 5.55957H11.2227C11.1747 5.55706 11.129 5.53679 11.0957 5.50293C11.0625 5.46904 11.0436 5.42389 11.043 5.37695V2.67773C11.043 2.4635 11.0622 1.92839 11.0146 1.72461C10.9392 1.38233 10.7117 1.28522 10.418 1.28516C10.2863 1.2891 10.1586 1.33123 10.0508 1.40527C9.94298 1.47939 9.85884 1.58233 9.81055 1.70215C9.73234 1.89573 9.71819 2.1849 9.71582 2.43945V5.37598C9.71536 5.40044 9.71017 5.42482 9.7002 5.44727C9.69014 5.46979 9.67534 5.49076 9.65723 5.50781C9.63914 5.52479 9.6171 5.53793 9.59375 5.54688C9.57045 5.55574 9.54551 5.56004 9.52051 5.55957H8.50293C8.45514 5.55681 8.41018 5.53661 8.37695 5.50293C8.34362 5.46905 8.32408 5.42394 8.32324 5.37695V2.67773C8.32327 2.10971 8.41327 1.27344 7.69434 1.27344C6.97548 1.27349 6.99316 2.08679 6.99316 2.67773V5.37598C6.99268 5.40046 6.98754 5.42481 6.97754 5.44727C6.96743 5.46983 6.95277 5.49076 6.93457 5.50781C6.91638 5.52485 6.89458 5.53794 6.87109 5.54688C6.84773 5.55574 6.82291 5.56008 6.79785 5.55957H5.78223C5.73669 5.55724 5.69313 5.53858 5.66016 5.50781C5.62728 5.47706 5.60603 5.43586 5.60156 5.3916V0.299805C5.60322 0.250779 5.62491 0.203885 5.66113 0.169922C5.69734 0.13602 5.74575 0.116801 5.7959 0.117188H6.74219C6.78901 0.119734 6.83403 0.139483 6.86719 0.171875C6.90015 0.204194 6.91923 0.247414 6.92188 0.292969V0.958008H6.94141C7.18766 0.31452 7.65198 0.0147587 8.27734 0.0146484C8.90289 0.0146484 9.31087 0.3145 9.5957 0.958008C9.68908 0.714767 9.84645 0.499876 10.0527 0.335938C10.2591 0.171987 10.5067 0.064181 10.7695 0.0244141ZM31.374 0C31.8288 0 32.2728 0.160717 32.5596 0.599609C32.8247 1.00704 32.8252 1.69299 32.8252 2.18555V5.38867C32.818 5.4338 32.7946 5.4755 32.7588 5.50488C32.7229 5.53428 32.6767 5.5498 32.6299 5.54883H31.6094C31.565 5.54697 31.5221 5.53018 31.4893 5.50098C31.4564 5.47177 31.4357 5.43165 31.4297 5.38867V2.62402C31.4297 2.06734 31.4957 1.25299 30.7939 1.25293C30.6663 1.25872 30.5427 1.29984 30.4385 1.37207C30.3344 1.44429 30.2538 1.54445 30.2061 1.66016C30.0641 1.9709 30.0449 2.28183 30.0449 2.62598V5.36621C30.043 5.41587 30.0213 5.46293 29.9844 5.49707C29.9475 5.5311 29.8984 5.5497 29.8477 5.54883H28.834C28.7861 5.54628 28.7413 5.52594 28.708 5.49219C28.6746 5.45826 28.6549 5.41327 28.6543 5.36621V0.273438C28.6595 0.226991 28.6828 0.184134 28.7188 0.15332C28.7548 0.122454 28.8017 0.106298 28.8496 0.107422H29.792C29.8776 0.110204 29.9512 0.167788 29.9717 0.249023V1.02832H29.9912C30.2752 0.332233 30.6732 0.000128612 31.374 0ZM22.5693 0.110352C22.5927 0.119219 22.6139 0.133292 22.6318 0.150391C22.6496 0.167442 22.6643 0.187475 22.6738 0.209961C22.6834 0.232645 22.6878 0.257674 22.6875 0.282227V0.90625C22.6875 1.01068 22.5974 1.14735 22.4365 1.36328L20.708 3.77441C21.3496 3.75957 22.0281 3.85352 22.6113 4.17383C22.6642 4.20136 22.7087 4.24229 22.7402 4.29199C22.7718 4.3418 22.7893 4.39945 22.791 4.45801V5.2373C22.791 5.34437 22.6717 5.46819 22.5449 5.4043C21.9994 5.13039 21.3946 4.98822 20.7812 4.98926C20.1678 4.99032 19.5631 5.13434 19.0186 5.41016C18.9026 5.47046 18.7812 5.34824 18.7812 5.24121V4.5C18.7706 4.32513 18.8138 4.15068 18.9053 4L20.9092 1.19043H19.1621C19.1369 1.19135 19.1114 1.18754 19.0879 1.17871C19.0646 1.16995 19.0433 1.15659 19.0254 1.13965C19.0074 1.1226 18.9931 1.10165 18.9834 1.0791C18.9737 1.05639 18.9685 1.03144 18.9688 1.00684V0.282227C18.9676 0.257734 18.9714 0.232816 18.9805 0.209961C18.9896 0.187059 19.0036 0.165734 19.0215 0.148438C19.0392 0.131299 19.0607 0.118057 19.084 0.109375C19.1075 0.100672 19.1331 0.0972393 19.1582 0.0986328H22.4951C22.5202 0.0977785 22.5459 0.101485 22.5693 0.110352ZM43.626 3.10938C42.8233 3.10947 42.4222 3.41124 42.4229 4.01465C42.4229 4.27779 42.4974 4.48095 42.6465 4.62305C42.7959 4.76526 43.0094 4.83555 43.2861 4.83496C43.5369 4.8318 43.7856 4.78693 44.0205 4.70117C44.2841 4.60645 44.5311 4.47263 44.7539 4.30566V3.24414C44.5696 3.20183 44.3832 3.16864 44.1953 3.14551C44.0067 3.12136 43.8162 3.10977 43.626 3.10938ZM38.1084 0.880859C37.5924 0.884823 37.0913 1.05276 36.6816 1.35938V4.25684C37.1358 4.5904 37.6046 4.75645 38.0869 4.75586C39.0657 4.75566 39.5547 4.11172 39.5547 2.82422C39.5546 1.53682 39.0728 0.888856 38.1084 0.879883V0.880859ZM2.99219 2.9668C2.25797 2.9668 1.48252 3.12038 1.48242 3.96484C1.48242 4.395 1.70956 4.68453 2.09863 4.68457C2.38437 4.68457 2.64095 4.51264 2.80273 4.2334C2.95154 3.97467 2.98346 3.72872 2.99023 3.45898L2.99219 3.18164V2.9668ZM16.3047 2.96191C15.5704 2.96191 14.7949 3.11544 14.7949 3.96094C14.795 4.38998 15.0222 4.6796 15.4111 4.67969C15.6959 4.67969 15.9534 4.50778 16.1143 4.22949C16.3119 3.88541 16.3047 3.56395 16.3047 3.17676V2.96191ZM25.5693 1.04688C24.8206 1.04688 24.7734 2.04243 24.7734 2.66406C24.7734 3.2858 24.7643 4.61328 25.5596 4.61328C26.3547 4.6131 26.3848 3.54189 26.3848 2.88867C26.3848 2.46016 26.3655 1.9456 26.2324 1.53906C26.1183 1.18795 25.891 1.0469 25.5693 1.04688Z"
+              fill="#6B6B6B"
+            />
+          </svg>
+          <svg
+            class="paypal"
+            xmlns="http://www.w3.org/2000/svg"
+            width="39"
+            height="18"
+            viewBox="0 0 39 18"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M7.53954 3.002C8.57582 3.002 9.53132 3.825 9.40039 5.874C9.2423 8.309 8.35087 9.656 6.94409 9.662H5.71489C5.538 9.662 5.45234 9.872 5.40637 10.305L5.1682 12.517C5.13337 12.851 5.01498 13.015 4.84296 13.015H3.69943C3.51696 13.015 3.45359 12.845 3.49398 12.463L4.43764 3.601C4.4843 3.165 4.59643 3.002 4.79979 3.002H7.53954ZM5.67729 7.747H6.60841C7.19132 7.715 7.57784 7.125 7.61684 6.06C7.64052 5.403 7.33687 4.932 6.85425 4.935L5.97745 4.941L5.67729 7.747ZM12.5093 12.337C12.6144 12.197 12.721 12.126 12.7056 12.297L12.6687 12.708C12.6492 12.923 12.707 13.036 12.8435 13.036H13.8596C14.0309 13.036 14.1138 12.936 14.1556 12.548L14.7824 6.798C14.8137 6.51 14.7657 6.368 14.6153 6.368H13.4982C13.3972 6.368 13.3484 6.451 13.322 6.676L13.2809 7.03C13.26 7.214 13.2015 7.247 13.1479 7.061C12.9584 6.405 12.4751 6.111 11.8003 6.133C10.2333 6.181 9.17754 7.921 9.06332 10.153C8.97696 11.878 9.82173 13.233 10.936 13.233C11.7439 13.233 12.106 12.885 12.5127 12.34L12.5093 12.337ZM11.6589 11.452C10.9841 11.452 10.514 10.665 10.6115 9.7C10.709 8.735 11.3399 7.948 12.0148 7.948C12.6889 7.948 13.159 8.735 13.0615 9.7C12.964 10.665 12.3337 11.452 11.6589 11.452ZM16.7707 6.35H15.7393C15.5276 6.35 15.4405 6.582 15.5081 6.867L16.7874 12.347L15.5324 14.955C15.428 15.173 15.5088 15.372 15.6578 15.372H16.8153C16.8832 15.3839 16.952 15.3668 17.0132 15.3229C17.0744 15.279 17.1252 15.2101 17.1593 15.125L21.0934 6.868C21.2146 6.615 21.1575 6.348 20.9583 6.348H19.8621C19.6741 6.348 19.5996 6.457 19.4916 6.685L17.8509 10.164L17.1182 6.677C17.075 6.467 16.9678 6.35 16.7707 6.35ZM25.187 3.002C26.2226 3.002 27.1788 3.824 27.0479 5.873C26.8891 8.309 25.9977 9.656 24.5909 9.662H23.3624C23.1855 9.662 23.0998 9.872 23.0539 10.305L22.8164 12.517C22.7809 12.851 22.6632 13.015 22.4905 13.015H21.3469C21.1645 13.015 21.1011 12.845 21.1415 12.463L22.0872 3.598C22.1339 3.162 22.2453 3 22.4494 3H25.1863L25.187 3.002ZM23.3234 7.747H24.2545C24.8374 7.715 25.2239 7.125 25.2629 6.06C25.2866 5.403 24.983 4.932 24.5004 4.935L23.6243 4.941L23.3234 7.747ZM30.1561 12.337C30.2605 12.197 30.3671 12.126 30.3518 12.297L30.3148 12.708C30.2953 12.922 30.3531 13.036 30.4896 13.036H31.5064C31.6771 13.036 31.7599 12.936 31.8024 12.548L32.4285 6.798C32.4598 6.51 32.4118 6.368 32.2614 6.368H31.1457C31.0454 6.368 30.996 6.451 30.9702 6.676L30.9284 7.03C30.9075 7.214 30.8497 7.246 30.7961 7.06C30.6066 6.405 30.1226 6.11 29.4485 6.133C27.8815 6.181 26.825 7.921 26.7115 10.153C26.6245 11.878 27.4692 13.233 28.5835 13.233C29.3921 13.233 29.7535 12.885 30.1609 12.34L30.1561 12.337ZM29.3057 11.452C28.6309 11.452 28.1615 10.665 28.259 9.7C28.3565 8.735 28.9868 7.948 29.6616 7.948C30.3357 7.948 30.8058 8.735 30.7083 9.7C30.6108 10.665 29.9799 11.452 29.3057 11.452ZM33.9927 13.045H32.8192C32.7987 13.0466 32.7782 13.0415 32.7592 13.03C32.7403 13.0186 32.7234 13.0012 32.7099 12.979C32.6961 12.9568 32.6858 12.9305 32.6798 12.902C32.6738 12.8735 32.6721 12.8435 32.675 12.814L33.7058 3.264C33.7153 3.19901 33.7399 3.14054 33.7754 3.098C33.8106 3.05566 33.8549 3.032 33.9008 3.031H35.0735C35.0941 3.02961 35.1146 3.03491 35.1336 3.04651C35.1525 3.05811 35.1694 3.07572 35.1829 3.098C35.1967 3.12019 35.207 3.14645 35.213 3.17496C35.219 3.20346 35.2206 3.23351 35.2177 3.263L34.187 12.813C34.1777 12.8787 34.1531 12.9379 34.1173 12.981C34.0822 13.0233 34.0379 13.047 33.992 13.048V13.045H33.9927Z"
+              fill="#6B6B6B"
+            />
+          </svg>
+        </div>
+        <p class="cancel desk">Cancel <b>anytime</b></p>
+      </div>
+      <div class="show-hide bundle-section first-flex-item B">
+        <div class="container-fluid footer-sticky">
+          <h2>PRINT + DIGITAL ACCESS</h2>
+          <h3>Less than <span class="offer-price">$2.50</span>/week</h3>
+          <a class="anch-style" href="#whatsIncludedB">
+            <button
+              class="btn btn-primary footer-btn"
+              type="button"
+              name="anchor"
+            >
+              SUBSCRIBE NOW
+            </button>
+          </a>
+          <hr class="sticky-divid" />
+          <div class="payment-options">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="56"
+              height="18"
+              viewBox="0 0 56 18"
+              fill="none"
+            >
+              <path
+                d="M19.522 3.5H7C6.17157 3.5 5.5 4.17157 5.5 5V12.55C5.5 13.3784 6.17157 14.05 7 14.05H19.522C20.3504 14.05 21.022 13.3784 21.022 12.55V5C21.022 4.17157 20.3504 3.5 19.522 3.5Z"
+                stroke="#6B6B6B"
+              />
+              <path
+                d="M5.78699 7.44202H21.522"
+                stroke="#6B6B6B"
+                stroke-width="4"
+              />
+              <path
+                d="M32.336 10.2601H31.526C31.046 10.8601 30.166 11.4801 29.096 11.4801C27.396 11.4801 25.966 10.0801 25.966 8.31005C25.966 6.58005 27.326 5.12005 29.096 5.12005C30.046 5.12005 31.016 5.67005 31.516 6.35005H32.316C32.006 5.62005 30.856 4.47005 29.096 4.47005C26.926 4.47005 25.236 6.15005 25.236 8.31005C25.236 10.4801 26.976 12.1301 29.106 12.1301C30.536 12.1301 31.836 11.3101 32.336 10.2601ZM39.393 12.0001L35.923 4.43005H35.843L32.363 12.0001H33.133L34.153 9.68005H37.583L38.593 12.0001H39.393ZM37.323 9.07005H34.393L35.873 5.83005L37.323 9.07005ZM44.98 6.96005C44.98 6.09005 44.53 5.30005 43.82 4.93005C43.45 4.73005 42.98 4.60005 41.87 4.60005H40V12.0001H40.72V9.18005H42.08L43.88 12.0001H44.76L42.86 9.11005C43.99 9.00005 44.98 8.25005 44.98 6.96005ZM44.26 6.93005C44.26 7.89005 43.55 8.57005 42.29 8.57005H40.71V5.25005H41.97C42.65 5.25005 43.09 5.28005 43.51 5.53005C43.98 5.82005 44.26 6.37005 44.26 6.93005ZM51.896 8.31005C51.896 7.33005 51.606 6.51005 51.106 5.89005C50.356 4.98005 49.216 4.60005 47.976 4.60005H45.796V12.0001H47.996C50.336 12.0001 51.896 10.6101 51.896 8.31005ZM51.166 8.31005C51.166 10.3501 49.836 11.3501 47.866 11.3501H46.526V5.25005H47.876C48.986 5.25005 49.886 5.59005 50.456 6.23005C50.916 6.74005 51.166 7.44005 51.166 8.31005Z"
+                fill="#6B6B6B"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="54"
+              height="18"
+              viewBox="0 0 54 18"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M37.7768 15.5464V14.2315C37.8945 14.2617 38.1587 14.2617 38.2918 14.2617C39.0275 14.2617 39.4248 13.9471 39.6678 13.1357C39.6678 13.1201 39.8076 12.6545 39.8076 12.6477L37.0112 4.73764H38.7334L40.6909 11.1672H40.7198L42.6793 4.73764H44.3571L41.4565 13.0519C40.795 14.9678 40.0294 15.5844 38.4239 15.5844C38.2918 15.5844 37.8935 15.5688 37.7768 15.5464ZM16.9859 2.85777C17.3832 2.35127 17.6532 1.66945 17.5818 0.973999C16.9994 1.00322 16.2897 1.36556 15.8798 1.87303C15.5105 2.30744 15.1836 3.01751 15.2694 3.68471C15.9223 3.74218 16.5741 3.35062 16.9859 2.85777ZM17.5741 3.81426C16.6262 3.75582 15.8191 4.36361 15.3668 4.36361C14.9136 4.36361 14.2203 3.84348 13.4701 3.85712C12.4942 3.87173 11.5888 4.43471 11.0931 5.33082C10.0739 7.12303 10.8241 9.78212 11.8144 11.2412C12.2965 11.963 12.8751 12.7578 13.6398 12.7295C14.362 12.7003 14.6455 12.2522 15.523 12.2522C16.3996 12.2522 16.6542 12.7295 17.4188 12.7149C18.2115 12.7013 18.7062 11.9932 19.1873 11.2695C19.7399 10.4464 19.9655 9.65257 19.98 9.60874C19.9655 9.59413 18.4516 9.00192 18.4371 7.22432C18.4236 5.73601 19.6261 5.0279 19.683 4.98406C19.0032 3.95939 17.9424 3.84348 17.5741 3.81426ZM25.8303 1.79997C27.8919 1.79997 29.3268 3.2503 29.3268 5.36101C29.3268 7.47855 27.862 8.93569 25.7782 8.93569H23.4967V12.6399H21.8478V1.79997H25.8303ZM23.4967 7.52432H25.3887C26.8245 7.52432 27.6412 6.73536 27.6412 5.36783C27.6412 4.00127 26.8245 3.2201 25.3964 3.2201H23.4967V7.52432ZM29.7578 10.3938C29.7578 9.01069 30.7954 8.16329 32.6362 8.05712L34.7557 7.93049V7.32173C34.7557 6.44218 34.1743 5.91621 33.2032 5.91621C32.2823 5.91621 31.7086 6.36718 31.5678 7.07335H30.0664C30.1551 5.6464 31.347 4.59445 33.2611 4.59445C35.1385 4.59445 36.3372 5.60842 36.3372 7.19316V12.6389H34.8136V11.3396H34.7779C34.3286 12.2191 33.3498 12.7743 32.3334 12.7743C30.8176 12.7743 29.7578 11.813 29.7578 10.3938ZM34.7557 9.67984V9.05647L32.8493 9.17627C31.8995 9.24445 31.3624 9.67303 31.3624 10.349C31.3624 11.0396 31.9217 11.4906 32.7761 11.4906C33.8869 11.4906 34.7557 10.7094 34.7557 9.67984Z"
+                fill="#6B6B6B"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="52"
+              height="10"
+              viewBox="0 0 52 10"
+              fill="none"
+            >
+              <path
+                d="M4.68555 6.4541C4.50581 6.29694 4.66602 6.08212 4.88086 6.2041C7.33261 7.59737 10.3631 8.43652 13.4961 8.43652C15.7543 8.42448 17.9876 7.97652 20.0684 7.11914C20.3901 6.98574 20.661 7.32675 20.3457 7.55859L19.9785 7.80664C18.0952 9.01932 15.5237 9.66302 13.2959 9.66309C10.1168 9.67895 7.04594 8.53458 4.68555 6.4541ZM18.8672 6.34961C19.9576 5.60119 21.7438 5.81476 21.9531 6.06738C22.1608 6.32021 21.8969 8.07136 20.875 8.90723C20.7177 9.03536 20.5678 8.96717 20.6377 8.79785C20.8542 8.27184 21.32 7.13334 21.1758 6.74219L21.1396 6.6748C20.896 6.3694 19.529 6.52952 18.915 6.60156C18.7281 6.62353 18.6992 6.4646 18.8672 6.34961ZM47.2393 0.203125C47.3211 0.195438 47.4032 0.214573 47.4736 0.255859C47.5337 0.321383 47.5774 0.399405 47.6006 0.484375L49.0918 4.51953L50.5303 0.484375C50.5534 0.399657 50.5964 0.321311 50.6562 0.255859C50.7091 0.224864 50.7691 0.206937 50.8301 0.203125H51.4873C51.5869 0.203157 51.6367 0.24575 51.6367 0.328125C51.626 0.414893 51.6002 0.499311 51.5615 0.578125L49.2197 6.40137C49.0274 6.87954 48.8054 7.22325 48.5537 7.43164C48.3021 7.64003 47.9719 7.74376 47.5645 7.74316C47.3599 7.74578 47.1558 7.72093 46.958 7.66992C46.8916 7.65597 46.8313 7.62166 46.7871 7.57129C46.7568 7.52358 46.739 7.46944 46.7344 7.41406V7.08789C46.7344 6.95627 46.7877 6.89062 46.8945 6.89062C46.9483 6.89301 47.0021 6.90008 47.0547 6.91113C47.1492 6.92703 47.2449 6.93359 47.3408 6.93164C47.5668 6.94554 47.791 6.8796 47.9707 6.74512C48.1198 6.62049 48.2546 6.39142 48.375 6.05859L48.5771 5.53125L46.5264 0.578125C46.4879 0.499279 46.4624 0.414904 46.4521 0.328125C46.4522 0.24562 46.5018 0.203125 46.6006 0.203125H47.2393ZM38.4053 0.0498047C38.724 0.0440047 39.0405 0.106329 39.332 0.232422C39.6068 0.355507 39.8476 0.54111 40.0342 0.773438C40.2373 1.03083 40.3876 1.32455 40.4766 1.6377C40.5842 2.00859 40.6361 2.39283 40.6309 2.77832C40.6358 3.17231 40.5804 3.56558 40.4658 3.94336C40.3699 4.26378 40.2127 4.56365 40.0029 4.82715C39.8079 5.06676 39.5602 5.26081 39.2783 5.39453C38.9822 5.52882 38.6584 5.59453 38.332 5.58789C37.7218 5.59774 37.1311 5.378 36.6826 4.97363V7.41113C36.6868 7.43934 36.684 7.46805 36.6748 7.49512C36.6656 7.52218 36.6505 7.5472 36.6299 7.56738C36.6092 7.5876 36.5834 7.60233 36.5557 7.61133C36.5279 7.6203 36.4986 7.62324 36.4697 7.61914H35.8408C35.8119 7.62328 35.7817 7.62032 35.7539 7.61133C35.7263 7.60235 35.7013 7.58744 35.6807 7.56738C35.66 7.54717 35.644 7.52225 35.6348 7.49512C35.6256 7.46809 35.6228 7.43929 35.627 7.41113V0.412109C35.623 0.383961 35.6265 0.355065 35.6357 0.328125C35.645 0.301306 35.6602 0.276886 35.6807 0.256836C35.7012 0.236748 35.7264 0.220995 35.7539 0.211914C35.7816 0.202845 35.8119 0.200173 35.8408 0.204102H36.3086C36.3388 0.201324 36.3695 0.204799 36.3984 0.213867C36.4272 0.222897 36.4537 0.23754 36.4766 0.256836C36.4995 0.276289 36.519 0.300449 36.5322 0.327148C36.5453 0.353681 36.5522 0.382677 36.5537 0.412109L36.6074 0.745117C36.8624 0.525564 37.1536 0.349792 37.4688 0.225586C37.7666 0.109624 38.0846 0.0498404 38.4053 0.0498047ZM2.44141 0.0136719C2.93566 0.0137342 3.58052 0.141701 3.96875 0.506836C4.33889 0.845363 4.40723 1.26871 4.41797 1.73535V3.75879C4.41797 4.22388 4.61576 4.42767 4.80176 4.67773C4.86651 4.76553 4.88083 4.87559 4.80176 4.94141C4.53946 5.15751 4.27986 5.37688 4.02344 5.59961L4.01562 5.59863C3.98306 5.62614 3.94225 5.64322 3.89941 5.64746C3.85652 5.65167 3.81296 5.64273 3.77539 5.62207C3.43849 5.34828 3.3775 5.22162 3.19434 4.96094C2.6362 5.51582 2.24117 5.68164 1.51953 5.68164C0.665001 5.6814 0.000158815 5.16609 0 4.13574C0 3.3308 0.449144 2.7834 1.07812 2.51465C1.62898 2.27849 2.3986 2.23484 2.9873 2.16992V2.04199C2.98731 1.80585 3.00623 1.52676 2.86426 1.32227C2.74028 1.13972 2.50521 1.06553 2.29492 1.06543C1.90755 1.06543 1.5621 1.25891 1.47754 1.66016C1.47233 1.70568 1.45144 1.74822 1.41895 1.78125C1.38649 1.81417 1.34411 1.83588 1.29785 1.84277L0.321289 1.73828C0.297444 1.73491 0.274511 1.72705 0.253906 1.71484C0.233277 1.70258 0.215241 1.68616 0.201172 1.66699C0.187047 1.64761 0.177024 1.62482 0.171875 1.60156C0.166785 1.57839 0.166256 1.55451 0.170898 1.53125C0.396553 0.365283 1.47527 0.0136719 2.44141 0.0136719ZM15.748 0.00976562C16.2415 0.00976562 16.8871 0.137674 17.2764 0.50293C17.6492 0.841479 17.7157 1.26465 17.7256 1.73145V3.75586C17.7256 4.22034 17.9234 4.42454 18.1094 4.6748C18.1776 4.76609 18.1917 4.87325 18.1045 4.93359C17.8969 5.10313 17.5283 5.41631 17.3262 5.5918C17.2934 5.61897 17.2528 5.63557 17.21 5.63965C17.1672 5.64369 17.1244 5.63473 17.0869 5.61426C16.7499 5.34034 16.6891 5.2165 16.5039 4.95312C15.9468 5.50795 15.5498 5.67474 14.8311 5.6748C13.9763 5.6748 13.3105 5.15885 13.3105 4.12891C13.3106 3.32308 13.7575 2.77655 14.3936 2.50781C14.9436 2.27164 15.714 2.2281 16.3027 2.16406V2.03809C16.3028 1.802 16.3215 1.52287 16.1787 1.31934C16.0583 1.13684 15.8186 1.06161 15.6094 1.06152C15.2222 1.06152 14.8785 1.25528 14.793 1.65625C14.7876 1.70173 14.7668 1.74434 14.7344 1.77734C14.7019 1.81031 14.6595 1.83184 14.6133 1.83887L13.6289 1.73535C13.6047 1.73206 13.5815 1.72427 13.5605 1.71191C13.5396 1.69955 13.521 1.6835 13.5068 1.66406C13.4926 1.64458 13.4827 1.62202 13.4775 1.59863C13.4724 1.57527 13.4728 1.55079 13.4775 1.52734C13.7042 0.360833 14.7821 0.00982378 15.748 0.00976562ZM25.5596 0.00683594C27.0667 0.00694746 27.8818 1.27129 27.8818 2.87793C27.8818 4.4311 26.9831 5.66297 25.5596 5.66309C24.0811 5.66309 23.2754 4.39845 23.2754 2.82422C23.2755 1.25012 24.091 0.00683594 25.5596 0.00683594ZM43.7852 0.0566406C44.4592 0.0566406 44.9561 0.192075 45.2754 0.461914C45.5947 0.731783 45.7552 1.15083 45.7559 1.71973V5.27246C45.7598 5.30063 45.7573 5.32949 45.748 5.35645C45.7388 5.38341 45.7227 5.4076 45.7021 5.42773C45.6815 5.44788 45.6566 5.46358 45.6289 5.47266C45.6013 5.4817 45.5718 5.48435 45.543 5.48047H45.041C45.0268 5.479 45.0127 5.47592 44.999 5.47168C44.9715 5.46313 44.9457 5.44915 44.9238 5.43066C44.9021 5.41226 44.8847 5.38952 44.8721 5.36426C44.8595 5.33897 44.852 5.31127 44.8506 5.2832L44.7969 4.93945C44.5462 5.1516 44.2601 5.32065 43.9512 5.43848C43.6582 5.55319 43.345 5.61199 43.0293 5.61328C42.5191 5.61321 42.1148 5.47317 41.8164 5.19238C41.5181 4.91155 41.3685 4.53553 41.3672 4.06445C41.3672 3.55869 41.5518 3.15454 41.9209 2.85254C42.29 2.55064 42.7868 2.3998 43.4111 2.40039C43.8635 2.40722 44.3137 2.46634 44.752 2.57617V1.89258C44.7519 1.51803 44.6662 1.25475 44.4961 1.10254C44.326 0.950435 44.0282 0.873683 43.6025 0.873047C43.0729 0.878176 42.5463 0.958132 42.04 1.11035L41.96 1.13672C41.9311 1.14675 41.9007 1.15196 41.8701 1.15234C41.7804 1.15228 41.7315 1.09023 41.7314 0.964844V0.686523C41.7246 0.616225 41.7404 0.54519 41.7754 0.483398C41.8213 0.433209 41.88 0.395594 41.9453 0.374023C42.2155 0.266807 42.4972 0.189522 42.7852 0.144531C43.1151 0.08614 43.4498 0.0566594 43.7852 0.0566406ZM10.7695 0.0244141C11.0323 -0.015303 11.3015 0.0141062 11.5488 0.109375C11.7962 0.204675 12.0134 0.363124 12.1777 0.567383C12.5001 0.995813 12.4336 1.62067 12.4336 2.16309V5.37598C12.4331 5.40048 12.428 5.42479 12.418 5.44727C12.4079 5.46982 12.3932 5.49076 12.375 5.50781C12.3568 5.52486 12.335 5.53794 12.3115 5.54688C12.288 5.55581 12.2625 5.56012 12.2373 5.55957H11.2227C11.1747 5.55706 11.129 5.53679 11.0957 5.50293C11.0625 5.46904 11.0436 5.42389 11.043 5.37695V2.67773C11.043 2.4635 11.0622 1.92839 11.0146 1.72461C10.9392 1.38233 10.7117 1.28522 10.418 1.28516C10.2863 1.2891 10.1586 1.33123 10.0508 1.40527C9.94298 1.47939 9.85884 1.58233 9.81055 1.70215C9.73234 1.89573 9.71819 2.1849 9.71582 2.43945V5.37598C9.71536 5.40044 9.71017 5.42482 9.7002 5.44727C9.69014 5.46979 9.67534 5.49076 9.65723 5.50781C9.63914 5.52479 9.6171 5.53793 9.59375 5.54688C9.57045 5.55574 9.54551 5.56004 9.52051 5.55957H8.50293C8.45514 5.55681 8.41018 5.53661 8.37695 5.50293C8.34362 5.46905 8.32408 5.42394 8.32324 5.37695V2.67773C8.32327 2.10971 8.41327 1.27344 7.69434 1.27344C6.97548 1.27349 6.99316 2.08679 6.99316 2.67773V5.37598C6.99268 5.40046 6.98754 5.42481 6.97754 5.44727C6.96743 5.46983 6.95277 5.49076 6.93457 5.50781C6.91638 5.52485 6.89458 5.53794 6.87109 5.54688C6.84773 5.55574 6.82291 5.56008 6.79785 5.55957H5.78223C5.73669 5.55724 5.69313 5.53858 5.66016 5.50781C5.62728 5.47706 5.60603 5.43586 5.60156 5.3916V0.299805C5.60322 0.250779 5.62491 0.203885 5.66113 0.169922C5.69734 0.13602 5.74575 0.116801 5.7959 0.117188H6.74219C6.78901 0.119734 6.83403 0.139483 6.86719 0.171875C6.90015 0.204194 6.91923 0.247414 6.92188 0.292969V0.958008H6.94141C7.18766 0.31452 7.65198 0.0147587 8.27734 0.0146484C8.90289 0.0146484 9.31087 0.3145 9.5957 0.958008C9.68908 0.714767 9.84645 0.499876 10.0527 0.335938C10.2591 0.171987 10.5067 0.064181 10.7695 0.0244141ZM31.374 0C31.8288 0 32.2728 0.160717 32.5596 0.599609C32.8247 1.00704 32.8252 1.69299 32.8252 2.18555V5.38867C32.818 5.4338 32.7946 5.4755 32.7588 5.50488C32.7229 5.53428 32.6767 5.5498 32.6299 5.54883H31.6094C31.565 5.54697 31.5221 5.53018 31.4893 5.50098C31.4564 5.47177 31.4357 5.43165 31.4297 5.38867V2.62402C31.4297 2.06734 31.4957 1.25299 30.7939 1.25293C30.6663 1.25872 30.5427 1.29984 30.4385 1.37207C30.3344 1.44429 30.2538 1.54445 30.2061 1.66016C30.0641 1.9709 30.0449 2.28183 30.0449 2.62598V5.36621C30.043 5.41587 30.0213 5.46293 29.9844 5.49707C29.9475 5.5311 29.8984 5.5497 29.8477 5.54883H28.834C28.7861 5.54628 28.7413 5.52594 28.708 5.49219C28.6746 5.45826 28.6549 5.41327 28.6543 5.36621V0.273438C28.6595 0.226991 28.6828 0.184134 28.7188 0.15332C28.7548 0.122454 28.8017 0.106298 28.8496 0.107422H29.792C29.8776 0.110204 29.9512 0.167788 29.9717 0.249023V1.02832H29.9912C30.2752 0.332233 30.6732 0.000128612 31.374 0ZM22.5693 0.110352C22.5927 0.119219 22.6139 0.133292 22.6318 0.150391C22.6496 0.167442 22.6643 0.187475 22.6738 0.209961C22.6834 0.232645 22.6878 0.257674 22.6875 0.282227V0.90625C22.6875 1.01068 22.5974 1.14735 22.4365 1.36328L20.708 3.77441C21.3496 3.75957 22.0281 3.85352 22.6113 4.17383C22.6642 4.20136 22.7087 4.24229 22.7402 4.29199C22.7718 4.3418 22.7893 4.39945 22.791 4.45801V5.2373C22.791 5.34437 22.6717 5.46819 22.5449 5.4043C21.9994 5.13039 21.3946 4.98822 20.7812 4.98926C20.1678 4.99032 19.5631 5.13434 19.0186 5.41016C18.9026 5.47046 18.7812 5.34824 18.7812 5.24121V4.5C18.7706 4.32513 18.8138 4.15068 18.9053 4L20.9092 1.19043H19.1621C19.1369 1.19135 19.1114 1.18754 19.0879 1.17871C19.0646 1.16995 19.0433 1.15659 19.0254 1.13965C19.0074 1.1226 18.9931 1.10165 18.9834 1.0791C18.9737 1.05639 18.9685 1.03144 18.9688 1.00684V0.282227C18.9676 0.257734 18.9714 0.232816 18.9805 0.209961C18.9896 0.187059 19.0036 0.165734 19.0215 0.148438C19.0392 0.131299 19.0607 0.118057 19.084 0.109375C19.1075 0.100672 19.1331 0.0972393 19.1582 0.0986328H22.4951C22.5202 0.0977785 22.5459 0.101485 22.5693 0.110352ZM43.626 3.10938C42.8233 3.10947 42.4222 3.41124 42.4229 4.01465C42.4229 4.27779 42.4974 4.48095 42.6465 4.62305C42.7959 4.76526 43.0094 4.83555 43.2861 4.83496C43.5369 4.8318 43.7856 4.78693 44.0205 4.70117C44.2841 4.60645 44.5311 4.47263 44.7539 4.30566V3.24414C44.5696 3.20183 44.3832 3.16864 44.1953 3.14551C44.0067 3.12136 43.8162 3.10977 43.626 3.10938ZM38.1084 0.880859C37.5924 0.884823 37.0913 1.05276 36.6816 1.35938V4.25684C37.1358 4.5904 37.6046 4.75645 38.0869 4.75586C39.0657 4.75566 39.5547 4.11172 39.5547 2.82422C39.5546 1.53682 39.0728 0.888856 38.1084 0.879883V0.880859ZM2.99219 2.9668C2.25797 2.9668 1.48252 3.12038 1.48242 3.96484C1.48242 4.395 1.70956 4.68453 2.09863 4.68457C2.38437 4.68457 2.64095 4.51264 2.80273 4.2334C2.95154 3.97467 2.98346 3.72872 2.99023 3.45898L2.99219 3.18164V2.9668ZM16.3047 2.96191C15.5704 2.96191 14.7949 3.11544 14.7949 3.96094C14.795 4.38998 15.0222 4.6796 15.4111 4.67969C15.6959 4.67969 15.9534 4.50778 16.1143 4.22949C16.3119 3.88541 16.3047 3.56395 16.3047 3.17676V2.96191ZM25.5693 1.04688C24.8206 1.04688 24.7734 2.04243 24.7734 2.66406C24.7734 3.2858 24.7643 4.61328 25.5596 4.61328C26.3547 4.6131 26.3848 3.54189 26.3848 2.88867C26.3848 2.46016 26.3655 1.9456 26.2324 1.53906C26.1183 1.18795 25.891 1.0469 25.5693 1.04688Z"
+                fill="#6B6B6B"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="39"
+              height="18"
+              viewBox="0 0 39 18"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M7.53954 3.002C8.57582 3.002 9.53132 3.825 9.40039 5.874C9.2423 8.309 8.35087 9.656 6.94409 9.662H5.71489C5.538 9.662 5.45234 9.872 5.40637 10.305L5.1682 12.517C5.13337 12.851 5.01498 13.015 4.84296 13.015H3.69943C3.51696 13.015 3.45359 12.845 3.49398 12.463L4.43764 3.601C4.4843 3.165 4.59643 3.002 4.79979 3.002H7.53954ZM5.67729 7.747H6.60841C7.19132 7.715 7.57784 7.125 7.61684 6.06C7.64052 5.403 7.33687 4.932 6.85425 4.935L5.97745 4.941L5.67729 7.747ZM12.5093 12.337C12.6144 12.197 12.721 12.126 12.7056 12.297L12.6687 12.708C12.6492 12.923 12.707 13.036 12.8435 13.036H13.8596C14.0309 13.036 14.1138 12.936 14.1556 12.548L14.7824 6.798C14.8137 6.51 14.7657 6.368 14.6153 6.368H13.4982C13.3972 6.368 13.3484 6.451 13.322 6.676L13.2809 7.03C13.26 7.214 13.2015 7.247 13.1479 7.061C12.9584 6.405 12.4751 6.111 11.8003 6.133C10.2333 6.181 9.17754 7.921 9.06332 10.153C8.97696 11.878 9.82173 13.233 10.936 13.233C11.7439 13.233 12.106 12.885 12.5127 12.34L12.5093 12.337ZM11.6589 11.452C10.9841 11.452 10.514 10.665 10.6115 9.7C10.709 8.735 11.3399 7.948 12.0148 7.948C12.6889 7.948 13.159 8.735 13.0615 9.7C12.964 10.665 12.3337 11.452 11.6589 11.452ZM16.7707 6.35H15.7393C15.5276 6.35 15.4405 6.582 15.5081 6.867L16.7874 12.347L15.5324 14.955C15.428 15.173 15.5088 15.372 15.6578 15.372H16.8153C16.8832 15.3839 16.952 15.3668 17.0132 15.3229C17.0744 15.279 17.1252 15.2101 17.1593 15.125L21.0934 6.868C21.2146 6.615 21.1575 6.348 20.9583 6.348H19.8621C19.6741 6.348 19.5996 6.457 19.4916 6.685L17.8509 10.164L17.1182 6.677C17.075 6.467 16.9678 6.35 16.7707 6.35ZM25.187 3.002C26.2226 3.002 27.1788 3.824 27.0479 5.873C26.8891 8.309 25.9977 9.656 24.5909 9.662H23.3624C23.1855 9.662 23.0998 9.872 23.0539 10.305L22.8164 12.517C22.7809 12.851 22.6632 13.015 22.4905 13.015H21.3469C21.1645 13.015 21.1011 12.845 21.1415 12.463L22.0872 3.598C22.1339 3.162 22.2453 3 22.4494 3H25.1863L25.187 3.002ZM23.3234 7.747H24.2545C24.8374 7.715 25.2239 7.125 25.2629 6.06C25.2866 5.403 24.983 4.932 24.5004 4.935L23.6243 4.941L23.3234 7.747ZM30.1561 12.337C30.2605 12.197 30.3671 12.126 30.3518 12.297L30.3148 12.708C30.2953 12.922 30.3531 13.036 30.4896 13.036H31.5064C31.6771 13.036 31.7599 12.936 31.8024 12.548L32.4285 6.798C32.4598 6.51 32.4118 6.368 32.2614 6.368H31.1457C31.0454 6.368 30.996 6.451 30.9702 6.676L30.9284 7.03C30.9075 7.214 30.8497 7.246 30.7961 7.06C30.6066 6.405 30.1226 6.11 29.4485 6.133C27.8815 6.181 26.825 7.921 26.7115 10.153C26.6245 11.878 27.4692 13.233 28.5835 13.233C29.3921 13.233 29.7535 12.885 30.1609 12.34L30.1561 12.337ZM29.3057 11.452C28.6309 11.452 28.1615 10.665 28.259 9.7C28.3565 8.735 28.9868 7.948 29.6616 7.948C30.3357 7.948 30.8058 8.735 30.7083 9.7C30.6108 10.665 29.9799 11.452 29.3057 11.452ZM33.9927 13.045H32.8192C32.7987 13.0466 32.7782 13.0415 32.7592 13.03C32.7403 13.0186 32.7234 13.0012 32.7099 12.979C32.6961 12.9568 32.6858 12.9305 32.6798 12.902C32.6738 12.8735 32.6721 12.8435 32.675 12.814L33.7058 3.264C33.7153 3.19901 33.7399 3.14054 33.7754 3.098C33.8106 3.05566 33.8549 3.032 33.9008 3.031H35.0735C35.0941 3.02961 35.1146 3.03491 35.1336 3.04651C35.1525 3.05811 35.1694 3.07572 35.1829 3.098C35.1967 3.12019 35.207 3.14645 35.213 3.17496C35.219 3.20346 35.2206 3.23351 35.2177 3.263L34.187 12.813C34.1777 12.8787 34.1531 12.9379 34.1173 12.981C34.0822 13.0233 34.0379 13.047 33.992 13.048V13.045H33.9927Z"
+                fill="#6B6B6B"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="container nopad">
+          <a class="anch-style" href="#whatsIncludedB">
+            <button
+              class="btn btn-primary footer-btn main"
+              type="button"
+              name="anchor"
+            >
+              GET UNLIMITED ACCESS NOW
+            </button>
+          </a>
+          <p class="cancel mob">Cancel or pause <b>anytime</b></p>
+          <p class="addit-subs mob">
+            Looking for a <b>gift</b> subscription? <a href="https://subscribe.theweek.com/servlet/OrdersGateway?cds_mag_code=TWE&cds_page_id=279127&cds_response_key=I5FRBKGC2">Get one here.</a>
+          </p>
+          <p class="addit-subs mob">
+            Looking for a <b>print</b> subscription? <a href="https://subscribe.theweek.com/pubs/W0/TWE/Print_US_5299_AR-A.jsp?cds_page_id=283620&cds_mag_code=TWE&id=1752677984407&lsid=51970959444066594&vid=1&cds_response_key=I5FRPKSW3">Get one here.</a>
+          </p>
+          <hr class="content-divider" />
+          <h2 class="carousel-title">
+            Discover the benefits of
+            <span class="red-font">Print + Digital</span> Access
+          </h2>
+          <div
+            id="carouselB"
+            class="carousel slide carousel-fade"
+            data-interval="false"
+            data-ride="carousel"
+          >
+            <div class="carousel-inner B">
+              <div class="carousel-item active incl-item">
+                <div class="carousel-caption d-md-block">
+                  <h6>SUBSCRIBER EXCLUSIVE DAILY EDITIONS</h6>
+                  <p>
+                    All you need to know delivered to your inbox, or available in the app. Includes: Morning Report, Evening Review, Saturday Wrap and Sunday Shortlist.
+                  </p>
+                </div>
+                <img
+                  src="https://cdn.mos.cms.futurecdn.net/KSwTTAGjFMSnn9NzSvsy4o-2560-80.png"
+                  class="d-block w-100 incl-img"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item incl-item">
+                <div class="carousel-caption d-md-block">
+                  <h6>APP & SITE ACCESS</h6>
+                  <p>Unlimited access to daily content on: News, Business, Personal Finance, Arts & Leisure, Travel, Food & Drink, Recipes, Cartoons, Puzzles, and more!</p>
+                </div>
+                <img
+                  src="https://cdn.mos.cms.futurecdn.net/vssPzwvC4hc5noQRN4se6o-2560-80.png"
+                  class="d-block w-100 incl-img"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item incl-item">
+                <div class="carousel-caption d-md-block">
+                  <h6>WEEKLY MAGAZINE</h6>
+                  <p>
+                    Available in the app every Friday, and delivered to your door every week. 
+                  </p>
+                </div>
+                <img
+                  src="https://cdn.mos.cms.futurecdn.net/zbAL3hReBK4dg8HDtvmM4o-2560-80.png"
+                  class="d-block w-100 incl-img"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselB"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselB"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+            <ol class="carousel-indicators">
+              <li
+                data-target="#carouselB"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#carouselB" data-slide-to="1"></li>
+              <li data-target="#carouselB" data-slide-to="2"></li>
+            </ol>
+          </div>
+          <p class="addit-subs desk">
+            Looking for a <b>gift</b> subscription? <a href="https://subscribe.theweek.com/servlet/OrdersGateway?cds_mag_code=TWE&cds_page_id=279127&cds_response_key=I5FRBKGC2">Get one here.</a>
+          </p>
+          <p class="addit-subs desk">
+            Looking for a <b>print</b> subscription? <a href="https://subscribe.theweek.com/pubs/W0/TWE/Print_US_5299_AR-A.jsp?cds_page_id=283620&cds_mag_code=TWE&id=1752677984407&lsid=51970959444066594&vid=1&cds_response_key=I5FRPKSW3">Get one here.</a>
+          </p>
+        </div>
+        </div>
+        <div class="show-hide digital-section first-flex-item D">
+          <div class="container-fluid footer-sticky">
+            <h2>DIGITAL ACCESS</h2>
+            <h3>6 weeks for just <span class="offer-price">$1</span></h3>
+            <a class="anch-style" href="#whatsIncludedD">
+              <button
+                class="btn btn-primary footer-btn"
+                type="button"
+                name="anchor"
+              >
+                SUBSCRIBE NOW
+              </button>
+            </a>
+            <hr class="sticky-divid" />
+            <div class="payment-options">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="56"
+                height="18"
+                viewBox="0 0 56 18"
+                fill="none"
+              >
+                <path
+                  d="M19.522 3.5H7C6.17157 3.5 5.5 4.17157 5.5 5V12.55C5.5 13.3784 6.17157 14.05 7 14.05H19.522C20.3504 14.05 21.022 13.3784 21.022 12.55V5C21.022 4.17157 20.3504 3.5 19.522 3.5Z"
+                  stroke="#6B6B6B"
+                />
+                <path
+                  d="M5.78699 7.44202H21.522"
+                  stroke="#6B6B6B"
+                  stroke-width="4"
+                />
+                <path
+                  d="M32.336 10.2601H31.526C31.046 10.8601 30.166 11.4801 29.096 11.4801C27.396 11.4801 25.966 10.0801 25.966 8.31005C25.966 6.58005 27.326 5.12005 29.096 5.12005C30.046 5.12005 31.016 5.67005 31.516 6.35005H32.316C32.006 5.62005 30.856 4.47005 29.096 4.47005C26.926 4.47005 25.236 6.15005 25.236 8.31005C25.236 10.4801 26.976 12.1301 29.106 12.1301C30.536 12.1301 31.836 11.3101 32.336 10.2601ZM39.393 12.0001L35.923 4.43005H35.843L32.363 12.0001H33.133L34.153 9.68005H37.583L38.593 12.0001H39.393ZM37.323 9.07005H34.393L35.873 5.83005L37.323 9.07005ZM44.98 6.96005C44.98 6.09005 44.53 5.30005 43.82 4.93005C43.45 4.73005 42.98 4.60005 41.87 4.60005H40V12.0001H40.72V9.18005H42.08L43.88 12.0001H44.76L42.86 9.11005C43.99 9.00005 44.98 8.25005 44.98 6.96005ZM44.26 6.93005C44.26 7.89005 43.55 8.57005 42.29 8.57005H40.71V5.25005H41.97C42.65 5.25005 43.09 5.28005 43.51 5.53005C43.98 5.82005 44.26 6.37005 44.26 6.93005ZM51.896 8.31005C51.896 7.33005 51.606 6.51005 51.106 5.89005C50.356 4.98005 49.216 4.60005 47.976 4.60005H45.796V12.0001H47.996C50.336 12.0001 51.896 10.6101 51.896 8.31005ZM51.166 8.31005C51.166 10.3501 49.836 11.3501 47.866 11.3501H46.526V5.25005H47.876C48.986 5.25005 49.886 5.59005 50.456 6.23005C50.916 6.74005 51.166 7.44005 51.166 8.31005Z"
+                  fill="#6B6B6B"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="54"
+                height="18"
+                viewBox="0 0 54 18"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M37.7768 15.5464V14.2315C37.8945 14.2617 38.1587 14.2617 38.2918 14.2617C39.0275 14.2617 39.4248 13.9471 39.6678 13.1357C39.6678 13.1201 39.8076 12.6545 39.8076 12.6477L37.0112 4.73764H38.7334L40.6909 11.1672H40.7198L42.6793 4.73764H44.3571L41.4565 13.0519C40.795 14.9678 40.0294 15.5844 38.4239 15.5844C38.2918 15.5844 37.8935 15.5688 37.7768 15.5464ZM16.9859 2.85777C17.3832 2.35127 17.6532 1.66945 17.5818 0.973999C16.9994 1.00322 16.2897 1.36556 15.8798 1.87303C15.5105 2.30744 15.1836 3.01751 15.2694 3.68471C15.9223 3.74218 16.5741 3.35062 16.9859 2.85777ZM17.5741 3.81426C16.6262 3.75582 15.8191 4.36361 15.3668 4.36361C14.9136 4.36361 14.2203 3.84348 13.4701 3.85712C12.4942 3.87173 11.5888 4.43471 11.0931 5.33082C10.0739 7.12303 10.8241 9.78212 11.8144 11.2412C12.2965 11.963 12.8751 12.7578 13.6398 12.7295C14.362 12.7003 14.6455 12.2522 15.523 12.2522C16.3996 12.2522 16.6542 12.7295 17.4188 12.7149C18.2115 12.7013 18.7062 11.9932 19.1873 11.2695C19.7399 10.4464 19.9655 9.65257 19.98 9.60874C19.9655 9.59413 18.4516 9.00192 18.4371 7.22432C18.4236 5.73601 19.6261 5.0279 19.683 4.98406C19.0032 3.95939 17.9424 3.84348 17.5741 3.81426ZM25.8303 1.79997C27.8919 1.79997 29.3268 3.2503 29.3268 5.36101C29.3268 7.47855 27.862 8.93569 25.7782 8.93569H23.4967V12.6399H21.8478V1.79997H25.8303ZM23.4967 7.52432H25.3887C26.8245 7.52432 27.6412 6.73536 27.6412 5.36783C27.6412 4.00127 26.8245 3.2201 25.3964 3.2201H23.4967V7.52432ZM29.7578 10.3938C29.7578 9.01069 30.7954 8.16329 32.6362 8.05712L34.7557 7.93049V7.32173C34.7557 6.44218 34.1743 5.91621 33.2032 5.91621C32.2823 5.91621 31.7086 6.36718 31.5678 7.07335H30.0664C30.1551 5.6464 31.347 4.59445 33.2611 4.59445C35.1385 4.59445 36.3372 5.60842 36.3372 7.19316V12.6389H34.8136V11.3396H34.7779C34.3286 12.2191 33.3498 12.7743 32.3334 12.7743C30.8176 12.7743 29.7578 11.813 29.7578 10.3938ZM34.7557 9.67984V9.05647L32.8493 9.17627C31.8995 9.24445 31.3624 9.67303 31.3624 10.349C31.3624 11.0396 31.9217 11.4906 32.7761 11.4906C33.8869 11.4906 34.7557 10.7094 34.7557 9.67984Z"
+                  fill="#6B6B6B"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="52"
+                height="10"
+                viewBox="0 0 52 10"
+                fill="none"
+              >
+                <path
+                  d="M4.68555 6.4541C4.50581 6.29694 4.66602 6.08212 4.88086 6.2041C7.33261 7.59737 10.3631 8.43652 13.4961 8.43652C15.7543 8.42448 17.9876 7.97652 20.0684 7.11914C20.3901 6.98574 20.661 7.32675 20.3457 7.55859L19.9785 7.80664C18.0952 9.01932 15.5237 9.66302 13.2959 9.66309C10.1168 9.67895 7.04594 8.53458 4.68555 6.4541ZM18.8672 6.34961C19.9576 5.60119 21.7438 5.81476 21.9531 6.06738C22.1608 6.32021 21.8969 8.07136 20.875 8.90723C20.7177 9.03536 20.5678 8.96717 20.6377 8.79785C20.8542 8.27184 21.32 7.13334 21.1758 6.74219L21.1396 6.6748C20.896 6.3694 19.529 6.52952 18.915 6.60156C18.7281 6.62353 18.6992 6.4646 18.8672 6.34961ZM47.2393 0.203125C47.3211 0.195438 47.4032 0.214573 47.4736 0.255859C47.5337 0.321383 47.5774 0.399405 47.6006 0.484375L49.0918 4.51953L50.5303 0.484375C50.5534 0.399657 50.5964 0.321311 50.6562 0.255859C50.7091 0.224864 50.7691 0.206937 50.8301 0.203125H51.4873C51.5869 0.203157 51.6367 0.24575 51.6367 0.328125C51.626 0.414893 51.6002 0.499311 51.5615 0.578125L49.2197 6.40137C49.0274 6.87954 48.8054 7.22325 48.5537 7.43164C48.3021 7.64003 47.9719 7.74376 47.5645 7.74316C47.3599 7.74578 47.1558 7.72093 46.958 7.66992C46.8916 7.65597 46.8313 7.62166 46.7871 7.57129C46.7568 7.52358 46.739 7.46944 46.7344 7.41406V7.08789C46.7344 6.95627 46.7877 6.89062 46.8945 6.89062C46.9483 6.89301 47.0021 6.90008 47.0547 6.91113C47.1492 6.92703 47.2449 6.93359 47.3408 6.93164C47.5668 6.94554 47.791 6.8796 47.9707 6.74512C48.1198 6.62049 48.2546 6.39142 48.375 6.05859L48.5771 5.53125L46.5264 0.578125C46.4879 0.499279 46.4624 0.414904 46.4521 0.328125C46.4522 0.24562 46.5018 0.203125 46.6006 0.203125H47.2393ZM38.4053 0.0498047C38.724 0.0440047 39.0405 0.106329 39.332 0.232422C39.6068 0.355507 39.8476 0.54111 40.0342 0.773438C40.2373 1.03083 40.3876 1.32455 40.4766 1.6377C40.5842 2.00859 40.6361 2.39283 40.6309 2.77832C40.6358 3.17231 40.5804 3.56558 40.4658 3.94336C40.3699 4.26378 40.2127 4.56365 40.0029 4.82715C39.8079 5.06676 39.5602 5.26081 39.2783 5.39453C38.9822 5.52882 38.6584 5.59453 38.332 5.58789C37.7218 5.59774 37.1311 5.378 36.6826 4.97363V7.41113C36.6868 7.43934 36.684 7.46805 36.6748 7.49512C36.6656 7.52218 36.6505 7.5472 36.6299 7.56738C36.6092 7.5876 36.5834 7.60233 36.5557 7.61133C36.5279 7.6203 36.4986 7.62324 36.4697 7.61914H35.8408C35.8119 7.62328 35.7817 7.62032 35.7539 7.61133C35.7263 7.60235 35.7013 7.58744 35.6807 7.56738C35.66 7.54717 35.644 7.52225 35.6348 7.49512C35.6256 7.46809 35.6228 7.43929 35.627 7.41113V0.412109C35.623 0.383961 35.6265 0.355065 35.6357 0.328125C35.645 0.301306 35.6602 0.276886 35.6807 0.256836C35.7012 0.236748 35.7264 0.220995 35.7539 0.211914C35.7816 0.202845 35.8119 0.200173 35.8408 0.204102H36.3086C36.3388 0.201324 36.3695 0.204799 36.3984 0.213867C36.4272 0.222897 36.4537 0.23754 36.4766 0.256836C36.4995 0.276289 36.519 0.300449 36.5322 0.327148C36.5453 0.353681 36.5522 0.382677 36.5537 0.412109L36.6074 0.745117C36.8624 0.525564 37.1536 0.349792 37.4688 0.225586C37.7666 0.109624 38.0846 0.0498404 38.4053 0.0498047ZM2.44141 0.0136719C2.93566 0.0137342 3.58052 0.141701 3.96875 0.506836C4.33889 0.845363 4.40723 1.26871 4.41797 1.73535V3.75879C4.41797 4.22388 4.61576 4.42767 4.80176 4.67773C4.86651 4.76553 4.88083 4.87559 4.80176 4.94141C4.53946 5.15751 4.27986 5.37688 4.02344 5.59961L4.01562 5.59863C3.98306 5.62614 3.94225 5.64322 3.89941 5.64746C3.85652 5.65167 3.81296 5.64273 3.77539 5.62207C3.43849 5.34828 3.3775 5.22162 3.19434 4.96094C2.6362 5.51582 2.24117 5.68164 1.51953 5.68164C0.665001 5.6814 0.000158815 5.16609 0 4.13574C0 3.3308 0.449144 2.7834 1.07812 2.51465C1.62898 2.27849 2.3986 2.23484 2.9873 2.16992V2.04199C2.98731 1.80585 3.00623 1.52676 2.86426 1.32227C2.74028 1.13972 2.50521 1.06553 2.29492 1.06543C1.90755 1.06543 1.5621 1.25891 1.47754 1.66016C1.47233 1.70568 1.45144 1.74822 1.41895 1.78125C1.38649 1.81417 1.34411 1.83588 1.29785 1.84277L0.321289 1.73828C0.297444 1.73491 0.274511 1.72705 0.253906 1.71484C0.233277 1.70258 0.215241 1.68616 0.201172 1.66699C0.187047 1.64761 0.177024 1.62482 0.171875 1.60156C0.166785 1.57839 0.166256 1.55451 0.170898 1.53125C0.396553 0.365283 1.47527 0.0136719 2.44141 0.0136719ZM15.748 0.00976562C16.2415 0.00976562 16.8871 0.137674 17.2764 0.50293C17.6492 0.841479 17.7157 1.26465 17.7256 1.73145V3.75586C17.7256 4.22034 17.9234 4.42454 18.1094 4.6748C18.1776 4.76609 18.1917 4.87325 18.1045 4.93359C17.8969 5.10313 17.5283 5.41631 17.3262 5.5918C17.2934 5.61897 17.2528 5.63557 17.21 5.63965C17.1672 5.64369 17.1244 5.63473 17.0869 5.61426C16.7499 5.34034 16.6891 5.2165 16.5039 4.95312C15.9468 5.50795 15.5498 5.67474 14.8311 5.6748C13.9763 5.6748 13.3105 5.15885 13.3105 4.12891C13.3106 3.32308 13.7575 2.77655 14.3936 2.50781C14.9436 2.27164 15.714 2.2281 16.3027 2.16406V2.03809C16.3028 1.802 16.3215 1.52287 16.1787 1.31934C16.0583 1.13684 15.8186 1.06161 15.6094 1.06152C15.2222 1.06152 14.8785 1.25528 14.793 1.65625C14.7876 1.70173 14.7668 1.74434 14.7344 1.77734C14.7019 1.81031 14.6595 1.83184 14.6133 1.83887L13.6289 1.73535C13.6047 1.73206 13.5815 1.72427 13.5605 1.71191C13.5396 1.69955 13.521 1.6835 13.5068 1.66406C13.4926 1.64458 13.4827 1.62202 13.4775 1.59863C13.4724 1.57527 13.4728 1.55079 13.4775 1.52734C13.7042 0.360833 14.7821 0.00982378 15.748 0.00976562ZM25.5596 0.00683594C27.0667 0.00694746 27.8818 1.27129 27.8818 2.87793C27.8818 4.4311 26.9831 5.66297 25.5596 5.66309C24.0811 5.66309 23.2754 4.39845 23.2754 2.82422C23.2755 1.25012 24.091 0.00683594 25.5596 0.00683594ZM43.7852 0.0566406C44.4592 0.0566406 44.9561 0.192075 45.2754 0.461914C45.5947 0.731783 45.7552 1.15083 45.7559 1.71973V5.27246C45.7598 5.30063 45.7573 5.32949 45.748 5.35645C45.7388 5.38341 45.7227 5.4076 45.7021 5.42773C45.6815 5.44788 45.6566 5.46358 45.6289 5.47266C45.6013 5.4817 45.5718 5.48435 45.543 5.48047H45.041C45.0268 5.479 45.0127 5.47592 44.999 5.47168C44.9715 5.46313 44.9457 5.44915 44.9238 5.43066C44.9021 5.41226 44.8847 5.38952 44.8721 5.36426C44.8595 5.33897 44.852 5.31127 44.8506 5.2832L44.7969 4.93945C44.5462 5.1516 44.2601 5.32065 43.9512 5.43848C43.6582 5.55319 43.345 5.61199 43.0293 5.61328C42.5191 5.61321 42.1148 5.47317 41.8164 5.19238C41.5181 4.91155 41.3685 4.53553 41.3672 4.06445C41.3672 3.55869 41.5518 3.15454 41.9209 2.85254C42.29 2.55064 42.7868 2.3998 43.4111 2.40039C43.8635 2.40722 44.3137 2.46634 44.752 2.57617V1.89258C44.7519 1.51803 44.6662 1.25475 44.4961 1.10254C44.326 0.950435 44.0282 0.873683 43.6025 0.873047C43.0729 0.878176 42.5463 0.958132 42.04 1.11035L41.96 1.13672C41.9311 1.14675 41.9007 1.15196 41.8701 1.15234C41.7804 1.15228 41.7315 1.09023 41.7314 0.964844V0.686523C41.7246 0.616225 41.7404 0.54519 41.7754 0.483398C41.8213 0.433209 41.88 0.395594 41.9453 0.374023C42.2155 0.266807 42.4972 0.189522 42.7852 0.144531C43.1151 0.08614 43.4498 0.0566594 43.7852 0.0566406ZM10.7695 0.0244141C11.0323 -0.015303 11.3015 0.0141062 11.5488 0.109375C11.7962 0.204675 12.0134 0.363124 12.1777 0.567383C12.5001 0.995813 12.4336 1.62067 12.4336 2.16309V5.37598C12.4331 5.40048 12.428 5.42479 12.418 5.44727C12.4079 5.46982 12.3932 5.49076 12.375 5.50781C12.3568 5.52486 12.335 5.53794 12.3115 5.54688C12.288 5.55581 12.2625 5.56012 12.2373 5.55957H11.2227C11.1747 5.55706 11.129 5.53679 11.0957 5.50293C11.0625 5.46904 11.0436 5.42389 11.043 5.37695V2.67773C11.043 2.4635 11.0622 1.92839 11.0146 1.72461C10.9392 1.38233 10.7117 1.28522 10.418 1.28516C10.2863 1.2891 10.1586 1.33123 10.0508 1.40527C9.94298 1.47939 9.85884 1.58233 9.81055 1.70215C9.73234 1.89573 9.71819 2.1849 9.71582 2.43945V5.37598C9.71536 5.40044 9.71017 5.42482 9.7002 5.44727C9.69014 5.46979 9.67534 5.49076 9.65723 5.50781C9.63914 5.52479 9.6171 5.53793 9.59375 5.54688C9.57045 5.55574 9.54551 5.56004 9.52051 5.55957H8.50293C8.45514 5.55681 8.41018 5.53661 8.37695 5.50293C8.34362 5.46905 8.32408 5.42394 8.32324 5.37695V2.67773C8.32327 2.10971 8.41327 1.27344 7.69434 1.27344C6.97548 1.27349 6.99316 2.08679 6.99316 2.67773V5.37598C6.99268 5.40046 6.98754 5.42481 6.97754 5.44727C6.96743 5.46983 6.95277 5.49076 6.93457 5.50781C6.91638 5.52485 6.89458 5.53794 6.87109 5.54688C6.84773 5.55574 6.82291 5.56008 6.79785 5.55957H5.78223C5.73669 5.55724 5.69313 5.53858 5.66016 5.50781C5.62728 5.47706 5.60603 5.43586 5.60156 5.3916V0.299805C5.60322 0.250779 5.62491 0.203885 5.66113 0.169922C5.69734 0.13602 5.74575 0.116801 5.7959 0.117188H6.74219C6.78901 0.119734 6.83403 0.139483 6.86719 0.171875C6.90015 0.204194 6.91923 0.247414 6.92188 0.292969V0.958008H6.94141C7.18766 0.31452 7.65198 0.0147587 8.27734 0.0146484C8.90289 0.0146484 9.31087 0.3145 9.5957 0.958008C9.68908 0.714767 9.84645 0.499876 10.0527 0.335938C10.2591 0.171987 10.5067 0.064181 10.7695 0.0244141ZM31.374 0C31.8288 0 32.2728 0.160717 32.5596 0.599609C32.8247 1.00704 32.8252 1.69299 32.8252 2.18555V5.38867C32.818 5.4338 32.7946 5.4755 32.7588 5.50488C32.7229 5.53428 32.6767 5.5498 32.6299 5.54883H31.6094C31.565 5.54697 31.5221 5.53018 31.4893 5.50098C31.4564 5.47177 31.4357 5.43165 31.4297 5.38867V2.62402C31.4297 2.06734 31.4957 1.25299 30.7939 1.25293C30.6663 1.25872 30.5427 1.29984 30.4385 1.37207C30.3344 1.44429 30.2538 1.54445 30.2061 1.66016C30.0641 1.9709 30.0449 2.28183 30.0449 2.62598V5.36621C30.043 5.41587 30.0213 5.46293 29.9844 5.49707C29.9475 5.5311 29.8984 5.5497 29.8477 5.54883H28.834C28.7861 5.54628 28.7413 5.52594 28.708 5.49219C28.6746 5.45826 28.6549 5.41327 28.6543 5.36621V0.273438C28.6595 0.226991 28.6828 0.184134 28.7188 0.15332C28.7548 0.122454 28.8017 0.106298 28.8496 0.107422H29.792C29.8776 0.110204 29.9512 0.167788 29.9717 0.249023V1.02832H29.9912C30.2752 0.332233 30.6732 0.000128612 31.374 0ZM22.5693 0.110352C22.5927 0.119219 22.6139 0.133292 22.6318 0.150391C22.6496 0.167442 22.6643 0.187475 22.6738 0.209961C22.6834 0.232645 22.6878 0.257674 22.6875 0.282227V0.90625C22.6875 1.01068 22.5974 1.14735 22.4365 1.36328L20.708 3.77441C21.3496 3.75957 22.0281 3.85352 22.6113 4.17383C22.6642 4.20136 22.7087 4.24229 22.7402 4.29199C22.7718 4.3418 22.7893 4.39945 22.791 4.45801V5.2373C22.791 5.34437 22.6717 5.46819 22.5449 5.4043C21.9994 5.13039 21.3946 4.98822 20.7812 4.98926C20.1678 4.99032 19.5631 5.13434 19.0186 5.41016C18.9026 5.47046 18.7812 5.34824 18.7812 5.24121V4.5C18.7706 4.32513 18.8138 4.15068 18.9053 4L20.9092 1.19043H19.1621C19.1369 1.19135 19.1114 1.18754 19.0879 1.17871C19.0646 1.16995 19.0433 1.15659 19.0254 1.13965C19.0074 1.1226 18.9931 1.10165 18.9834 1.0791C18.9737 1.05639 18.9685 1.03144 18.9688 1.00684V0.282227C18.9676 0.257734 18.9714 0.232816 18.9805 0.209961C18.9896 0.187059 19.0036 0.165734 19.0215 0.148438C19.0392 0.131299 19.0607 0.118057 19.084 0.109375C19.1075 0.100672 19.1331 0.0972393 19.1582 0.0986328H22.4951C22.5202 0.0977785 22.5459 0.101485 22.5693 0.110352ZM43.626 3.10938C42.8233 3.10947 42.4222 3.41124 42.4229 4.01465C42.4229 4.27779 42.4974 4.48095 42.6465 4.62305C42.7959 4.76526 43.0094 4.83555 43.2861 4.83496C43.5369 4.8318 43.7856 4.78693 44.0205 4.70117C44.2841 4.60645 44.5311 4.47263 44.7539 4.30566V3.24414C44.5696 3.20183 44.3832 3.16864 44.1953 3.14551C44.0067 3.12136 43.8162 3.10977 43.626 3.10938ZM38.1084 0.880859C37.5924 0.884823 37.0913 1.05276 36.6816 1.35938V4.25684C37.1358 4.5904 37.6046 4.75645 38.0869 4.75586C39.0657 4.75566 39.5547 4.11172 39.5547 2.82422C39.5546 1.53682 39.0728 0.888856 38.1084 0.879883V0.880859ZM2.99219 2.9668C2.25797 2.9668 1.48252 3.12038 1.48242 3.96484C1.48242 4.395 1.70956 4.68453 2.09863 4.68457C2.38437 4.68457 2.64095 4.51264 2.80273 4.2334C2.95154 3.97467 2.98346 3.72872 2.99023 3.45898L2.99219 3.18164V2.9668ZM16.3047 2.96191C15.5704 2.96191 14.7949 3.11544 14.7949 3.96094C14.795 4.38998 15.0222 4.6796 15.4111 4.67969C15.6959 4.67969 15.9534 4.50778 16.1143 4.22949C16.3119 3.88541 16.3047 3.56395 16.3047 3.17676V2.96191ZM25.5693 1.04688C24.8206 1.04688 24.7734 2.04243 24.7734 2.66406C24.7734 3.2858 24.7643 4.61328 25.5596 4.61328C26.3547 4.6131 26.3848 3.54189 26.3848 2.88867C26.3848 2.46016 26.3655 1.9456 26.2324 1.53906C26.1183 1.18795 25.891 1.0469 25.5693 1.04688Z"
+                  fill="#6B6B6B"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="39"
+                height="18"
+                viewBox="0 0 39 18"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.53954 3.002C8.57582 3.002 9.53132 3.825 9.40039 5.874C9.2423 8.309 8.35087 9.656 6.94409 9.662H5.71489C5.538 9.662 5.45234 9.872 5.40637 10.305L5.1682 12.517C5.13337 12.851 5.01498 13.015 4.84296 13.015H3.69943C3.51696 13.015 3.45359 12.845 3.49398 12.463L4.43764 3.601C4.4843 3.165 4.59643 3.002 4.79979 3.002H7.53954ZM5.67729 7.747H6.60841C7.19132 7.715 7.57784 7.125 7.61684 6.06C7.64052 5.403 7.33687 4.932 6.85425 4.935L5.97745 4.941L5.67729 7.747ZM12.5093 12.337C12.6144 12.197 12.721 12.126 12.7056 12.297L12.6687 12.708C12.6492 12.923 12.707 13.036 12.8435 13.036H13.8596C14.0309 13.036 14.1138 12.936 14.1556 12.548L14.7824 6.798C14.8137 6.51 14.7657 6.368 14.6153 6.368H13.4982C13.3972 6.368 13.3484 6.451 13.322 6.676L13.2809 7.03C13.26 7.214 13.2015 7.247 13.1479 7.061C12.9584 6.405 12.4751 6.111 11.8003 6.133C10.2333 6.181 9.17754 7.921 9.06332 10.153C8.97696 11.878 9.82173 13.233 10.936 13.233C11.7439 13.233 12.106 12.885 12.5127 12.34L12.5093 12.337ZM11.6589 11.452C10.9841 11.452 10.514 10.665 10.6115 9.7C10.709 8.735 11.3399 7.948 12.0148 7.948C12.6889 7.948 13.159 8.735 13.0615 9.7C12.964 10.665 12.3337 11.452 11.6589 11.452ZM16.7707 6.35H15.7393C15.5276 6.35 15.4405 6.582 15.5081 6.867L16.7874 12.347L15.5324 14.955C15.428 15.173 15.5088 15.372 15.6578 15.372H16.8153C16.8832 15.3839 16.952 15.3668 17.0132 15.3229C17.0744 15.279 17.1252 15.2101 17.1593 15.125L21.0934 6.868C21.2146 6.615 21.1575 6.348 20.9583 6.348H19.8621C19.6741 6.348 19.5996 6.457 19.4916 6.685L17.8509 10.164L17.1182 6.677C17.075 6.467 16.9678 6.35 16.7707 6.35ZM25.187 3.002C26.2226 3.002 27.1788 3.824 27.0479 5.873C26.8891 8.309 25.9977 9.656 24.5909 9.662H23.3624C23.1855 9.662 23.0998 9.872 23.0539 10.305L22.8164 12.517C22.7809 12.851 22.6632 13.015 22.4905 13.015H21.3469C21.1645 13.015 21.1011 12.845 21.1415 12.463L22.0872 3.598C22.1339 3.162 22.2453 3 22.4494 3H25.1863L25.187 3.002ZM23.3234 7.747H24.2545C24.8374 7.715 25.2239 7.125 25.2629 6.06C25.2866 5.403 24.983 4.932 24.5004 4.935L23.6243 4.941L23.3234 7.747ZM30.1561 12.337C30.2605 12.197 30.3671 12.126 30.3518 12.297L30.3148 12.708C30.2953 12.922 30.3531 13.036 30.4896 13.036H31.5064C31.6771 13.036 31.7599 12.936 31.8024 12.548L32.4285 6.798C32.4598 6.51 32.4118 6.368 32.2614 6.368H31.1457C31.0454 6.368 30.996 6.451 30.9702 6.676L30.9284 7.03C30.9075 7.214 30.8497 7.246 30.7961 7.06C30.6066 6.405 30.1226 6.11 29.4485 6.133C27.8815 6.181 26.825 7.921 26.7115 10.153C26.6245 11.878 27.4692 13.233 28.5835 13.233C29.3921 13.233 29.7535 12.885 30.1609 12.34L30.1561 12.337ZM29.3057 11.452C28.6309 11.452 28.1615 10.665 28.259 9.7C28.3565 8.735 28.9868 7.948 29.6616 7.948C30.3357 7.948 30.8058 8.735 30.7083 9.7C30.6108 10.665 29.9799 11.452 29.3057 11.452ZM33.9927 13.045H32.8192C32.7987 13.0466 32.7782 13.0415 32.7592 13.03C32.7403 13.0186 32.7234 13.0012 32.7099 12.979C32.6961 12.9568 32.6858 12.9305 32.6798 12.902C32.6738 12.8735 32.6721 12.8435 32.675 12.814L33.7058 3.264C33.7153 3.19901 33.7399 3.14054 33.7754 3.098C33.8106 3.05566 33.8549 3.032 33.9008 3.031H35.0735C35.0941 3.02961 35.1146 3.03491 35.1336 3.04651C35.1525 3.05811 35.1694 3.07572 35.1829 3.098C35.1967 3.12019 35.207 3.14645 35.213 3.17496C35.219 3.20346 35.2206 3.23351 35.2177 3.263L34.187 12.813C34.1777 12.8787 34.1531 12.9379 34.1173 12.981C34.0822 13.0233 34.0379 13.047 33.992 13.048V13.045H33.9927Z"
+                  fill="#6B6B6B"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="container nopad">
+            <a class="anch-style" href="#whatsIncludedD">
+              <button class="btn btn-primary footer-btn main" type="button" name="anchor">
+                GET UNLIMITED ACCESS NOW
+              </button>
+            </a>
+            <p class="cancel mob">Cancel or pause <b>anytime</b></p>
+            <p class="addit-subs mob">
+              Looking for a <b>gift</b> subscription? <a href="https://subscribe.theweek.com/servlet/OrdersGateway?cds_mag_code=TWE&cds_page_id=279127&cds_response_key=I5FRBKGC2">Get one here.</a>
+            </p>
+            <p class="addit-subs mob">
+              Looking for a <b>print</b> subscription? <a href="https://subscribe.theweek.com/pubs/W0/TWE/Print_US_5299_AR-A.jsp?cds_page_id=283620&cds_mag_code=TWE&id=1752677984407&lsid=51970959444066594&vid=1&cds_response_key=I5FRPKSW3">Get one here.</a>
+            </p>
+            <hr class="content-divider" />
+            <h2 class="carousel-title">
+              Discover the benefits of
+              <span class="red-font">Digital</span> Access
+            </h2>
+            <div
+              id="carouselD"
+              class="carousel slide carousel-fade"
+              data-interval="false"
+              data-ride="carousel"
+            >
+              <div class="carousel-inner D">
+                <div class="carousel-item active incl-item">
+                  <div class="carousel-caption d-md-block">
+                    <h6>SUBSCRIBER EXCLUSIVE DAILY EDITIONS</h6>
+                    <p>
+                      All you need to know delivered to your inbox, or available in the app. Includes: Morning Report, Evening Review, Saturday Wrap and Sunday Shortlist.
+                    </p>
+                  </div>
+                  <img
+                    src="https://cdn.mos.cms.futurecdn.net/KSwTTAGjFMSnn9NzSvsy4o-2560-80.png"
+                    class="d-block w-100 incl-img"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item incl-item">
+                  <div class="carousel-caption d-md-block">
+                    <h6>APP & SITE ACCESS</h6>
+                    <p>Unlimited access to daily content on: News, Business, Personal Finance, Arts & Leisure, Travel, Food & Drink, Recipes, Cartoons, Puzzles, and more!</p>
+                  </div>
+                  <img
+                    src="https://cdn.mos.cms.futurecdn.net/vssPzwvC4hc5noQRN4se6o-2560-80.png"
+                    class="d-block w-100 incl-img"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item incl-item">
+                  <div class="carousel-caption d-md-block">
+                    <h6>WEEKLY MAGAZINE</h6>
+                    <p>
+                      Available in the app every Friday.
+                    </p>
+                  </div>
+                  <img
+                    src="https://cdn.mos.cms.futurecdn.net/zbAL3hReBK4dg8HDtvmM4o-2560-80.png"
+                    class="d-block w-100 incl-img"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <a
+                class="carousel-control-prev"
+                href="#carouselD"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#carouselD"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Next</span>
+              </a>
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#carouselD"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li data-target="#carouselD" data-slide-to="1"></li>
+                <li data-target="#carouselD" data-slide-to="2"></li>
+              </ol>
+            </div>
+          </div>
+          <p class="addit-subs desk">
+            Looking for a <b>gift</b> subscription? <a href="https://subscribe.theweek.com/servlet/OrdersGateway?cds_mag_code=TWE&cds_page_id=279127&cds_response_key=I5FRBKGC2">Get one here.</a>
+          </p>
+          <p class="addit-subs desk">
+            Looking for a <b>print</b> subscription? <a href="https://subscribe.theweek.com/pubs/W0/TWE/Print_US_5299_AR-A.jsp?cds_page_id=283620&cds_mag_code=TWE&id=1752677984407&lsid=51970959444066594&vid=1&cds_response_key=I5FRPKSW3">Get one here.</a>
+          </p>
+          </div>
+        </div>
+          <div class="container show-hide B">
+            <h3 id="whatsIncludedB" class="included-subheader">
+              <hr class="included-divider" />
+              Here’s what’s included in your order:
+              <hr class="included-divider" />
+            </h3>
+          <div class="accordion access-accord B" id="accordion">
+            <div class="card access-card">
+              <div class="card-header access-header" id="headingB">
+                <h2 class="mb-0 card-details">
+                  <button
+                    class="btn btn-link btn-block text-left"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseB"
+                    aria-expanded="true"
+                    aria-controls="collapseB"
+                  >
+                    <i class="mdi mdi-chevron-up float-right"></i>
+                    <h4>Print + Digital Access</h4>
+                    <h5>
+                      Less than <span class="offer-price">$2.50</span>/week
+                    </h5>
+                    <p>Billed as $99/year plus a FREE GIFT</p>
+                  </button>
+                </h2>
+              </div>
+              <div
+                id="collapseB"
+                class="collapse show"
+                aria-labelledby="headingB"
+                data-parent="#accordion"
+              >
+                <div class="card-body access-body">
+                  <ul class="feature-list">
+                    <li class="feature-item">
+                      <span class="feature-description"
+                        >Print Issues delivered weekly</span
+                      >
+                      <span class="feature-status">Included</span>
+                    </li>
+                    <li class="feature-item">
+                      <span class="feature-description"
+                        >Unlimited digital access on the web and the app</span
+                      >
+                      <span class="feature-status">Included</span>
+                    </li>
+                    <li class="feature-item">
+                      <span class="feature-description"
+                        >Subscriber exclusive daily editions</span
+                      >
+                      <span class="feature-status">Included</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+        <div class="container show-hide D">
+          <h3 id="whatsIncludedD" class="included-subheader anch-style">
+            <hr class="included-divider" />
+            Here’s what’s included in your order:
+            <hr class="included-divider" />
+          </h3>
+          <div class="accordion access-accord D" id="accordion">
+            <div class="card access-card">
+              <div class="card-header access-header" id="headingD">
+                <h2 class="mb-0 card-details">
+                  <button
+                    class="btn btn-link btn-block text-left"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseD"
+                    aria-expanded="true"
+                    aria-controls="collapseD"
+                  >
+                    <i class="mdi mdi-chevron-up float-right"></i>
+                    <h4>Digital Access</h4>
+                    <h5>
+                      6 weeks for just <span class="offer-price">$1</span>
+                    </h5>
+                    <p>Renews automatically for just $89/year</p>
+                  </button>
+                </h2>
+              </div>
+              <div
+                id="collapseD"
+                class="collapse show"
+                aria-labelledby="headingD"
+                data-parent="#accordion"
+              >
+                <div class="card-body access-body">
+                  <ul class="feature-list">
+                    <li class="feature-item">
+                      <span class="feature-description"
+                        >Unlimited digital access on the web and the app</span
+                      >
+                      <span class="feature-status">Included</span>
+                    </li>
+                    <li class="feature-item">
+                      <span class="feature-description"
+                        >Subscriber exclusive daily editions</span
+                      >
+                      <span class="feature-status">Included</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    <div id="sf1" class="frm">
+    <fieldset>
+      <div class="container nopad">
+        <div class="email-preferences">
+          <h3 class="email-subheader">
+            Get started with your account, you’ll access your subscription
+            through this email
+          </h3>
+            <div class="form-group">
+              <input
+                type="email"
+                name="cds_email"
+                id="cds_email"
+                placeholder="EMAIL"
+                maxlength="50"
+                class="form-control"
+                aria-label="Email address"
+                value=""
+                required
+              />
+            </div>
+            <div class="emailprefs col-sm-6 col-md-4 col">
+              <div class="row-nopad externaloffers">
+                <label class="radio-inline main"
+                  ><span
+                    >I want to receive <em>The Week</em> Today's best articles
+                    email newsletter.</span
+                  ></label
+                ><br />
+                <label class="radio-inline yes-op">
+                  Yes
+                  <input
+                    type="radio"
+                    name="cds_opt_in3"
+                    id="opt3Y"
+                    value="Y"
+                    checked=""
+                    aria-label="Yes, I want to receive The Week's 10 Things You Need To Know Today email newsletter."
+                  />
+                </label>
+                <label class="radio-inline">
+                  No
+                  <input
+                    type="radio"
+                    name="cds_opt_in3"
+                    id="opt3N"
+                    value="N"
+                    aria-label="No, I don't want to receive The Week's 10 Things You Need To Know Today email newsletter."
+                  />
+                </label>
+              </div>
+            </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="form-group row full-width sub-btn">
+      <button
+        class="btn btn-primary emailpref-btn"
+        type="button"
+        name="continue"
+        id="submitButton"
+      >
+        GET UNLIMITED ACCESS NOW
+      </button>
+  </div>
+  <div id="sf2" class="frm">
+    <fieldset>
+          <div class="card card-body billing">
+            <section class="billing_info">
+              <div class="infobar container-week uc-text">
+                Enter your payment information
+              </div>
+
+              <&CDS_PAYMENT_COMPONENT_ERROR>
+              <div style="display: none"><$PAY_TYPES></div>
+              <div id="helper"><&CDS_PAYMENT_CAPTURE></div>
+              <%@ include file="pc-basic.jsp" %>
+              <!-- end payment info -->
+            </section>
+            <section class="billing_info">
+              <div class="infobar container-week uc-text">
+                Enter your billing information
+              </div>
+              <div class="row-nopad container-week billing-details">
+                <div class="col-sm-12">
+                  <#IFNOTEMPTY_ERROR_ALL>
+                  <div class="error">
+                    <$ERROR_ALL>
+                    <br />
+                    <br />
+                  </div>
+                  <#ENDIF>
+                </div>
+                <div class="billingform row-nopad container-week">
+                  <div class="form-fields">
+                    <div>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        maxlength="27"
+                        name="cds_name"
+                        id="cds_name"
+                        placeholder="Full Name"
+                        class="form-control"
+                        aria-label="Full Name"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex-wrapper">
+                    <div class="flex-1">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name="cds_address_1"
+                        id="cds_address_1"
+                        maxlength="27"
+                        placeholder="Address 1"
+                        class="form-control"
+                        aria-label="Address 1"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name="cds_address_2"
+                        id="cds_address_2"
+                        maxlength="27"
+                        placeholder="Address 2"
+                        class="form-control"
+                        aria-label="Address 2"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex-1">
+                    <div class="form-group country-zip">
+                      <div
+                        id="countriesOption"
+                        class="col-xs-6 col-left-nopad item-flex-basis"
+                      >
+                        <select
+                          name="cds_country"
+                          id="cds_country"
+                          class="form-control"
+                        >
+                          <$CDS_COUNTRY_LIST>
+                        </select>
+                      </div>
+                      <div
+                        class="col-xs-6 pull-right col-right-nopad item-flex-basis"
+                      >
+                        <input
+                          type="text"
+                          name="cds_zip"
+                          id="geo"
+                          placeholder="ZIP"
+                          maxlength="5"
+                          class="form-control"
+                          aria-label="ZIP"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group city-state">
+                      <div class="col-xs-6 col-left-nopad item-flex-basis">
+                        <input
+                          type="text"
+                          name="cds_city"
+                          id="cds_city"
+                          placeholder="City"
+                          maxlength="13"
+                          class="form-control"
+                          aria-label="City or town"
+                        />
+                      </div>
+                      <div
+                        class="col-xs-6 pull-right col-right-nopad item-flex-basis"
+                      >
+                        <div id="usStates" class="USStateDD">
+                          <select
+                            name="cds_state"
+                            class="form-control"
+                            id="cds_state"
+                          >
+                            <option disabled selected value="">
+                              Select a State
+                            </option>
+                            <optgroup label="States">
+                              <option value="AA">AA - Military</option>
+                              <option value="AE">AE - Military</option>
+                              <option value="AP">AP - Military</option>
+                              <option value="AL">AL - Alabama</option>
+                              <option value="AK">AK - Alaska</option>
+                              <option value="AS">AS - American Samoa</option>
+                              <option value="AZ">AZ - Arizona</option>
+                              <option value="AR">AR - Arkansas</option>
+                              <option value="CA">CA - California</option>
+                              <option value="CO">CO - Colorado</option>
+                              <option value="CT">CT - Connecticut</option>
+                              <option value="DE">DE - Delaware</option>
+                              <option value="DC">
+                                DC - District of Columbia
+                              </option>
+                              <option value="FM">
+                                FM - Federated States of Micronesia
+                              </option>
+                              <option value="FL">FL - Florida</option>
+                              <option value="GA">GA - Georgia</option>
+                              <option value="GU">GU - Guam</option>
+                              <option value="HI">HI - Hawaii</option>
+                              <option value="ID">ID - Idaho</option>
+                              <option value="IL">IL - Illinois</option>
+                              <option value="IN">IN - Indiana</option>
+                              <option value="IA">IA - Iowa</option>
+                              <option value="KS">KS - Kansas</option>
+                              <option value="KY">KY - Kentucky</option>
+                              <option value="LA">LA - Louisiana</option>
+                              <option value="ME">ME - Maine</option>
+                              <option value="MH">MH - Marshall Islands</option>
+                              <option value="MD">MD - Maryland</option>
+                              <option value="MA">MA - Massachusetts</option>
+                              <option value="MI">MI - Michigan</option>
+                              <option value="MN">MN - Minnesota</option>
+                              <option value="MS">MS - Mississippi</option>
+                              <option value="MO">MO - Missouri</option>
+                              <option value="MT">MT - Montana</option>
+                              <option value="NE">NE - Nebraska</option>
+                              <option value="NV">NV - Nevada</option>
+                              <option value="NH">NH - New Hampshire</option>
+                              <option value="NJ">NJ - New Jersey</option>
+                              <option value="NM">NM - New Mexico</option>
+                              <option value="NY">NY - New York</option>
+                              <option value="NC">NC - North Carolina</option>
+                              <option value="ND">ND - North Dakota</option>
+                              <option value="MP">
+                                MP - Northern Mariana Islands
+                              </option>
+                              <option value="OH">OH - Ohio</option>
+                              <option value="OK">OK - Oklahoma</option>
+                              <option value="OR">OR - Oregon</option>
+                              <option value="PW">PW - Palau</option>
+                              <option value="PA">PA - Pennsylvania</option>
+                              <option value="PR">PR - Puerto Rico</option>
+                              <option value="RI">RI - Rhode Island</option>
+                              <option value="SC">SC - South Carolina</option>
+                              <option value="SD">SD - South Dakota</option>
+                              <option value="TN">TN - Tennessee</option>
+                              <option value="TX">TX - Texas</option>
+                              <option value="UT">UT - Utah</option>
+                              <option value="VT">VT - Vermont</option>
+                              <option value="VI">VI - Virgin Islands</option>
+                              <option value="VA">VA - Virginia</option>
+                              <option value="WA">WA - Washington</option>
+                              <option value="WV">WV - West Virginia</option>
+                              <option value="WI">WI - Wisconsin</option>
+                              <option value="WY">WY - Wyoming</option>
+                            </optgroup>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="emailprefs second">
+                    <div class="row-nopad internaloffers bill">
+                      <h6>EMAIL PREFERENCES</h6>
+                      <label class="radio-inline main"
+                        ><span
+                          >I want to receive special offers from
+                          <em>The Week</em> and other Future brands.</span
+                        ></label
+                      >
+                      <div class="flex">
+                      <label class="radio-inline yes-op">
+                        Yes
+                        <input
+                          type="radio"
+                          name="cds_opt_in1"
+                          id="opt1Y"
+                          value="Y"
+                          checked=""
+                          aria-label="Yes, I want to receive special offers from The Week."
+                        />
+                      </label>
+                      <label class="radio-inline">
+                        No
+                        <input
+                          type="radio"
+                          name="cds_opt_in1"
+                          id="opt1N"
+                          value="N"
+                          aria-label="No, I don't want to receive special offers from The Week."
+                        />
+                      </label>
+                    </div>
+                    <input
+                      type="hidden"
+                      name="MSRDOSEM"
+                      id="MSRDOSEM"
+                      value=""
+                    />
+                  </div>
+                    <div class="row-nopad externaloffers bill">
+                      <label class="radio-inline main"
+                        ><span
+                          >I want to receive special offers on behalf of
+                          carefully selected third parties.</span
+                        ></label
+                      >
+                      <div class="flex">
+                      <label class="radio-inline yes-op">
+                        Yes
+                        <input
+                          type="radio"
+                          name="cds_opt_in2"
+                          id="opt2Y"
+                          value="Y"
+                          checked=""
+                          aria-label="I want to receive special offers on behalf of carefully selected third parties."
+                        />
+                      </label>
+                      <label class="radio-inline">
+                        No
+                        <input
+                          type="radio"
+                          name="cds_opt_in2"
+                          id="opt2N"
+                          value="N"
+                          aria-label="I do not want to receive special offers on behalf of carefully selected third parties."
+                        />
+                      </label>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+                  <div class="form-group tandcs">
+                    <p class="first">
+                      You can opt-out of any of the subscriber daily editions or
+                      other newsletters once you begin receiving them.
+                    </p>
+                    <p>
+                      The Week's subscriber-exclusive Digital Editions are
+                      available for iPhone, iPad, iPad mini, and Android
+                      devices. You will receive log-in instructions after you
+                      place your order
+                    </p>
+                  </div>
+
+                  <!-- end email prefs -->
+              </div>
+            </section>
+            <!-- end billing info -->
+            <div class="row-nopad container-week billing-details">
+              <div id="ardirect" style="display: block">
+                To continue with your order, please check the box below and
+                click <span class="red-font">Subscribe Now</span><br /><br />
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="autorenew"
+                  id="autorenew"
+                  value="Y"
+                />&nbsp; <%@ include file="ar_self_B_LP.jsp" %>
+              </div>
+              <div>
+                By subscribing below, you agree to the
+                <a
+                  href="https://futureplc.com/terms-conditions/"
+                  target="_blank"
+                  >Terms & Conditions</a
+                >
+                and
+                <a href="https://futureplc.com/privacy-policy/" target="_blank"
+                  >Privacy Policy</a
+                >
+                and confirm you are aged 16 or over.<br /><br />
+              </div>
+            </div>
+            <div class="row-nopad container-week">
+              <div class="col-12 text-center">
+                <button
+                  type="submit"
+                  class="subscribe-button"
+                  id="Submit"
+                  name="send"
+                >
+                  <span class="loader" aria-label="processing..."></span>
+                  <span class="text">SUBSCRIBE NOW&raquo;</span></button
+                ><br />
+                <div class="secure">
+                  <img
+                    src="https://w1.buysub.com/pubs/W0/TWE/images/global/comodo.jpg"
+                    alt="This transaction is secured with SSL encryption"
+                  />
+                </div>
+              </div>
+            </div>
+            <%@ include file="footer_sub_include.jsp" %>
+          </div>
+        </div>
+    </fieldset>
+      </div>
+      </form>
+    </section>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"
+    ></script>
+
+<script>
+  // Chevron function
+  function toggleChevron(e) {
+    $(e.target)
+      .prev(".card-header")
+      .find("i.mdi")
+      .toggleClass("mdi-chevron-down mdi-chevron-up");
+  }
+
+  $(".access-accord.B").on("hidden.bs.collapse", toggleChevron);
+  $(".access-accord.B").on("shown.bs.collapse", toggleChevron);
+  $(".access-accord.D").on("hidden.bs.collapse", toggleChevron);
+  $(".access-accord.D").on("shown.bs.collapse", toggleChevron);
+
+  //Footer fixed between two scroll depths
+  function handleScroll() {
+  if ($(window).width() < 767) {
+    var YourDiv = $(".mainwrapper");
+    var startDiv = $(".row-prod.two");
+    var endDivB = $(".carousel-inner.B");
+    var endDivD = $(".carousel-inner.D");
+
+    $(window).off("scroll.fixedScroll").on("scroll.fixedScroll", function () {
+      var scroll = $(window).scrollTop();
+
+      var startTop = startDiv.offset().top - 10;
+      var endTopB = endDivB.offset().top - 10;
+      var endTopD = endDivD.offset().top - 10;
+
+      if (scroll >= startTop && (scroll <= endTopD || scroll <= endTopB)) {
+        YourDiv.addClass("fixed");
+      } else {
+        YourDiv.removeClass("fixed");
+      }
+    });
+  } else {
+    // Remove scroll listener and class when above 767px
+    $(window).off("scroll.fixedScroll");
+    $(".mainwrapper").removeClass("fixed");
+  }
+}
+
+// Run on load and on resize
+$(document).ready(handleScroll);
+$(window).on("resize", handleScroll);
+
+  // Show/hide bundle/digital functionality
+  $(document).ready(function () {
+    $("input[name=cds_term_value]").change(function () {
+      var test = $(this).attr("title");
+      $(".show-hide").hide();
+      $("." + test).show();
+    });
+  });
+
+  //Input label highlight on click
+  $(document).ready(function () {
+    $("#plan-cards input:radio.pn-tne__plan-select").change(function () {
+      // Only remove the class in the specific `box` that contains the radio
+      $("div.highlight").removeClass("highlight");
+      $(this).closest(".row-prod.one").addClass("highlight");
+      $(this).closest(".row-prod.two").addClass("highlight");
+    });
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    // AR checkbox change
+    $("#autorenew").on("change", function () {
+      if ($(this).prop("checked")) {
+        // hide the #ardirect element
+        $("#ardirect").css("display", "none");
+      } else {
+        // show the #ardirect element again
+        $("#ardirect").css("display", "block");
+      }
+    });
+
+    // Initial check on page load in case the checkbox is already checked
+    if ($("#autorenew").prop("checked")) {
+      $("#ardirect").css("display", "none");
+    }
+
+    // city/state population for US
+    $("#geo").blur(function () {
+      var zip_in = $(this);
+      var zip_box = $("#zipbox");
+      var country = $("#cds_country").val();
+      if (country == "United States") {
+        if (zip_in.val().length < 5) {
+          zip_box.removeClass("error success");
+        } else if (zip_in.val().length > 5) {
+          zip_box.addClass("error").removeClass("success");
+        } else if (zip_in.val().length == 5) {
+          $.ajax({
+            url: "https://api.zippopotam.us/us/" + zip_in.val(),
+            cache: false,
+            dataType: "json",
+            type: "GET",
+            success: function (result, success) {
+              places = result["places"][0];
+              $("#cds_city").val(places["place name"]);
+              $("#cds_state").val(places["state abbreviation"]);
+              zip_box.addClass("success").removeClass("error");
+            },
+            error: function (result, success) {
+              zip_box.removeClass("success").addClass("error");
+            },
+          });
+        }
+      } else {
+      }
+    });
+
+    //start form submit
+    $("form").submit(function (event) {
+      // Check if the form is valid
+      if ($("form").valid() === true) {
+        // No action needed, form will be submitted
+
+        //update key for format in the middle
+        var rkey = "<$RECEIVED_RESPONSE_KEY>";
+        if (rkey == "") {
+          var responseKey = "<$RESPONSE_KEY>";
+          var parsedKey = "<$RESPONSE_KEY>"
+            .replace("<!-- RESPONSE KEY:  ", "")
+            .replace(" -->", "");
+          var key = parsedKey;
+        } else {
+          var key = "<$RECEIVED_RESPONSE_KEY>";
+        }
+        var title = $("input[name=cds_term_value]:checked").attr("title");
+        var order_key = key.substring(0, 4) + title + key.substr(5);
+        $("#cds_response_key").val(order_key);
+
+        //disable submit so can't submit 2X
+        setTimeout(function () {
+          $("input[name=send], button[name=send]").prop("disabled", true);
+        }, 0);
+      } else {
+        // If form is invalid, prevent submission
+        event.preventDefault();
+      }
+    });
+    //validator including autorenew checkbox
+    $("form").each(function () {
+      validator = $(this).validate({
+        errorElement: "div",
+        errorPlacement: function (error, element) {
+          if ($(element).attr("id") == "autorenew") {
+            error.insertAfter($(element).parent());
+          } else if (element.parent(".input-group").length) {
+            error.insertAfter(element.parent());
+          } else {
+            error.insertAfter(element);
+          }
+        },
+        rules: {
+          cds_name: { required: true, minlength: 3 },
+          cds_address_1: { required: true },
+          cds_city: { required: true },
+          cds_zip: { required: true, minlength: 5 },
+          cds_state: { required: true },
+          cds_country: { required: true },
+          cds_email: { required: true, email: true },
+          cds_cc_number: {
+            required: ".cctypes input[type=radio]:checked",
+            creditcard: true,
+          },
+          cds_cc_exp_month: { required: ".cctypes input[type=radio]:checked" },
+          cds_cc_exp_year: { required: ".cctypes input[type=radio]:checked" },
+          autorenew: { required: true },
+        },
+        messages: {
+          cds_name: {
+            required: "Please enter a valid name.",
+            minlength: "Please enter a valid name.",
+          },
+          cds_address_1: { required: "Please enter a valid street address." },
+          cds_city: { required: "Please enter a valid city." },
+          cds_state: { required: "Please select a valid state." },
+          cds_zip: {
+            required: "Please enter a valid zip code.",
+            minlength: "Please enter a valid zip code.",
+          },
+          cds_country: { required: "Please select a valid country." },
+          cds_email: { required: "Please enter a valid email address." },
+          cds_cc_number: {
+            required: "Please enter a valid credit card number.",
+          },
+          cds_cc_exp_month: { required: "Please select an expiration month." },
+          cds_cc_exp_year: { required: "Please select an expiration year." },
+          autorenew: {
+            required: "Please check the box above and click Subscribe Now.",
+          },
+        },
+      });
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    var v = $("#form1").validate({
+      rules: {
+        cds_email: { required: true, email: true },
+      },
+      messages: {
+        cds_email: { required: "Please enter a valid email address." },
+      },
+    });
+
+    // Binding next button on first step
+    $(".frm").hide("fast");
+    $("#sf1").show("slow");
+
+    $(".emailpref-btn").click(function () {
+      if (v.form()) {
+        $("#sf2").show("slow");
+        document
+          .getElementById("sf2")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+</script>
+  </body>
+</html>
