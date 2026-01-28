@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bey Medias | Subscription Page Variant</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+* { 
+  font-family: "Inter";
+  box-sizing: border-box
+}
+h1, h2, h3, h4, h5, h6, p, span { 
+    margin: 0;
+    padding: 0;
+}
+.pn-opinion-subscription-page { 
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pn-opinion-boutique-header { 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 10px;
+  justify-content: space-between;
+  max-width: 700px;
+  width: 97%;
+  padding: 10px 0 5px;
+}
+.boutique-select { 
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  padding-bottom: 18px;
+}
+.boutique-select.tab-two { 
+  padding-bottom: 18px;
+  position: relative;
+}
+.boutique-select.tab-two span { 
+  color: #CE470A;
+  border: 1px #CE470A solid; 
+  border-radius: 20px;
+  padding: 10px 20px;
+  line-height: 1.2;
+}
+.boutique-select.tab-two::after {
+    content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100px;
+  height: 2px;
+  background-color: #CE470A;
+}
+.boutique-select a { 
+  padding: 10px 20px;
+  color: #929292;
+  text-align: center;
+  border: 1px #929292 solid; 
+  border-radius: 20px;
+}
+.boutique-select a { 
+  text-decoration: none; 
+  color: #929292;
+}
+.boutique-select a:focus,
+.boutique-select a:hover { 
+  color: #C4401F;
+  border: 1px solid #C4401F;; 
+}
+
+/* ADD CSS BELOW FOR TAB CONTROL */
+.boutique-select.tab-one {
+  /* --- REMOVAL OF TAB 1 
+  display: none; 
+  --- CHANGE THE ORDER PROPERTY TO REORDER TABS, WHERE 0 IS LEFT AND 2 IS RIGHT
+  order: 0; 
+  */
+}
+.boutique-select.tab-two {
+  /* --- REORDER TABS
+  order: 1; */
+}
+.boutique-select.tab-three { 
+   /* --- REMOVAL OF TAB 3
+  display: none; 
+  --- REORDER TABS
+  order: 2; */
+}
+.pn-opinion-boutique-header { 
+  /* --- IF ONE OR TWO TABS ARE REMOVED ADD CSS BELOW  
+  justify-content: center; */
+}
+
+.pn-opinion-product-block-container { 
+  padding-bottom: 30px;
+}
+
+/*PRICING TOGGLE SECTION */
+.pricing-toggle-wrapper { 
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  position: relative; 
+  gap: 15px;
+  padding-top: 20px;
+}
+.pricing-type { 
+  font-weight: bold;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.pricing-switch { 
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.pricing-switch input { 
+  opacity: 0; 
+  width: 0; 
+  height: 0;
+}
+.pricing-slider { 
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #C4401F;
+  transition: .4s;
+  border-radius: 24px;
+}
+.pricing-slider:before { 
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked+.pricing-slider:before { 
+  transform: translateX(26px);
+}
+.annuel-promo { 
+  color: #C4401F;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 5px;
+  position: absolute;
+  right: 62px;
+  bottom: -32px;
+  transform: translateX(calc(100% + 5px));
+  width: 250px;
+}
+.annuel-promo::before { 
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 92 92" fill="none"><rect x="89.0273" width="89.0717" height="89.0717" transform="rotate(88.1937 89.0273 0)" fill="url(%23pattern0_738_7658)"/><defs><pattern id="pattern0_738_7658" patternContentUnits="objectBoundingBox" width="1" height="1"><use xlink:href="%23image0_738_7658" transform="scale(0.005)"/></pattern><image id="image0_738_7658" width="200" height="200" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAyKADAAQAAAABAAAAyAAAAACbWz2VAAARxElEQVR4Ae2deZAcVR3H33s9eyTBUIHExGQzO5NdAhLEYzWJlEekOISABSiHVYKCoUQto4IWoIVYXik8EeJBoRyF3EYEVFQoUQoKBRZLZAPB3dmdyRojBMIiySaZ6ff89iTLzkxP785Merpner69f2z3u3+f7t+893unELxIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARIoEUJWC0qN8VufAKyJ5F4/7zZs/WLY2PbwyquDCtj5ksCXgSOnD9/1o7OmbcLYVYjzPaYto/YtHnzFq/w9XRnDVJPuky7agKJRGJBLtZ+P5Tjvfsiz9BS7tw+NvZg1Yn5EEH5kAaTIAFfCCSTyTdLrR+DcvQVJajlsUXPAT5QQQKEzay8CSzp7v6g1OYRJdXi0lBamd5St6CeqSBBkWY+XgSsJfHEt6SQd8IgnlUukBKyrHu5sH67xfxOkOmRQKUE0KSar7S5BeGPnjKOFmNT+tfRkzVIHeEyaW8CTheuytn/QIiplcNJQmonXCgXa5BQsLdupgsXLpzZ2dbxbWHMp4Wq8PdZymvCIsZxkLDIt2C+hyST78lp/XPYFNUY3fZQeiS0H/LQMm7B76NlRY7H43PapLxCa7MGylHdj7IUqTDBVVjHhVlE5t3EBFRvd3KNJeUmGBLnQ47qlAMRjBDPhik/a5Aw6Uc4757u7lONkN8wwhyOWqNmSZUWQzVH9iEiFcQHiExikgAG/E6UQn3NGQ2vXS0m09NCjEw+BX9HBQmeeRRzlL2LkycbpS9DK+rt+YaRX1JKs9mvpGpJhwpSCzXGyRPo6+tr275t2+lSykuMMW+qwcQoIqm13q2U6ih0RC20tfA56HsqSNDEI5BfMpnstow57+VtL67BFJGFjiXtx6UsdQ/SOr0oLTv2fNFzwA9UkICBN1F2FhThCJVVO6TKtmPKeUIY+Q4hzQmYVLgcOuGHiVGAQz6CdIdMSapZlX2xIFDgt1SQwJE3R4aYCnKr0OZ0Ydn4Ud/XD5X/eEu+YJ/EMUL/wEj1PllSHWUymdDmYTmicRzEpxccpWSwaOkwV1PHDwGN/gPsjGxpUuipSqXS6buUMDOL/LTYhWd4h3dRQcJj37A5x4w52s/CoTm2EeMhq6VSf4MR3laatiXM9+Cm8VdkoMPNUZBQLypIqPgbNHMjD/GlZBo9UFJckEqPHBnLdjxma/15V7q2fn6XbV/vuBtLFCuP0Xtc4QN2oA0SMPBmyM5Ic8D+2OBoE70ojfjOLnvP1Vs2b9npyGy37b5cCfW6UvllTF05OpIZd9wljBDUNJNBSg2SSZ/A7qgggaFuqoxq2mYHn/a/0e175cydM3868MLAqxMSozfsUNgeF5Q2V2DuvyRisR9NhCv9r7H+ttQt6GcqSNDEmyA/adRTqEUqL6kWfzXKrJ8zd+4d/f39LiPc0vq7mJfl+tZQW3x/aHDwlYmMbGPnCnVCaVnc5JoIGOB/V6EDzJtZNSiBXTr7uw4r5jSNinuVCsqrhXlBSXkLxkeuG04PP5X3SqcLQuy9xdys1VCOk0o9EH9be2fnVYXuSK/Y5lAuo70weCD3VJBAMDdXJqOjoy/1xpMX4Bd9PXqdZudLr/WYlmqjkuYRPN83nE7/Bf/tqSTr7e3tyGVzPyy3+RrskSs2bdr0v8L4ULZxGCGF1ww8ONGnzKcwgt/3VBC/iUYkvcHM8E0Q5aZl85YdMNYxZkNp8oZ0VeLlcpfi6+4pjYPaYxQj5utL3WGkw24p1hAstpqNwcKabKLS9Gt5poLUQq2F4hQa29WI7Qw22ra+FDWQKxomN35leGTEPcZhzCulE1jajTkICYSmIO7Su8ShAwlUTUAqra+BcrS7Y5qnUiMjN7rd8x3LbkVQ6vXlwgblxhokKNItlE9PPPEZ1ATvKSeyMdZFcC87fQQ9Z9vQTVwUDQ2uBUUOAT+wBgkYeNSz6+nq6cU3vq6cnPjYf53KpB4o55d3M+a/Lj+julxuATpQQQKE3QJZWbZlO82nct3D41oK91STAijY3MF9xIHU8YIggd9SQQJHHt0Mscful9FrdVR5CeW6EVzl/fa6qs7OUZe/lq5eMFeYOjpQQeoIt5WS7k0kVsKGwJp09yVt8WznATOvcPsUuzjjIrBAXipyVeaQoueAH6ggAQOPYnbOxnDGtm/HsqpynT5GtslPDAwMFI+Se4DA9JNUoRc2m3MUBBVTOBcVJBzukcq1TakbhLLK2gqwO6791/DwQ5UKLLV8rjAsuoo7MNmxt9AtyHsqSJC0I5gX7I6LMfj9gbKiaTtjxWJfLOvn4WiUfKbUC6t+jyx1C+qZChIU6QjmsyS+5BjstPtND9GMlrE1gwWzdT3ClTjrgRIHgROmFpW6BfVMBQmKdMTyObS7O2mkfSvEKmsfYL7V+uHMMA7jrO7CdkKus0AwRytXXSr+haaC+MeyZVLCLN3Zu4W8F0b53HJCY0BwY9a2Ly7nN53bc5lMCuPsLxeFk8bd/VsUoH4PVJD6sY1qypbZnbsN1caycgI6uyMKW51V0+zffQli8VXhaLvGNPhHy+UVhBsVJAjKEcojmUj8GJtFneAlkqXkhanR1D+9/Ctxx8KpvbucILDU4rbh4WH3FJRKEvIhTPHMMB8SZBLRJYDBwEuNEd/ylFCKO4ZGRs709K/CA3kdj/1+jxjPZn+yZcvejR+qiO5bUCqIbyijnZBzEA4G8a71lFKLZzp3zVpe6/oRz3RD9qCChPwCmiF7rCv/IKah346yevVYvYoh9OX/SqddYxjNIN9UZaQNMhUd+gnnQByz9yzzssrhIILNsCaKyuHIVm7ujOPOiwREMp48Fjuub5BKllkZuBcQbJJ12DnRqV0iebGJFcnXuv9COcqBHUzuRkozvFLLL4BKj5wGf9xG82ITK5rvdb+kcppVwtj3IhFP5YBOPDVj56yzESayyuFApII4FHi9RgD7YZ0Om+MuZxbta44lN862PTLXtjpqPVYlYuYfqSDlqLSoGw7N+QQWPd1WfjeSfVCwgZzSsRMG/z0Y2vSPIF8PFSRI2g2cF6atfwWNpZ+iiJ7fBKaR7JGWOmVo89DTDSyKr0Xz7LrzNRcm1rAEVolVsVi3+Bl2IplyQwUIYCPMh4fS6fsaVpg6FIy9WHWA2ixJOktl26S8AzOejpmmzGh5yY/u2450mqDR8uY4SLTeZ8XSYBnrocqYe9GsmnZTBOyj+6mhdH6v3orTj0pAz/ZmVASkHG4CWAl4ksrZf6tEOXD081psFerYJi15UUFa67UrzJL9qpT6HqHUgdOIjmM9xAVDmeGrpwkXaW82sSL9eieFW7pw6Vw7tusXmBpy/KSr551Gs2oNao7rPUO0iAeN9BZ40cnFyXfjeMxb8bKn3fzA6cq1pHU2DHIY77zYxIr2N2D1dHd/TSnzYEXKIcyrUsZWUzkmPwo2sSZZROpuyZIlS2VW3wihVlYiGKaPvCC1dWJqc+qJSsK3ShjWINF70xKj4p+Vtv47xsQrUg4cADiA+ewrqBzujyFUGwQ9Ku81WpxlYmpdKpXKuItHl2oIOMeeYV8pLIuV76o4ntF/kO3tZ1S/wVvFOTR1wNAUZO8orhoCvTkwDF9RllqLBf9Ok4BXlQSgGJ1oK1+y70xAz8VNpcmiWXU1Tqt1ppigEuFVjkBoTax2pT6GAs1xCoXZo7MxaHUDju76bU9Pz2LHjVdlBLB2Y7U05p/ovr18ylm4xcmNY+rIOVCOtXCmchSzKXoKTUG0FicXlcR5kOJEncttRM/LRc4kOpc/HV4j0BuPL0t2J+7DZgq/wQ6Hva95THOD1U3DSoqjWnFe1TRoynqH1sTqWRx/earRXLzIjdgY+SI0u35ftuQt6ti7qLfLxLKX49fkXCCoajY2lGnDHmOfH+a548322kJTkOTi+O5KmgTG6D+ikF8aymT6mw2un+WFnbEgpsXFttGfBDfP1X4eee7EnKrPYdqI975WHhFb3Tk0BentSjxjLHFYpS8ANcqvlTBfH0ynn6w0ThTCYdZtN2bdXggb7XzIM8Ua8fLSgtuTljAfieq2POWl9s81PBtEibuqEQOafApmz/U77W5nx41q4jZjWCjG8t7FiZuF1oNQDseYrko5nCkjaIZdFk8nVlA5av8CQqtBMNJ7IEZ6H8Vg1htrK755GoX/idXZeZNz+GNtaTRWrK6urhkdsdiZUutPGqmW11462Y9TZz7WSktja2c1dczQFMQplnPOhNid+4FR4rypi+nti778V4WUv0Iz5EYsB/0zQmrv0A3pI3vi8aO0UucIW5+V7/KutZjYUEFI6zLYGj9GEuy+rZVjQbxQFWSiHPm+fCEdA/INE241/ddiK86424A9ne6aM2/eQ/39/dma0ql/JIWu7JX4lT8NZf2QsFT3/maJHqqbc9J8AUeRb93ftBh/kkBDKIhTHDQvDuqUse+gNjkXj/tdrvzovFAPoCPgASPln3DGxKZJsYO/Q5MyjqbT0RigO8YW+niv05mqLRl2XMfKQOsLqUzq4WrjMvz0BPb7Q5w+i+pCHJJIrMBqnR9hw76+6mJOHdqZrYpNlh/F3C90F6sntdJP49c2jVjo6PH3WtrVtUi3tS3TtnmrVKJPG/NOKESXn7mgHZmyjLyUU9P9pOpOq+EUZF8RVU88+XFspXE5CrjIXWx/XKAZO5S2B42whjDkthnK8x90GjyPPLcLY8agUDtzUu5SOWVLmYXdrNrw3K60niW1ep22zME4AWke4izEYS+LjC17cCRSz37ZEdOJZuu0wOTOzlmzrh8YGEBPFa96EmhUBcnLnJ+EZ8ynYG1egl/gefUE0ehp52sMIdcdOPegGxvYtmp0jFWXr6EVZEKaI+fPn7WjY8ansU56bT1rlIn8Guu/fEQacSWaUs64EXumAn45TaEgE0z6+vratm/bdgZs+AtR8LdNuEfw/ziM7w1CW1dhEdPjEZSvaURqKgUppIrFVivxc3qusvWZU016LIzT+PfmCfS4XQd5bsECsrHGL2/0S9i0CjLxahw7BfNlTsXzh6UtjoXB3Dnh1xz/zdPGyF8qoe8czGQ2NkeZW6eUTa8gha8qb6t0dh6Hg+dPUbY4DsqyoNC/Ee4xPoNZzNbD6PW6XytxN7qan22EcrEM5QlESkFKRUTtchhql1VG61XKqBVQmERpmLo/a4F1L2g6Gfk4Jls+mNXZh0dHR8frni8z8IVApBWklNC+3czfAqHfqoU6XAqTxMytJVCcxQhb1eKj0rSRjqMIg1LL57QUmzBAuMnk1JOp0dQgwvo+GOnKnw51IdBSCuJFcBWW944uGl1gt9sHS9ueq4R1ML7oA7GHbRtG9XFCgGzDwCEqIzkupRjXQu/EIOIOpPffnBDO3KetaCrt8kqf7iRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiRAAiTQdAT+D1k1lDZI2sNMAAAAAElFTkSuQmCC"/></defs></svg>');
+  color: black;
+}
+.price-container.annuel-option { 
+  display: none;
+}
+
+/* PRODUCT BLOCK SECTION */
+.offers-grid { 
+  display: flex; 
+  gap: 30px; 
+  max-width: 1100px; 
+  padding: 0 20px; 
+  margin: 50px auto 0px;
+}
+.product-block { 
+  border-radius: 8px;
+  padding: 30px 35px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+  background: #D9D9D912;
+  border: 3px solid #D9D9D9;
+}
+.product-block.one { 
+  border: 3px solid #FFC000;
+  background: #FFC00017;
+}
+.ribbon-wrapper { 
+  position: absolute; 
+  top: -10px;
+  right: 10px;
+  background: #FFC000; 
+  border-radius: 10px; 
+  font-size: 12px;
+  padding: 1px 15px;
+  font-weight: 700;
+}
+.product-title-section h2 { 
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  position: relative;
+  margin-bottom: 8px;
+  font-family: 'Inter';
+}
+.product-title-section h3 { 
+  font-size: 18px;
+  margin: 5px 0 0 0;
+  font-weight: normal;
+  text-align: center;
+}
+.price-container { 
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-end;
+}
+.product-price {
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0 15px;
+}
+.product-price h1 { 
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+}
+span.strikethrough-price { 
+  color: #C8C6C0;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: line-through;
+}
+span.price-term { 
+  font-size: 30px;
+  font-weight: 700;
+}
+.product-price h4.footnote {
+  font-size: 10px;
+  margin-top : 5px;
+  text-align: center;
+  padding: 0;
+  line-height: 1.2;
+}
+.product-price h4.footnote.mon { 
+  color: #929292;
+}
+.product-block.one a.pn-opinion-primary-cta { 
+  background: #FFC000;
+  border: none;
+}
+a.pn-opinion-primary-cta { 
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  border-radius: 16px;
+  color: black; 
+  border: 2px solid black;
+  text-decoration: none;
+  font-size: 14px;
+  height: 44px; 
+  width: 100%;
+  font-weight: 700;
+  gap: 2px;
+  transition: 0.15s ease-in background;
+  margin-bottom: 26px;
+  cursor: pointer; 
+}
+.product-block.one a.pn-opinion-primary-cta:hover { 
+  background: #E6AC00;
+}
+.logo-wrapper,
+.logo-wrapper img { 
+  width: 100%;
+}
+
+.wi-dropdown-title {
+  display: none;
+}
+.selection__included-toggle, 
+.panorama__included-toggle,
+.signature__included-toggle { 
+  display: none;
+}
+
+/* BENEFITS SECTION */
+.offer-description {
+  color: #666;
+  margin: 20px 0;
+  font-size: 14px;
+  flex: none;
+}
+.benefit-features ul { 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.benefit-features ul li { 
+  font-size: 16px;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 5px;
+  padding: 0;
+  display: flex; 
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+.benefit-features li.excluded{
+  color: #999;
+}
+svg.tick, 
+svg.cross { 
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* WSJ BANNER */
+.pn-opinion-wsj-banner { 
+  margin-bottom: 50px;
+}
+.wsj-banner-wrapper {
+  max-width: 735px; 
+  background: #EBF5FF; 
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 90%; 
+  padding: 20px 25px 10px;
+}
+.wsj-banner-wrapper h1 { 
+  font-size: 26px; 
+  font-weight: 700; 
+  color: #191919;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.wsj-image-wrap {
+  max-width: 400px; 
+  margin: 0 auto;
+  display: flex; 
+  justify-content: center;
+}
+.wsj-image-wrap img { 
+  width: 90%;
+}
+.wsj-banner-wrapper p { 
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  line-height: 1.2;
+  margin-bottom: 0;
+  
+}
+  br.break { 
+    display: none;
+  }
+
+
+@media screen and (max-width: 1100px) { 
+  .offers-grid { 
+    gap: 20px;
+  }
+  span.price-term { 
+    font-size: 26px;
+  }
+  .product-block { 
+    padding: 30px 25px;
+  }
+}
+
+@media screen and (max-width: 900px) { 
+  .product-block { 
+    padding: 30px 15px 20px;
+  }
+  .benefit-features ul li { 
+    font-size: 14px;
+  }
+  a.pn-opinion-primary-cta { 
+    height: 40px;
+  }
+  .product-title-section h3 { 
+	font-size: 16px; 
+  }
+  span.price-term { 
+    font-size: 22px;
+  }
+  .product-price h1 { 
+    font-size: 22px;
+  }
+  span.strikethrough-price { 
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) { 
+  .pn-opinion-boutique-header {  
+    max-width: 600px;
+  }
+  .boutique-select { 
+      font-size: 16px;
+  }
+  .boutique-select.tab-two span,
+  .boutique-select a {
+    padding: 8px 16px;
+  }
+  .offers-grid { 
+    flex-direction: column;
+  }
+  .product-block { 
+    margin: 0 auto;
+    max-width: 500px; 
+    width: 100%;
+  }
+  .offer-description { 
+    margin-bottom: 30px;
+  }
+  a.pn-opinion-primary-cta { 
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto 26px;
+  }
+  .benefit-features ul { 
+    max-width: 400px; 
+    margin: 3px auto 8px;
+  }
+ /* EXPANDABLE FUNCTION WHATS INCLUDED*/
+.unbutton {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+  .selection__included-toggle,
+  .panorama__included-toggle,
+  .signature__included-toggle {
+    display: inline-flex;
+  }
+  .benefit-features.selection,
+  .benefit-features.panorama,
+  .benefit-features.signature{
+    display: none;
+  }
+  .selection__included-toggle,
+  .panorama__included-toggle,
+  .signature__included-toggle {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    position: absolute; 
+    bottom: 3px;
+    justify-content: center;
+    right: 0;
+    font-family: "Inter";
+    font-weight: 700; 
+    font-size: 14px;
+    align-items: center;
+    gap: 3px;
+  }
+  .selection__included-toggle::after,
+  .selection__included-toggle::before,
+  .panorama__included-toggle::after,
+  .panorama__included-toggle::before,
+  .signature__included-toggle::after,
+  .signature__included-toggle::before{
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="13.3" viewBox="0 0 41 34" fill="none"><path d="M40.2579 13.0931L20.1366 33.2294L0.000373777 13.0931L10.0234 13.0931L10.0234 -3.41923e-06L30.2499 -1.65096e-06L30.2499 13.0931L40.2579 13.0931Z" fill="%23FFC000"/></svg>');
+    font-size: 20px;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+  .selection__package-expanded .selection__included-toggle::after,
+  .selection__package-expanded .selection__included-toggle::before,
+  .panorama__package-expanded .panorama__included-toggle::after,
+  .panorama__package-expanded .panorama__included-toggle::before,
+  .signature__package-expanded .signature__included-toggle::after,
+  .signature__package-expanded .signature__included-toggle::before{
+    transform-origin: center;
+    display: inline-block;
+    margin-bottom: 1px;
+    transform: rotate(180deg);
+  }
+  .expandable-list-function {
+    display: flex;
+    flex-direction: column;
+  }
+   /* EXPANDABLE STYLING */
+  .selection__package-expanded .benefit-features.selection,
+  .panorama__package-expanded .benefit-features.panorama,
+  .signature__package-expanded .benefit-features.signature {
+    display: block;
+    margin-bottom: 12px;
+  }
+}
+
+@media screen and (max-width: 574px) { 
+  .pn-opinion-boutique-header { 
+    max-width: 440px;
+  }
+  .boutique-select { 
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 500px) { 
+  .selection__included-toggle::after,
+  .panorama__included-toggle::after,
+  .signature__included-toggle::after { 
+    right: 22%;
+  }
+  .offers-grid { 
+    padding: 0; 
+    width: 80%;
+    margin: 60px auto 0px;
+  }
+  .product-block { 
+    padding: 30px 15px 25px;
+  }
+  a.pn-opinion-primary-cta { 
+    margin: 0 auto 18px;
+  }
+  .wi-dropdown-title h4 { 
+    font-size: 14px;
+  }
+  .wsj-banner-wrapper { 
+    width: 80%;
+    padding: 15px 15px;
+  }
+  .wsj-banner-wrapper h1 { 
+    font-size: 21px;
+    margin-bottom: 5px;
+  }
+  .wsj-banner-wrapper p { 
+    font-size: 11px;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+   br.break { 
+    display: block;
+  }
+  }
+  @media screen and (max-width: 470px) { 
+  .pn-opinion-boutique-header { 
+    max-width: 375px;
+    gap: 2px;
+  }
+   .boutique-select { 
+    font-size: 12px;
+     padding-bottom: 15px;
+  }
+  .boutique-select.tab-two span, .boutique-select a { 
+    padding: 8px;
+  }
+  .boutique-select.tab-two { 
+    padding-bottom: 15px;
+  }
+  .boutique-select.tab-two::after { 
+    width: 70px;
+  }
+}
+
+@media screen and (max-width: 405px) { 
+  .pn-opinion-boutique-header { 
+    justify-content: center;
+  }
+  .boutique-select.tab-two span, .boutique-select a { 
+    padding: 8px 4px;
+  }
+}
+
+@media screen and (max-width: 380px) { 
+  .pn-opinion-boutique-header { 
+    width: 100%; 
+    gap: 0px;
+  }
+  .boutique-select.tab-two span, .boutique-select a {
+    padding: 8px 2px;
+  }
+}
+
+    </style>
+    <div class="pn-opinion-subscription-page" ng-init="termId = terms[1].termId">
+          <div class="pn-opinion-boutique-header">
+    <div class="boutique-select tab-one">
+      <span><a href="https://www.lopinion.fr/boutique/cadeau">OFFREZ L'OPINION</a></span>
+    </div>
+    <div class="boutique-select tab-two">
+      <span>ABONNEMENTS</span>
+    </div>
+    <div class="boutique-select tab-three">
+      <span><a href="https://boutique.lopinion.fr/site/opinion/selection__OPI.VPC.LIVREKAK26__/fr/boutique/produit.html">LIVRE KAK 2025</a></span>
+    </div>
+  </div>
+  <div class="pn-opinion-product-block-container">
+    <div class="pn-opinion-outer-wrapper">
+      <div class="pricing-toggle-contaner">
+        <div class="pricing-toggle-wrapper">
+          <span class="pricing-type">Mensuel</span>
+          <label class="pricing-switch">
+            <input type="checkbox" id="pricingToggle">
+            <span class="pricing-slider"></span>
+          </label>
+          <span class="pricing-type">Annuel
+            <span class="annuel-promo">2 mois offerts</span>
+          </span>
+        </div>
+      </div>
+      <div class="offers-grid">
+        <div class="product-block one">
+          <div class="ribbon-wrapper">
+            <span class="ribbon">Meilleure offre</span>
+          </div>
+          <div class="product-title-section">
+            <h2>
+              Sélection
+            </h2>
+            <h3>
+              L’essentiel 100% Web
+            </h3>
+          </div>
+          <div class="price-container mensuel-option">
+            <div class="product-price">
+              <h1> <span class="strikethrough-price"></span><span class="price-term">1€ pour 6 mois</span></h1>
+              <h4 class="footnote mon">puis 9,99€ par mois, sans engagement</h4>
+            </div>
+            <a class="pn-opinion-primary-cta" href="#" ng-click="startCheckout(terms[0].termId)" external-event="cta-abo-click-selection-mensuel">S’abonner</a>
+          </div>
+          <div class="price-container annuel-option">
+            <div class="product-price">
+              <h1> <span class="strikethrough-price">155,88€</span><span class="price-term"> 139€</span></h1>
+              <h4 class="footnote ann">soit deux mois offerts</h4>
+            </div>
+            <a class="pn-opinion-primary-cta" href="#" ng-click="startCheckout(terms[1].termId)" external-event="cta-abo-click-selection-annuel">S’abonner</a>
+          </div>
+          <div class="whats-included-sctn">
+            <div class="expandable-list-function">
+              <button class="selection__included-toggle unbutton" type="button" external-event="more-info-close" onclick="toggleDetails(event, this)">
+              Voir plus de détails</button>
+              <div class="benefit-features selection">
+                <ul>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>Le journal numérique dès 20h30 la veille</li>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>La lecture audio des articles par nos journalistes</li>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>Notre espace débat</li>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>Une sélection d'articles du The Wall Street Journal, traduits en français</li>
+                  <li class="excluded"><svg class="cross" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#929292"/>
+<line y1="-2.64872" x2="20.7613" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 16.187 19.9043)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="20.8233" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 19.5059 33.7422)" stroke="white" stroke-width="5.29744"/>
+</svg>L’accès complet au site du The Wall Street Journal (en anglais)</li>
+                  <li class="excluded"><svg class="cross" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#929292"/>
+<line y1="-2.64872" x2="20.7613" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 16.187 19.9043)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="20.8233" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 19.5059 33.7422)" stroke="white" stroke-width="5.29744"/>
+</svg>Le journal papier livré chez vous</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-block">
+          <div class="product-title-section">
+            <h2>
+              Panorama
+            </h2>
+            <h3>
+              100% Web + WSJ.com
+            </h3>
+          </div>
+          <div class="price-container mensuel-option">
+            <div class="product-price">
+              <h1> <span class="strikethrough-price"></span><span class="price-term">18,99€</span> / mois</h1>
+              <h4 class="footnote mon">puis 9,99€ par mois, sans engagement</h4>
+            </div>
+            <a class="pn-opinion-primary-cta" href="#" ng-click="startCheckout(terms[4].termId)" external-event="cta-abo-click-panorama-mensuel">S’abonner</a>
+          </div>
+          <div class="price-container annuel-option">
+            <div class="product-price">
+              <h1> <span class="strikethrough-price">227,88€</span><span class="price-term"> 199€</span></h1>
+              <h4 class="footnote ann">soit deux mois offerts</h4>
+            </div>
+            <a class="pn-opinion-primary-cta" href="#" ng-click="startCheckout(terms[5].termId)" external-event="cta-abo-click-panorama-annuel">S’abonner</a>
+          </div>
+          <div class="whats-included-sctn">
+            <div class="expandable-list-function">
+              <button class="panorama__included-toggle unbutton" type="button" external-event="more-info-close" onclick="toggleDetails(event, this)">
+              Voir plus de détails</button>
+              <div class="benefit-features panorama">
+                <ul>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>Le journal numérique dès 20h30 la veille</li>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>La lecture audio des articles par nos journalistes</li>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>Notre espace débat</li>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>Une sélection d'articles du The Wall Street Journal, traduits en français</li>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>L’accès complet au site du The Wall Street Journal (en anglais)</li>
+                  <li class="excluded"><svg class="cross" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#929292"/>
+<line y1="-2.64872" x2="20.7613" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 16.187 19.9043)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="20.8233" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 19.5059 33.7422)" stroke="white" stroke-width="5.29744"/>
+</svg>Le journal papier livré chez vous </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-block">
+          <div class="product-title-section">
+            <h2>
+              Signature
+            </h2>
+            <h3>
+              L’intégral Papier + Web
+            </h3>
+          </div>
+          <div class="price-container mensuel-option">
+            <div class="product-price">
+              <h1> <span class="strikethrough-price"></span><span class="price-term">27,99€</span> / mois</h1>
+              <h4 class="footnote mon">sans engagement</h4>
+            </div>
+            <a class="pn-opinion-primary-cta" href="#" ng-click="startCheckout(terms[6].termId)" external-event="cta-abo-click-signature-mensuel">S’abonner</a>
+          </div>
+          <div class="price-container annuel-option">
+            <div class="product-price">
+              <h1> <span class="strikethrough-price">335,88€</span><span class="price-term"> 319€</span></h1>
+              <h4 class="footnote ann">soit deux mois offerts</h4>
+            </div>
+            <a class="pn-opinion-primary-cta" href="#" ng-click="startCheckout(terms[7].termId)" external-event="cta-abo-click-signature-annuel">S’abonner</a>
+          </div>
+          <div class="whats-included-sctn">
+            <div class="expandable-list-function">
+              <button class="signature__included-toggle unbutton" type="button" external-event="more-info-close" onclick="toggleDetails(event, this)">
+               Voir plus de détails</button>
+              <div class="benefit-features signature">
+                <ul>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>Le journal numérique dès 20h30 la veille</li>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>La lecture audio des articles par nos journalistes</li>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>Notre espace débat</li>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>Une sélection d'articles du The Wall Street Journal, traduits en français</li>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>L’accès complet au site du The Wall Street Journal (en anglais)</li>
+                  <li><svg class="tick" xmlns="http://www.w3.org/2000/svg" width="52" height="48" viewBox="0 0 52 48" fill="none">
+<ellipse cx="25.596" cy="23.6034" rx="25.596" ry="23.6034" fill="#FFC000"/>
+<line y1="-2.64872" x2="13.158" y2="-2.64872" transform="matrix(0.735143 0.677913 -0.735143 0.677913 13.0146 23.9336)" stroke="white" stroke-width="5.29744"/>
+<line y1="-2.64872" x2="22.1136" y2="-2.64872" transform="matrix(0.759579 -0.650415 0.709556 0.70465 22.6133 32.7852)" stroke="white" stroke-width="5.29744"/>
+</svg>Le journal papier livré chez vous </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pn-opinion-wsj-banner">
+    <div class="wsj-banner-wrapper">
+      <h1>
+        L’actualité sous <br class="break">un double éclairage avec
+      </h1>
+      <div class="wsj-image-wrap">
+        <img src="https://djcm-pnp.s3.amazonaws.com/media/MEDIA_ProductCatalog/m60030_header-logo.svg"></img>
+    </div>
+    <p>
+      Grâce à notre partenariat exclusif avec <b>The Wall Street Journal</b>, les abonnés Panorama et Signature bénéficient d'un accès illimité au site du <b>The Wall Street Journal</b>. 
+    </p>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<script>
+// Global function for toggle buttons
+function toggleDetails(event, button) {
+  event.preventDefault();
+  event.stopPropagation();
+  
+  const benefitFeatures = button.nextElementSibling;
+  const productBlock = button.closest('.product-block');
+  
+  if (!benefitFeatures || !productBlock) return;
+  
+  const isOpen = benefitFeatures.style.display === 'block';
+  
+  if (isOpen) {
+    button.textContent = 'Voir plus de détails';
+    benefitFeatures.style.display = 'none';
+    
+    if (button.classList.contains('selection__included-toggle')) {
+      productBlock.classList.remove('selection__package-expanded');
+    } else if (button.classList.contains('panorama__included-toggle')) {
+      productBlock.classList.remove('panorama__package-expanded');
+    } else if (button.classList.contains('signature__included-toggle')) {
+      productBlock.classList.remove('signature__package-expanded');
+    }
+  } else {
+    button.textContent = 'Voir moins';
+    benefitFeatures.style.display = 'block';
+    
+    if (button.classList.contains('selection__included-toggle')) {
+      productBlock.classList.add('selection__package-expanded');
+    } else if (button.classList.contains('panorama__included-toggle')) {
+      productBlock.classList.add('panorama__package-expanded');
+    } else if (button.classList.contains('signature__included-toggle')) {
+      productBlock.classList.add('signature__package-expanded');
+    }
+  }
+}
+
+// Pricing toggle functionality
+(function() {
+  function updatePricingDisplay() {
+    const pricingToggle = document.getElementById("pricingToggle");
+    if (!pricingToggle) return;
+    
+    const isAnnuel = pricingToggle.checked;
+    const productBlocks = document.querySelectorAll(".product-block");
+
+    productBlocks.forEach(function(block) {
+      // Hide all price containers first
+      const priceContainers = block.querySelectorAll(".price-container");
+      priceContainers.forEach(function(container) {
+        container.style.display = 'none';
+      });
+
+      // Show the appropriate price container
+      const selector = isAnnuel ? ".annuel-option" : ".mensuel-option";
+      const targetContainer = block.querySelector(selector);
+      
+      if (targetContainer) {
+        targetContainer.style.display = "flex";
+      }
+    });
+  }
+
+  // Listen for pricing toggle changes
+  document.body.addEventListener('change', function(e) {
+    if (e.target.id === 'pricingToggle') {
+      updatePricingDisplay();
+    }
+  });
+
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updatePricingDisplay);
+  } else {
+    updatePricingDisplay();
+  }
+})();
+</script>
+</body>
+</html>
