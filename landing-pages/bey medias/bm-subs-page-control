@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bey Medias | Subscription Page Control</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+* { 
+  font-family: "Inter";
+}
+
+.pn-opinion-boutique-header { 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 10px;
+  border-bottom: 1px solid #E5E7EB;
+}
+label.boutique-select { 
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+.boutique-select span { 
+  padding: 15px 20px 10px;
+  color: #929292;
+  text-align: center;
+}
+.boutique-select.numerique,
+.boutique-select.offrez { 
+  font-weight: 700;
+}
+.boutique-select a { 
+  text-decoration: none; 
+  color: #929292;
+}
+.boutique-select a:focus,
+.boutique-select a:hover { 
+  color: #C4401F;
+}
+input.plan-select { 
+  opacity: 0; 
+  width: 0;
+}
+input.plan-select:checked+span { 
+  color: #C4401F;
+  border-bottom: 2px solid #C4401F;
+}
+.pn-opinion-product-block-container { 
+  background: #F5F4F0; 
+  padding-bottom: 20px;
+}
+label.boutique-select.numerique { 
+}
+
+
+/*PRICING TOGGLE SECTION */
+.pricing-toggle-container { 
+}
+.pricing-toggle-wrapper { 
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  position: relative; 
+  gap: 15px;
+  padding-top: 20px;
+}
+.pricing-type { 
+  font-weight: bold;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.pricing-switch { 
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.pricing-switch input { 
+  opacity: 0; 
+  width: 0; 
+  height: 0;
+}
+.pricing-slider { 
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #C4401F;
+  transition: .4s;
+  border-radius: 24px;
+}
+.pricing-slider:before { 
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked+.pricing-slider:before { 
+  transform: translateX(26px);
+}
+.annuel-promo { 
+  color: #C4401F;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 5px;
+  position: absolute;
+  right: 0;
+  transform: translateX(calc(100% + 5px));
+  width: 80px;
+}
+.price-container.annuel-option { 
+  display: none;
+}
+
+/* PRODUCT BLOCK SECTION */
+.offers-grid { 
+  display: flex; 
+  gap: 20px; 
+  max-width: 1200px; 
+  padding: 0 20px; 
+  margin: 30px auto 0px;
+  flex-wrap: wrap;
+}
+.product-block { 
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+  flex-basis: 320px;
+  max-width: 488px;
+}
+.ribbon-wrapper { 
+  position: absolute; 
+  top: -10px;
+  right: -10px;
+  background: white; 
+  border-radius: 15px; 
+  border: 2px solid #000;
+  font-size: 12px;
+  padding: 1px 15px;
+}
+.product-title-section h2 { 
+  font-size: 20px;
+  font-weight: 800;
+  color: #333;
+  text-align: left;
+  position: relative;
+  margin-bottom: 12px;
+  font-family: 'Noto Serif', serif;
+}
+.product-title-section h2::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #cc471b;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+.product-title-section h3 { 
+  color: #666;
+  font-size: 16px;
+  margin: 5px 0 0 0;
+  font-weight: normal;
+}
+.price-container { 
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-end;
+}
+.product-price {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 12px;
+}
+.wsj-active { 
+  display: none;
+}
+.wsj-inactive .product-price h6 { 
+  font-size: 15px;
+  margin: 0;
+}
+.wsj-inactive .product-price h5.strikethrough-price { 
+  font-size: 15px;
+  text-decoration: line-through;
+  margin: 0;
+  color: #666;
+  font-family: "Noto Serif";
+}
+.product-price h1 { 
+  font-family: "Noto Serif"; 
+  font-size: 30px;
+  font-weight: 600;
+}
+span.price-term { 
+  font-size: 15px;
+}
+.product-price h4.footnote {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+a.pn-opinion-primary-cta { 
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  background: #FFC000;
+  border-radius: 999px;
+  color: black; 
+  text-decoration: none;
+  font-size: 14px;
+  height: 51px; 
+  width: 100%;
+  font-weight: 700;
+  gap: 2px;
+  transition: 0.15s ease-in background;
+}
+a.pn-opinion-primary-cta:hover { 
+  background: #E6AC00;
+}
+span.light-text { 
+  display: block;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1;
+}
+.logo-wrapper,
+.logo-wrapper img { 
+  width: 100%;
+}
+
+/* WSJ TOGGLE */
+.wsj-section { 
+  margin-top: 30px;
+}
+.wsj-toggle { 
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #FFF4CC;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+label.wsj-wrapper { 
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  gap: 10px;
+}
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.toggle-switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.toggle-slider { 
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked+.toggle-slider { 
+  background-color: #5a9a49;
+}
+input:checked+.toggle-slider:before { 
+  transform: translateX(26px);
+}
+.wi-dropdown-title {
+  display: none;
+}
+.selection__included-toggle, 
+.panorama__included-toggle,
+.signature__included-toggle { 
+  display: none;
+}
+
+/* BENEFITS SECTION */
+.offer-description {
+  color: #666;
+  margin: 20px 0;
+  font-size: 14px;
+  flex: none;
+}
+.benefit-features ul { 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.benefit-features ul li { 
+  font-size: 14px;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 5px;
+}
+.benefit-features li:first-child {
+  font-weight: bold;
+  padding-left: 0;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: initial;
+}
+svg.user-icon { 
+  width: 14px; 
+  height: 14px;
+  fill: #C4401F;
+}
+.benefit-features li.excluded, 
+.benefit-features li.option {
+  color: #999;
+}
+.benefit-features li.excluded::before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: #999;
+  font-weight: bold;
+}
+.benefit-features li.included::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #C4401F;
+  font-weight: bold;
+}
+.benefit-features li.option::before {
+  content: "□";
+  position: absolute;
+  left: 0;
+  color: #999;
+  font-weight: bold; 
+}
+sup { 
+  color: #666;
+  font-weight: bold;
+}
+a.article-lus { 
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 4px;
+  color: black;
+}
+
+
+@media screen and (max-width: 1040px) { 
+  .offers-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) { 
+  .pn-opinion-boutique-header { 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  .offers-grid { 
+    display: flex; 
+    flex-direction: column;
+  }
+  .product-block { 
+    margin: 0 auto;
+  }
+  .offer-description { 
+    margin-bottom: 30px;
+  }
+ /* EXPANDABLE FUNCTION WHATS INCLUDED*/
+.unbutton {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+  .wi-dropdown-title { 
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .wi-dropdown-title h4 { 
+    font-weight: 400;
+    font-size: 16px;
+    margin-left: -20px;
+    color: #2196C8;
+    font-weight: 700;
+  }
+  .selection__included-toggle,
+  .panorama__included-toggle,
+  .signature__included-toggle {
+    display: inline-flex;
+  }
+  .benefit-features.selection,
+  .benefit-features.panorama,
+  .benefit-features.signature{
+    display: none;
+  }
+  .selection__included-toggle,
+  .panorama__included-toggle,
+  .signature__included-toggle {
+    position: relative;
+    width: 100%;
+    height: 36px;
+  }
+  .selection__included-toggle::after,
+  .panorama__included-toggle::after,
+  .signature__included-toggle::after{
+    content: "▼";
+    position: absolute;
+    top: 0;
+    right: 30%;
+    bottom: 0;
+    width: 11px;
+    height: 11px;
+    margin-top: 12px;
+    color: #2196C8;
+  }
+  .selection__package-expanded .selection__included-toggle,
+  .panorama__package-expanded .panorama__included-toggle,
+  .signature__package-expanded .signature__included-toggle {
+    margin-top: 4px;
+    transform: rotateX(180deg) rotateY(0deg);
+    transform-origin: right;
+  }
+  .expandable-list-function {
+    margin-top: -31px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #E5E7EB;
+  }
+   /* EXPANDABLE STYLING */
+  .selection__package-expanded .benefit-features.selection,
+  .panorama__package-expanded .benefit-features.panorama,
+  .signature__package-expanded .benefit-features.signature {
+    display: block;
+    margin-bottom: 16px;
+    margin-top: 3px;
+  }
+}
+  
+  @media screen and (max-width: 550px)  { 
+  label.boutique-select {
+    font-size: 16px;
+    text-align: center;
+    }
+  }
+  
+@media screen and (max-width: 505px) { 
+  .selection__included-toggle::after,
+  .panorama__included-toggle::after,
+  .signature__included-toggle::after { 
+    right: 22%;
+  }
+  .pn-opinion-boutique-header { 
+    flex-direction: column;
+    padding: 12px 0px 10px;
+  }
+  label.boutique-select,
+  label.boutique-select.numerique,
+  .boutique-select span { 
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .boutique-select span { 
+    padding: 0;
+  }
+  .boutique-select.boutique span { 
+    padding-bottom: 5px;
+  }
+  .boutique-select a:hover { 
+    border-bottom: 2px solid #C4401F; 
+  }
+  }
+</style>
+
+    <div class="pn-opinion-subscription-page" ng-init="termId = terms[1].termId">
+  <div class="pn-opinion-boutique-header">
+    <label class="boutique-select offrez">
+      <input class="plan-select" type="radio" name="action" value="numerique"/>
+      <span><a href="https://www.lopinion.fr/boutique/cadeau">OFFREZ L'OPINION</a></span>
+    </label>
+    <label class="boutique-select boutique">
+      <input class="plan-select" type="radio" name="action" value="boutique" checked/>
+      <span>ABONNEMENTS</span>
+    </label>
+    <label class="boutique-select numerique">
+      <input class="plan-select" type="radio" name="action" value="numerique"/>
+      <span><a href="https://boutique.lopinion.fr/site/opinion/selection__OPI.VPC.LIVREKAK26__/fr/boutique/produit.html">LIVRE KAK 2025</a></span>
+    </label>
+  </div>
+  <div class="pn-opinion-product-block-container">
+    <div class="pn-opinion-outer-wrapper">
+      <div class="pricing-toggle-contaner">
+        <div class="pricing-toggle-wrapper">
+          <span class="pricing-type">mensuel</span>
+          <label class="pricing-switch">
+            <input type="checkbox" id="pricingToggle">
+            <span class="pricing-slider"></span>
+          </label>
+          <span class="pricing-type">annuel
+            <span class="annuel-promo">1 mois offert !</span>
+          </span>
+        </div>
+      </div>
+      <div class="offers-grid">
+        <div class="product-block">
+          <div class="ribbon-wrapper">
+            <span class="ribbon">numerique</span>
+          </div>
+          <div class="product-title-section">
+            <h2>
+              Sélection
+            </h2>
+            <h3>
+              Une information quotidienne lucide.
+            </h3>
+          </div>
+          <div class="price-container mensuel-option wsj-inactive">
+            <div class="product-price">
+              <h6>PROMO</h6>
+              <h5 class="strikethrough-price">9,99€</h5>
+              <h1>1€<span class="price-term"> pour 6 mois</span></h1>
+              <h4 class="footnote">puis 9,99 € /mois</h4>
+            </div>
+            <a class="pn-opinion-primary-cta"
+               ng-click="startCheckout(terms[0].termId)"
+               external-event="cta-abo-click-selection"
+               external-event-component-variant="primary"
+               external-event-template-params="{{params}}"                                             
+               external-event-term-id="{{terms[0].termId}}">Je m'abonne <span class="light-text">sans engagement</span></a>
+          </div>
+          <div class="price-container annuel-option wsj-inactive">
+            <div class="product-price">
+              <h1>139,00 €<span class="price-term">/an</span></h1>
+            </div>
+            <a class="pn-opinion-primary-cta"
+               ng-click="startCheckout(terms[1].termId)"
+               external-event="cta-abo-click-WSJ"
+               external-event-component-variant="primary"
+               external-event-template-params="{{params}}"                                             
+               external-event-term-id="{{terms[1].termId}}">Je m'abonne <span class="light-text">sans engagement</span></a>
+          </div>
+          <div class="price-container mensuel-option wsj-active">
+            <div class="product-price">
+              <h1>15,99 €<span class="price-term">/mois</span></h1>
+            </div>
+            <a class="pn-opinion-primary-cta"
+               ng-click="startCheckout(terms[2].termId)"
+               external-event="cta-abo-click-panorama"
+               external-event-component-variant="primary"
+               external-event-template-params="{{params}}"                                             
+               external-event-term-id="{{terms[2].termId}}">Je m'abonne <span class="light-text">sans engagement</span></a>
+          </div>
+          <div class="price-container annuel-option wsj-active">
+            <div class="product-price">
+              <h1>169,00 €<span class="price-term">/an</span></h1>
+            </div>
+            <a class="pn-opinion-primary-cta"
+               ng-click="startCheckout(terms[3].termId)"
+               external-event="cta-abo-click-signature"
+               external-event-component-variant="primary"
+               external-event-template-params="{{params}}"                                             
+               external-event-term-id="{{terms[3].termId}}">Je m'abonne <span class="light-text">sans engagement</span></a>
+          </div>
+          <div class="wsj-section">
+            <div class="logo-wrapper">
+              <img src="https://beymedias.brightspotcdn.com/df/be/6a519e8c40fea94de05807737173/selection.svg"> 
+            </div>
+            <div class="wsj-toggle">
+              <label class="wsj-wrapper">
+                <span class="toggle-switch">
+                  <input type="checkbox" id="wsj-option">
+                  <span class="toggle-slider"></span>
+                </span>
+                <span>Option WSJ.com (+3€/mois)</span>
+              </label>
+            </div>
+            <div class="offer-description">
+              <p>
+                Un accès étendu à l'information, incluant une sélection du Wall Street Journal en français. Profitez du journal en numérique dès la veille pour enrichir votre lecture.
+              </p>
+            </div>
+          </div>
+          <div class="whats-included-sctn">
+            <div class="wi-dropdown-title">
+              <h4>
+                Voir plus de détails
+              </h4>
+            </div>
+            <div class="expandable-list-function">
+              <button class="selection__included-toggle unbutton" type="button" external-event="more-info-close" onclick="toggleDetails(event, this)">
+              </button>
+              <div class="benefit-features selection">
+                <ul>
+                  <li>[%% person %%]2 comptes</li>
+                  <li class="excluded">Le journal papier livré chez vous</li>
+                  <li class="option">L'abonnement thewallstreetjournal.com <sup>(1) (en option)</sup></li>
+                  <li class="excluded">Chaque week-end le décryptage économique de L'Agefi<sup>(2)</sup></li>
+                  <li class="included">Tous les articles premium sur le site et l’application</li>
+                  <li class="included">Le journal en version numérique la veille à partir de 20h</li>
+                  <li class="included">Les <a class="article-lus" href="https://www.lopinion.fr/boutique/abonnement?#audio">articles lus</a> par leurs auteurs</li>
+                  <li class="included">L'espace sondage et forum</li>
+                  <li class="included">Une sélection d'articles du WallStreetJournal en français</li>
+                  <li class="included">'O2 Week-end, l'art de vivre et le luxe</li>
+                  <li class="included">Les newsletters abonnés</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-block">
+          <div class="ribbon-wrapper">
+            <span class="ribbon">numerique</span>
+          </div>
+          <div class="product-title-section">
+            <h2>
+              Panorama
+            </h2>
+            <h3>
+              Une vision globale de l'information.
+            </h3>
+          </div>
+          <div class="price-container mensuel-option">
+            <div class="product-price">
+              <h1>18,99 €<span class="price-term">/mois</span></h1>
+            </div>
+            <a class="pn-opinion-primary-cta" 
+               ng-click="startCheckout(terms[4].termId)"
+               external-event
+               external-event-component-variant="primary"
+               external-event-template-params="{{params}}"                                             
+               external-event-term-id="{{terms[4].termId}}">Je m'abonne <span class="light-text">sans engagement</span></a>
+          </div>
+          <div class="price-container annuel-option">
+            <div class="product-price">
+              <h1>199,00 €<span class="price-term">/an</span></h1>
+            </div>
+            <a class="pn-opinion-primary-cta" 
+               ng-click="startCheckout(terms[5].termId)"
+               external-event
+               external-event-component-variant="primary"
+               external-event-template-params="{{params}}"                                             
+               external-event-term-id="{{terms[5].termId}}">Je m'abonne <span class="light-text">sans engagement</span></a>
+          </div>
+          <div class="wsj-section">
+            <div class="logo-wrapper">
+              <img src="https://beymedias.brightspotcdn.com/cf/32/9050bbe94e6ba2094ddf5b77e0d7/panorama.svg"> 
+            </div>
+            <div class="offer-description">
+              <p>
+                Une vue premium sur l'actualité de référence, complétée par un accès intégral au site thewallstreetjournal.com, et du magazine de l'économie avec L'Agefi.
+              </p>
+            </div>
+          </div>
+          <div class="whats-included-sctn">
+            <div class="wi-dropdown-title">
+              <h4>
+                Voir plus de détails
+              </h4>
+            </div>
+            <div class="expandable-list-function">
+              <button class="panorama__included-toggle unbutton" type="button" external-event="more-info-close" onclick="toggleDetails(event, this)">
+              </button>
+              <div class="benefit-features panorama">
+                <ul>
+                  <li>[%% person %%]3 comptes</li>
+                  <li class="excluded">Le journal papier livré chez vous
+                  <li class="included"><b>L'abonnement inclus thewallstreetjournal.com</b><sup>(1)</sup></li>
+                  <li class="included"><b>Chaque week-end le décryptage économique de L'Agefi</b><sup>(2)</sup></li>
+                  <li class="included">Tous les articles premium sur le site et l’application</li>
+                  <li class="included">Le journal en version numérique la veille à partir de 20h</li>
+                  <li class="included">Les <a class="article-lus" href="https://www.lopinion.fr/boutique/abonnement?#audio">articles lus</a> par leurs auteurs</li>
+                  <li class="included">L'espace sondage et forum</li>
+                  <li class="included">Une sélection d'articles du WallStreetJournal en français</li>
+                  <li class="included">'O2 Week-end, l'art de vivre et le luxe</li>
+                  <li class="included">Les newsletters abonnés</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-block">
+          <div class="ribbon-wrapper">
+            <span class="ribbon">numerique + papier</span>
+          </div>
+          <div class="product-title-section">
+            <h2>
+              Signature
+            </h2>
+            <h3>
+              Une expérience numérique et papier.
+            </h3>
+          </div>
+          <div class="price-container mensuel-option">
+            <div class="product-price">
+              <h1>27,99 €<span class="price-term">/mois</span></h1>
+            </div>
+            <a class="pn-opinion-primary-cta" 
+               ng-click="startCheckout(terms[6].termId)"
+               external-event
+               external-event-component-variant="primary"
+               external-event-template-params="{{params}}"                                             
+               external-event-term-id="{{terms[6].termId}}">Je m'abonne <span class="light-text">sans engagement</span></a>
+          </div>
+          <div class="price-container annuel-option">
+            <div class="product-price">
+              <h1>319,00 €<span class="price-term">/an</span></h1>
+            </div>
+            <a class="pn-opinion-primary-cta"
+               ng-click="startCheckout(terms[7].termId)"
+               external-event
+               external-event-component-variant="primary"
+               external-event-template-params="{{params}}"                                             
+               external-event-term-id="{{terms[7].termId}}">Je m'abonne <span class="light-text">sans engagement</span></a>
+          </div>
+          <div class="wsj-section">
+            <div class="logo-wrapper">
+              <img src="https://beymedias.brightspotcdn.com/04/95/05fa820c40e8a62b520d05322532/signature.svg"> 
+            </div>
+            <div class="offer-description">
+              <p>
+                Profitez du meilleur des deux mondes : tout l'univers numérique et le journal papier livré chez vous. Une expérience de lecture premium pour ne rien manquer de l'actualité.
+              </p>
+            </div>
+          </div>
+          <div class="whats-included-sctn">
+            <div class="wi-dropdown-title">
+              <h4>
+                Voir plus de détails
+              </h4>
+            </div>
+            <div class="expandable-list-function">
+              <button class="signature__included-toggle unbutton" type="button" external-event="more-info-close" onclick="toggleDetails(event, this)">
+              </button>
+              <div class="benefit-features signature">
+                <ul>
+                  <li>[%% person %%]3 comptes</li>
+                  <li class="included"><b>Le journal papier livré chez vous</b>
+                  <li class="included">L'abonnement inclus thewallstreetjournal.com <sup>(1)</sup></li>
+                  <li class="included">Chaque week-end le décryptage économique de L'Agefi<sup>(2)</sup></li>
+                  <li class="included">Tous les articles premium sur le site et l’application</li>
+                  <li class="included">Le journal en version numérique la veille à partir de 20h</li>
+                  <li class="included">Les <a class="article-lus" href="https://www.lopinion.fr/boutique/abonnement?#audio">articles lus</a> par leurs auteurs</li>
+                  <li class="included">L'espace sondage et forum</li>
+                  <li class="included">Une sélection d'articles du WallStreetJournal en français</li>
+                  <li class="included">'O2 Week-end, l'art de vivre et le luxe</li>
+                  <li class="included">Les newsletters abonnés</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+// Global function for toggle buttons
+function toggleDetails(event, button) {
+  event.preventDefault();
+  event.stopPropagation();
+  
+  const benefitFeatures = button.nextElementSibling;
+  const productBlock = button.closest('.product-block');
+  const titleSection = button.closest('.whats-included-sctn').querySelector('.wi-dropdown-title h4');
+  
+  if (!benefitFeatures || !productBlock || !titleSection) return;
+  
+  const isOpen = benefitFeatures.style.display === 'block';
+  
+  if (isOpen) {
+    titleSection.textContent = 'Voir plus de détails';
+    benefitFeatures.style.display = 'none';
+    
+    if (button.classList.contains('selection__included-toggle')) {
+      productBlock.classList.remove('selection__package-expanded');
+    } else if (button.classList.contains('panorama__included-toggle')) {
+      productBlock.classList.remove('panorama__package-expanded');
+    } else if (button.classList.contains('signature__included-toggle')) {
+      productBlock.classList.remove('signature__package-expanded');
+    }
+  } else {
+    titleSection.textContent = 'Voir moins';
+    benefitFeatures.style.display = 'block';
+    
+    if (button.classList.contains('selection__included-toggle')) {
+      productBlock.classList.add('selection__package-expanded');
+    } else if (button.classList.contains('panorama__included-toggle')) {
+      productBlock.classList.add('panorama__package-expanded');
+    } else if (button.classList.contains('signature__included-toggle')) {
+      productBlock.classList.add('signature__package-expanded');
+    }
+  }
+}
+
+// Pricing toggle functionality
+(function() {
+  function updatePricingDisplay() {
+    const pricingToggle = document.getElementById("pricingToggle");
+    if (!pricingToggle) return;
+    
+    const isAnnuel = pricingToggle.checked;
+    const productBlocks = document.querySelectorAll(".product-block");
+
+    productBlocks.forEach(function(block) {
+      const wsjCheckbox = block.querySelector(".wsj-wrapper input[type='checkbox']");
+      const hasWsjToggle = wsjCheckbox !== null;
+      const wsjOn = hasWsjToggle && wsjCheckbox.checked;
+
+      const priceContainers = block.querySelectorAll(".price-container");
+      priceContainers.forEach(function(container) {
+        container.style.display = 'none';
+      });
+
+      let selector = "";
+
+      if (hasWsjToggle) {
+        if (isAnnuel && wsjOn) selector = ".annuel-option.wsj-active";
+        else if (isAnnuel && !wsjOn) selector = ".annuel-option.wsj-inactive";
+        else if (!isAnnuel && wsjOn) selector = ".mensuel-option.wsj-active";
+        else selector = ".mensuel-option.wsj-inactive";
+      } else {
+        selector = isAnnuel ? ".annuel-option" : ".mensuel-option";
+      }
+
+      const targetContainer = block.querySelector(selector);
+      if (targetContainer) {
+        targetContainer.style.display = "flex";
+      }
+    });
+  }
+
+  document.body.addEventListener('change', function(e) {
+    if (e.target.id === 'pricingToggle' || 
+        (e.target.type === 'checkbox' && e.target.closest('.wsj-wrapper'))) {
+      updatePricingDisplay();
+    }
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updatePricingDisplay);
+  } else {
+    updatePricingDisplay();
+  }
+})();
+</script>
+</body>
+</html>
