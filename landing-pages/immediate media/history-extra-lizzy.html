@@ -163,7 +163,7 @@ a.vikings_subs-button:hover {
   font-size: clamp( 15px, 1.8vw, 22px);
   line-height: normal;
   text-align: center;
-  margin-top: -39%;
+  margin-top: -42%;
   height: 50%;
   font-weight: 700;
   width: 110%;
@@ -530,25 +530,32 @@ button.log-in {
    scrollbar-width: none;  /* Firefox */
    padding-left: 5vw;
    padding-right: 5vw;
+   padding-top: 20px;
+   padding-bottom: 25px;
   }
   #container::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
   }
+
   #parent {
-    width: 1280px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    width: max-content; /* Let content determine width */
+    padding: 0 10px;
   }
   .mob-course-block {
     text-align: center;
-    margin: 20px 20px 40px;
     border: 2px solid black;
-    float: left;
     border-radius: 5px;
-  	display: flex; 
+    display: flex; 
     flex-direction: column; 
     align-items: center;
     padding: 24px 7.5px;
     height: 115px;
-    width: 260px; 
+    width: 260px;
+    min-width: 260px; /* Prevent shrinking */
+    flex-shrink: 0; /* Prevent shrinking */
     justify-content: space-evenly;
   }
   .mob-course-block:nth-child(1) { 
@@ -576,7 +583,6 @@ button.log-in {
   }
   #slideLeft, #slideRight { 
     position: absolute;
-    display: flex;
     width: 70px;
     padding: 0;
     background: none;
@@ -585,6 +591,10 @@ button.log-in {
     height: calc(100% + 2.5vw);
     align-items: center;
     margin-top: -2.5vw;
+    cursor: pointer;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+    top: 0;
   }
   #slideLeft { 
     left: 0%;
@@ -598,6 +608,12 @@ button.log-in {
     text-align: right;
     padding-right: 15px;
   } 
+  /* Hidden state for arrows */
+  #slideLeft.hidden,
+  #slideRight.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
   .mob-course-block p { 
     font-family: domine;
     font-weight: 500;
@@ -724,13 +740,11 @@ button.log-in {
   .course-details-section .secondary-title h2 { 
     margin: 0;
   }
+  /* FIXED: Adjusted parent gap and box sizing */
   #parent { 
-  width: 1240px;
+    gap: 15px;
   }
   .mob-course-block { 
-    margin: 15px 15px 30px; 
-    height: 151px; 
-    width: 280px; 
     padding: 20px 7.5px;
   }
   .whats-included-section { 
@@ -789,16 +803,17 @@ button.log-in {
     gap: 12px;
   }
   #container { 
-    padding-left: 22vw; 
-    padding-right: 22vw;
+    padding-left: 17vw; 
+    padding-right: 17vw;
   }
+ 
   #parent { 
-    width: 880px;
+    gap: 15px;
   }
   .mob-course-block { 
-    height: 130px; 
+    height: 90px; 
     width: 190px;
-    margin: 20px 15px 30px;
+    min-width: 190px;
     padding: 18px 7.5px;
     border-radius: 10px;
   }
@@ -838,18 +853,9 @@ button.log-in {
     margin: 30px 4px;
   }
 }
-
-@media screen and (max-width: 360px) { 
-  #container { 
-    padding-left: 20vw; 
-    padding-right: 20vw;
-  }
-}
-
-
-
-
 </style>
+
+
     <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
@@ -969,10 +975,10 @@ button.log-in {
         1 April
       </p>
         </div>
-        <button id="slideLeft" type="button">&#60;</button>
-    <button id="slideRight" type="button">&#62;</button>
 </div>
     </div>
+    <button id="slideLeft" type="button">&#60;</button>
+    <button id="slideRight" type="button">&#62;</button>
 </div>
 </section>
 <section id="whatsIncluded">
@@ -1083,69 +1089,95 @@ button.log-in {
 
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('container');
     const buttonRight = document.getElementById('slideRight');
     const buttonLeft = document.getElementById('slideLeft');
     
+    // Exit if elements don't exist (desktop view)
+    if (!container || !buttonRight || !buttonLeft) return;
+    
     function getScrollDistance() {
         if (window.innerWidth < 440) {
-            return 220;
+            return 205; // box width (190) + gap (15)
         } else if (window.innerWidth < 550) {
-            return 310;
+            return 295; // box width (280) + gap (15)
         } else {
-            return 370;
+            return 280; // box width (260) + gap (20)
         }
     }
 
-    function toggleButtonsVisibility() {
-        if (container.scrollLeft === 0) {
-            buttonLeft.style.display = 'none';
+    function updateArrowVisibility() {
+        const scrollLeft = container.scrollLeft;
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        
+        // Hide left arrow when at start (with 2px tolerance for sub-pixel rendering)
+        if (scrollLeft <= 2) {
+            buttonLeft.classList.add('hidden');
         } else {
-            buttonLeft.style.display = 'inline-block';
+            buttonLeft.classList.remove('hidden');
         }
-        if (container.scrollLeft + container.clientWidth === container.scrollWidth) {
-            buttonRight.style.display = 'none';
+        
+        // Hide right arrow when at end (with 2px tolerance for sub-pixel rendering)
+        if (scrollLeft >= maxScroll - 2) {
+            buttonRight.classList.add('hidden');
         } else {
-            buttonRight.style.display = 'inline-block';
+            buttonRight.classList.remove('hidden');
         }
     }
-
-    function scrollHandler(direction) {
-        smoothScroll(container, direction, getScrollDistance(), 1000);
-        toggleButtonsVisibility();
-    }
-
-    toggleButtonsVisibility();
-
-    buttonRight.onclick = () => scrollHandler('right');
-    buttonLeft.onclick = () => scrollHandler('left');
 
     function smoothScroll(element, direction, distance, duration) {
         const initialScrollLeft = element.scrollLeft;
-        const targetScrollLeft = direction === 'right' ? initialScrollLeft + distance : initialScrollLeft - distance;
+        const maxScroll = element.scrollWidth - element.clientWidth;
+        
+        let targetScrollLeft;
+        if (direction === 'right') {
+            targetScrollLeft = Math.min(initialScrollLeft + distance, maxScroll);
+        } else {
+            targetScrollLeft = Math.max(initialScrollLeft - distance, 0);
+        }
+        
         const startTime = performance.now();
+        
         function scroll(timestamp) {
             const elapsed = timestamp - startTime;
             const progress = Math.min(elapsed / duration, 1);
             const easedProgress = ease(progress);
             element.scrollLeft = initialScrollLeft + (targetScrollLeft - initialScrollLeft) * easedProgress;
+            
+            // Update arrow visibility during animation
+            updateArrowVisibility();
+            
             if (progress < 1) {
                 requestAnimationFrame(scroll);
             }
         }
+        
         function ease(t) {
             return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
         }
+        
         requestAnimationFrame(scroll);
     }
 
-    container.addEventListener('scroll', toggleButtonsVisibility);
-    window.addEventListener('resize', () => {
-        const newScrollDistance = getScrollDistance();
-        if (container.scrollLeft % newScrollDistance !== 0) {
-            smoothScroll(container, 'right', newScrollDistance, 1000);
-        }
+    // Initial visibility check
+    updateArrowVisibility();
+
+    // Button click handlers
+    buttonRight.onclick = function() {
+        smoothScroll(container, 'right', getScrollDistance(), 400);
+    };
+    
+    buttonLeft.onclick = function() {
+        smoothScroll(container, 'left', getScrollDistance(), 400);
+    };
+
+    // Update on manual scroll (touch/trackpad)
+    container.addEventListener('scroll', updateArrowVisibility);
+    
+    // Update on resize
+    window.addEventListener('resize', function() {
+        updateArrowVisibility();
     });
 });
 </script>
