@@ -8,23 +8,31 @@
 <body>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200;300;400;500;600;700&display=swap');
+h1, h2, h3, h4, h5, h6, p, span { 
+    margin: 0; 
+    padding: 0;
+}
 
+.pn-he-full-page {
+  background: #FEFBF6; 
+}
 section { 
-  background: #FEFBF6;
   color: black;
   font-family: domine;
+  max-width: 1200px; 
+  width: 80%; 
+  margin: 0 auto;
 }
 .mob-logo-title-combo { 
   display: none;
 }
 .viking-intro-section { 
   display: flex;
-  padding: 3.8vw 0 2.7vw;
-  margin: 0 2.7vw;
+  padding: 3.8vw 0 2vw;
   gap: 2vw; 
 }
 .hex-main-image img { 
-  width: 22vw; 
+  width: 15vw; 
 }
 .hex-main-image svg {
   width: 23.5vw;
@@ -40,7 +48,7 @@ section {
   gap: 15px;
 }
 .intro-copy h1 { 
-  font-size: 5.2vw;
+  font-size: 4.2vw;
   line-height: normal; 
   margin: 0;
   font-weight: 700;
@@ -72,7 +80,7 @@ section {
   border-radius: 8px;
   text-decoration: none;
   font-family: domine;
-  padding: 1.3vw;
+  padding: 1vw;
   font-size: clamp(16px, 1.9vw, 22px);
   transition: background 0.1s ease-in;
   width: 40%;
@@ -99,7 +107,6 @@ a.vikings_subs-button:hover {
 }
 .course-details-section { 
   padding: 1.8vw 0 2.5vw;;
-  margin: 0 3vw;
 }
 .course-details-section .secondary-title h2 { 
   border-bottom: 1px solid #000; 
@@ -110,7 +117,7 @@ a.vikings_subs-button:hover {
   padding: 0px 10px; 
 }
 .secondary-title h2 { 
-  font-size: 2.9vw; 
+  font-size: 2.5vw; 
   line-height: 1.2;
   text-align: center;
   margin: 0px 15px;
@@ -118,17 +125,17 @@ a.vikings_subs-button:hover {
 .course-boxes { 
   display: flex; 
   justify-content: space-around;
-  margin: 9vw 0 4vw;
+  margin: 8vw 0 4vw;
   flex-wrap: wrap;
 }
 .course-box { 
   border: 2.5px solid black;
   border-radius: 5px;
-  width: 16%;
+  width: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 16.5%;
+  padding-bottom: 15.5%;
   height: 0;
   position: relative;
 }
@@ -153,7 +160,7 @@ a.vikings_subs-button:hover {
   background-position: center;
 }
 .course-box p {
-  font-size: 2vw; 
+  font-size: clamp( 15px, 1.8vw, 22px);
   line-height: normal;
   text-align: center;
   margin-top: -39%;
@@ -163,7 +170,7 @@ a.vikings_subs-button:hover {
 }
 p.date {
   position: relative;
-  top: 27vw;
+  top: 23vw;
 }
 button.course-preview-btn { 
   position: relative; 
@@ -184,33 +191,32 @@ button.course-preview-btn:hover {
 }
 .whats-included-section { 
   padding: 1.9vw 0;
-  margin: 0 5vw;
   border-top: 1px solid black;
 }
 .benefit-section { 
   display: flex;
   justify-content: center;
   gap: 8%;
-  margin: 4vw 1vw;
+  margin: 3vw 0;
 }
 .benefit-component { 
   width: 25%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4vw;
+  gap: 2.5vw;
 }
 .benefit-icon { 
   display: flex; 
   justify-content: center;
-  width: 50%;
+  width: 33%;
+  min-width: 64px;
 }
 .benefit-component p { 
   text-align: center;
   font-weight: 700;
-  font-size: 1.75vw;
+  font-size: clamp(15px, 1.55vw, 20px);
   line-height: 1.2;
-  width: 90%;
 }
 .benefit-copy { 
   display: flex;
@@ -221,16 +227,22 @@ button.course-preview-btn:hover {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   box-shadow: 0px -20px 18px -4px #5c575745;
+  width: 98vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -49vw;
+  margin-right: -49vw;
 }
 .subs-header { 
   display: flex;
-  padding: 4vw 4vw 2vw;
+  padding: 2vw 4vw 2vw;
   flex-direction: column;
   align-items: center;
-  gap: 2vw;
+  gap: 1vw;
 }
 .unlock-icon { 
-  width: 8.8vw;
+  width: 5.8vw;
   min-width: 27px;
   max-width: 71px;
 }
@@ -242,18 +254,20 @@ button.course-preview-btn:hover {
   gap: 1vw;
 }
 .subs-title h2 { 
-  font-size: clamp(18px, 3.75vw, 36px);
+  font-size: clamp(18px, 3.5vw, 30px);
   line-height: 1.2;
   font-weight: 700;
   text-align: center; 
 }
 .subs-header p { 
   color: white;
-  font-size: clamp(16px, 1.9vw, 24px); 
-  font-family: open sans;
+  font-size: clamp(16px, 1.8vw, 22px); 
+  font-family: "open sans";
   width: 80%;
   line-height: 1.2;
   margin: 0;
+  max-width: 850px; 
+  margin: 0 auto;
   text-align: center;
 }
 .choose-plan h3 { 
@@ -278,10 +292,10 @@ h3.period_label {
   font-weight: 700;
   line-height: normal;
   border-radius: 4px;
-  margin-bottom: 1.65vw;
+  margin-bottom: 1vw;
 }
 .plan-card__content { 
-  padding: 1.5vw 1.7vw 2.7vw;
+  padding: 1vw 1.7vw 1vw;
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -309,11 +323,11 @@ h3.period_label {
   justify-content: flex-start;
 }
 .ribbon-label { 
-  padding: 0.9vw 1.4vw;
+  padding: 0.5vw 1vw;
   background:#B83C2F;
   color: #fff;
   font-family: domine;
-  font-size: clamp(13px, 1.9vw, 24px); 
+  font-size: clamp(13px, 1.7vw, 20px); 
   font-weight: 600;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -331,10 +345,10 @@ h3.period_label {
   align-items: center;
   border-bottom: 1px solid #696969CC;
   padding-bottom: 1vw;
-  margin-bottom: 0.8vw;
+  margin-bottom: 0.4vw;
 }
 .plan-card__offer h3 { 
-  font-size: clamp(26px, 3.55vw, 40px);
+  font-size: clamp(26px, 3vw, 36px);
   font-weight: 700;
   font-family: "noto serif HK";
 }
@@ -369,21 +383,20 @@ input[type='radio']:checked {
     font-weight: 400;
 }
 a.cta-btn__immediate { 
-   color: #FFFFFF;
    border-color: #346AC1;
    background: #346AC1;
    border-radius: 0.7vw;
-   padding: 1.2vw 0 1.2vw;
+   padding: 0.6vw 0 0.6vw;
    text-align: center;
    color: #FFF;
    text-align: center;
-   font-size: clamp(16px, 1.9vw, 24px);
+   font-size: clamp(16px, 1.8vw, 22px);
    font-weight: 700;
    line-height: normal;
    transition: background .15s ease-in;
    font-family: "noto serif HK";
    width: 70%; 
-   margin: 0vw auto 1.9vw;
+   margin: 0vw auto 0.9vw;
    min-height: 40px; 
   display: flex; 
   justify-content: center; 
@@ -395,7 +408,7 @@ a.cta-btn__immediate:hover {
   color:#fff;
 }
 .pn-immediate-print-subs {
-  font-size: clamp(18px, 3.75vw, 36px);
+  font-size: clamp(18px, 1.75vw, 22px);
   line-height: 1.2;
   margin: 0 auto;
   text-align: center;
@@ -404,16 +417,17 @@ a.cta-btn__immediate:hover {
   align-items: center;
   gap: 3px;
   font-family: "domine";
-  font-weight: 700;
+  font-weight: 500;
 }
 .links-section h3 { 
-  font-size: clamp(16px, 1.9vw, 24px);
+  font-size: clamp(16px, 1.5vw, 18px);
   color: #fff;
   font-family: "open sans";
   line-height: 1.2;
   text-align: center;
   width: 88%; 
   margin: 0 auto;
+  font-weight: 500;
 }
 .links-section a { 
   color: #fff;
@@ -434,7 +448,7 @@ button.log-in {
 .links-section { 
   display: flex;
   flex-direction: column;
-  gap: 1.8vw;
+  gap: 0.8vw;
   padding: 5px 5px 4vw;
 }
 
@@ -459,6 +473,13 @@ button.log-in {
 }
 
 @media screen and (max-width: 750px) { 
+  section {  
+    width: 90%;
+  }
+  section.scroll-reel { 
+    width: 100%; 
+    position: relative;
+  }
   .mob-logo-title-combo { 
     display: flex; 
     align-items: center;
@@ -480,7 +501,6 @@ button.log-in {
   .viking-intro-section { 
     display: flex; 
     flex-direction: column; 
-    margin: 0 5vw;
   }
   .viking-intro-content { 
     margin: 0 4vw;
@@ -508,14 +528,14 @@ button.log-in {
    overflow-x: scroll;
    -ms-overflow-style: none;  /* Internet Explorer 10+ */
    scrollbar-width: none;  /* Firefox */
-   padding-left: 25vw;
-   padding-right: 25vw;
+   padding-left: 5vw;
+   padding-right: 5vw;
   }
   #container::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
   }
   #parent {
-    width: 1480px;
+    width: 1280px;
   }
   .mob-course-block {
     text-align: center;
@@ -527,8 +547,8 @@ button.log-in {
     flex-direction: column; 
     align-items: center;
     padding: 24px 7.5px;
-    height: 171px;
-    width: 330px; 
+    height: 115px;
+    width: 260px; 
     justify-content: space-evenly;
   }
   .mob-course-block:nth-child(1) { 
@@ -555,15 +575,16 @@ button.log-in {
     box-shadow: 0 8px 6px -6px black;
   }
   #slideLeft, #slideRight { 
-    position: fixed;
+    position: absolute;
     display: flex;
     width: 70px;
     padding: 0;
     background: none;
     border: none;
     font-size: 50px;
-    height: 170px;
+    height: calc(100% + 2.5vw);
     align-items: center;
+    margin-top: -2.5vw;
   }
   #slideLeft { 
     left: 0%;
@@ -606,7 +627,7 @@ button.log-in {
   .benefit-section {
     flex-direction: column;
     gap: 5vw;
-    margin: 4vw 4vw;
+    margin: 3vw 0;
   }
   .benefit-component {
     flex-direction: row;
@@ -832,29 +853,30 @@ button.log-in {
     <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
+<div class="pn-he-full-page">
 <section> 
 <div class="viking-intro-section">
   <div class="mob-logo-title-combo">
     <div class="hex-logo-mob">
-      <img src="[%% title image %%]"> 
+      <img src="https://media.immediate.co.uk/volatile/sites/7/2024/03/Group-240-5d48987.png"> 
   </div>
     <h1 class="mob-viking-header">
-      [%% main title %%]
+      ELIZABETHANS
     </h1>
   </div>
   <div class="hex-main-image">
-      <img src="[%% title image %%]"> <!-- add the URL into this dynamic field -->
+      <img src="https://media.immediate.co.uk/volatile/sites/7/2024/03/Group-240-5d48987.png"> 
     </div>
   <div class="viking-intro-content">
     <div class="intro-copy">
       <h1>
-        [%% main title %%]
+        ELIZABETHANS
       </h1>
       <h6>
-        [%% header copy %%]
+        Welcome to HistoryExtra Academy Vikings! Exclusive to members of HistoryExtra.
       </h6>
       <p>
-        [%% course details %%]
+        In this four-week short course, you'll discover everything you need to know about the Elizabethan period, guided by <b>Professor Tracey Borman!</b>
       </p>
     </div>
    <div claSS="subs-section">
@@ -878,73 +900,73 @@ button.log-in {
   <div class="course-boxes">
     <div class="course-box">
       <p>
-        [%% c1 title %%]
+        The Court of Elizabeth I
       </p>
       <p class="date">
-        [%% c1 date %%]
+        11 March
       </p>
     </div>
     <div class="course-box">
       <p>
-        [%% c2 title %%]
+        Everyday Life
       </p>
       <p class="date">
-        [%% c2 date %%]
+        18 March
       </p>
     </div>
     <div class="course-box">
       <p>
-        [%% c3 title %%]
+        Plots and Rebellions
       </p>
       <p class="date">
-        [%% c3 date %%]
+         25 March
       </p>
     </div>
     <div class="course-box">
       <p>
-        [%% c4 title %%]
+        The Succession
       </p>
       <p class="date">
-        [%% c4 date %%]
+        1 April
       </p>
     </div>
   </div>
   </div>
 </section>
-<section>
+<section class="scroll-reel">
 <div class="mob-course-reel-section">
 <div id="container">
       <div id="parent">
     <div class="mob-course-block">
         <p>
-         [%% c1 title %%]
+         The Court of Elizabeth I
           </p>
       <p class="date">
-        [%% c1 date %%]
+        11 March
       </p>
      </div>
     <div class="mob-course-block">
       <p>
-         [%% c2 title %%]
+         Everyday Life
           </p>
       <p class="date">
-        [%% c2 date %%]
+        18 March
       </p>
      </div>
     <div class="mob-course-block">
       <p>
-         [%% c3 title %%]
+         Plots and Rebellions
           </p>
       <p class="date">
-        [%% c3 date %%]
+        25 March
       </p>
      </div>
     <div class="mob-course-block">
         <p>
-         [%% c4 title %%]
+         The Succession
           </p>
         <p class="date">
-        [%% c4 date %%]
+        1 April
       </p>
         </div>
         <button id="slideLeft" type="button">&#60;</button>
@@ -1016,11 +1038,11 @@ button.log-in {
             <h3 class="period_label">
           Monthly</h3>
             <div class="plan-card__offer">
-              <h3>[%% monthly price %%]</h3>
+              <h3>£5.99</h3>
               <input type="radio" name="1" class="pn-immediate-term__price" value="0" ng-click="termId = terms[0].termId">
           </div>
             <h3 class="bau-price">
-              [%% monthly price subhead %%]</h3>
+              per month</h3>
           </div>
       </label>
       <label class="plan-card">
@@ -1031,11 +1053,11 @@ button.log-in {
             <h3 class="period_label">
           Annual</h3>
             <div class="plan-card__offer">
-              <h3>[%% annual price %%]</h3>
+              <h3><s1>£72</s1>&nbsp;£29.99</h3>
               <input type="radio" name="1"class="pn-immediate-term__price" value="1" ng-click="termId = terms[1].termId" checked>
           </div>
             <h3 class="bau-price">
-              [%% annual price subhead %%]</h3>
+              then&nbsp;<s1>£72</s1>&nbsp;£34.99/<span class="time-period">year</span></p> </h3>
           </div>
         </label>
       </div>
@@ -1049,11 +1071,12 @@ button.log-in {
     </div>
   <div class="links-section">
           <h2 class="pn-immediate-print-subs">Already a print subscriber?</h2>
-          <h3>If you have a print subscription to either <em>BBC History Magazine</em> or <em>BBC History Revealed</em>, you can use your subscriiption number as a promo code to unlock your free <em>HistoryExtra</em> access.
+          <h3>If you have a print subscription to either <em>BBC History Magazine</em> or <em>BBC History Revealed</em>, you can use your subscription number as a promo code to unlock your free <em>HistoryExtra</em> access.
             <a href="https://www.historyextra.com/already-a-print-subscriber/">Click here to get started</a></h3>
           </div>
 </div>
 </section>
+</div>
 <div id="pageBottom"></div>
 
 
