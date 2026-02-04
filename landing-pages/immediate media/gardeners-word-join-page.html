@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gardeners World | Join Page</title>
+</head>
+<body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200;300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, ul { 
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+/* LAYOUT ISSUE */
+.pn-gw__print-subs-page { 
+  margin: 0 auto;
+  width: 100vw;
+  background: #F7FBF6;
+  height: 100vh;
+}
+
+/* TOP BANNER */
+.gw-info-banner { 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  color: #fff; 
+  background: #920253;
+  gap: 2px;
+  margin-top: 0px;
+}
+.gw-info-format {
+  max-width: 980px;
+  padding: 12px;
+}
+.gw-info-banner h1 {
+  font-size: 26px;
+  line-height: 1.2;
+  font-family: domine;
+  text-align: center;
+}
+.gw-info-banner h2 { 
+  text-align: center; 
+  font-size: 16px;
+  line-height: 1.1;
+  font-family: 'open sans';
+}
+
+/* MAIN */
+.subs-card__billing-section {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  padding: 20px 0;
+  gap: 20px;
+  font-family: 'open sans';
+  background: #F7FBF6;
+}
+.plan-cards__gw-immediate { 
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 90%;
+  flex-direction: row-reverse;
+}
+.plan-card { 
+  width: 50%;
+  display: flex; 
+  flex-direction: column;
+}
+.plan-card__content { 
+  padding: 10px 25px 15px 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: #fff; 
+  border-radius: 10px; 
+  border: 3px solid #368528;
+}
+.package-info-subs-section { 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;
+  height: auto;
+}
+.package-info-section { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
+h2.plan-package-title { 
+  text-align: center;
+  font-weight: 700; 
+  font-size: 22px;
+  font-family: "domine"; 
+  line-height: 1.2;
+}
+.pink-font { 
+  color: #920253;
+  font-size: 22px;
+}
+.image-assets.first { 
+    height: 154px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.image-assets.second {
+    height: 154px; 
+
+}
+img.magazine-cover { 
+  width: 100%;
+  max-width: 100px;
+  position: relative;
+}
+img.magazine-cover.first { 
+  transform: rotate(-10deg);
+  z-index: 1;
+  left: 50px;
+}
+img.magazine-cover.second { 
+    top: 12px;
+}
+img.addit-asset-one.first { 
+    width: 100%;
+max-width: 102px;
+transform: rotate(13deg);
+position: relative;
+bottom: 0px;
+right: -42px;
+}
+img.addit-asset-two.first {
+    width: 76px;
+z-index: 2;
+position: relative;
+right: 74px;
+top: 45px; 
+
+}
+.plan-card__offer { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: "domine"; 
+}
+.plan-card__offer h3 { 
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'open sans', clarendon-urw-extra-narrow;
+}
+h4.package-offer { 
+  font-weight: 500; 
+  font-family: "domine"; 
+  font-size: 20px; 
+  line-height: 1.2;
+  text-align: center;
+  margin: 5px 0px;
+}
+p.package-details { 
+  font-size: 15px; 
+  font-weight: 500;
+  text-align: center; 
+  margin-top: 4px;
+}
+h3.bau-price { 
+  font-size: 13px;
+  line-height: 1;
+  text-align: center;
+  font-weight: 500;
+}
+s1 {
+  text-decoration:line-through;
+  color: dimgrey;
+}
+a, a:visited { 
+  background: #920253;
+  border-radius: 5px;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px; 
+  height: 46px;
+  color: white;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  transition: background 0.15s ease-in;
+  margin: 13px auto 7px;
+  width: 90%;
+  text-decoration: none;
+}
+a:hover { 
+  background: #570132;
+  color: #fff;
+}
+.intro__included-toggle,
+.annual__included-toggle { 
+  display: none;
+}
+.subs-card__secondary-header { 
+  display: none;
+}
+.subs-card__included-list__intro ul,
+.subs-card__included-list__annual ul { 
+  margin-top: 18px;
+}
+.benefits-section { 
+  width: 100%;
+  margin: 0 auto; 
+}
+.benefit-card__benefit-list { 
+  margin: 5px 0px 20px;
+}
+.benefit-card__benefit-list li {
+  display: flex;
+  gap: 5px;
+  font-size: 17.5px;
+  margin-bottom: 17px;
+}
+li {
+  font-size: 14px;
+  margin-bottom: 12px;
+  font-family: "open sans", Helvetica, Arial, sans-serif;
+  display: flex;
+  gap: 5px;
+  line-height: 1.2; 
+}
+.nb-subscribers {
+    display: flex;
+  	background: #f7fbf6; 
+    padding-top: 20px;
+  	padding-left: 5px;
+    padding-bottom: 20px;
+    flex-direction: column;
+  	justify-content: center; 
+    align-items: center;
+    max-width: 980px;
+  margin: 0 auto;
+  }
+  
+  .nb-subscribers h3 {
+  	font-size: 13px;
+ 	line-height: 1.1;
+ 	font-family: 'open sans';
+    text-align: center;
+  	}
+  
+
+svg { 
+  flex-shrink: 0; 
+  margin-top: -2px;
+}
+
+@media screen and (max-width: 980px) {
+  .pn-gw__print-subs-page {  
+    max-width: 980px;
+  }
+  p.package-details { 
+    font-size: 14px;
+  }
+  h3.bau-price { 
+    font-size: 12px;
+  }
+  li { 
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 915px) {
+  p.package-details { 
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+}
+
+@media screen and (max-width: 882px) {
+  .package-info-subs-section { 
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .plan-cards__gw-immediate { 
+    gap: 20px;
+  }
+  .plan-card__content { 
+    padding: 10px 18px 15px 24px;
+  }
+}
+
+/* FORMAT ADJUSTMENTS */
+@media screen and (max-width: 760px) {
+  .plan-cards__gw-immediate { 
+    width: 95% 
+  }
+}
+  
+@media screen and (max-width: 740px) {
+  h2.plan-package-title { 
+    font-size: 21px;
+}
+}
+
+@media screen and (max-width: /* 610px */ 695px) { 
+  .gw-info-banner h1 { 
+    font-size: 24px;
+    line-height: 1.1;
+  }
+  .gw-info-banner h2 { 
+    font-size: 13px;
+  }
+  .plan-cards__gw-immediate { 
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .plan-card { 
+    width: 100%;
+  }
+  .plan-card__content { 
+    margin: 0px auto; 
+    padding: 8px 15px 4px;
+    width: 70%;
+    max-width: 370px;
+    min-width: 270px;
+    gap: 15px;
+  }
+  .package-info-subs-section { 
+    height: auto; 
+  }
+  .image-assets.first,
+  .image-assets.second { 
+    height: auto; 
+  }
+  img.magazine-cover { 
+    width: 84px;
+  }
+  img.magazine-cover.second { 
+    top: 0px; 
+  }
+  img.addit-asset-one.first { 
+    width: 80px;
+  }
+  img.addit-asset-two.first { 
+    width: 60px;
+left: -45px;
+top: 39px;
+  }
+  
+  h2.plan-package-title { 
+    font-size: 22px;
+  }
+  h4.package-offer { 
+    margin: 0 0 10px;
+  }
+  p.package-details { 
+    font-size: 12.5px;
+    margin-top: 7px;
+  }
+  a, a:visited { 
+    margin: 9px auto 9px; 
+    max-width: 206px; 
+    font-size: 15px;
+    height: 28px;
+    padding: 5px 0px 8px;
+  }
+  h3.bau-price { 
+    font-size: 11px; 
+  }
+  .subs-card__secondary-header { 
+    display: block;
+  }
+  .subs-card__secondary-header h3 { 
+    text-align: center; 
+    text-transform: uppercase; 
+    font-size: 13px;
+    font-family: "open sans"; 
+  }
+  .intro__included-toggle,
+  .annual__included-toggle { 
+    display: inline-flex;
+  }
+  .subs-card__included-list__intro,
+  .subs-card__included-list__annual { 
+    display: none; 
+  }
+  .benefit-card__benefit-list li { 
+    font-size: 14.5px;
+  }
+  .subs-card__included-list__intro ul, 
+  .subs-card__included-list__annual ul { 
+    margin-top: 0;
+  }
+  
+  /* EXPANDABLE STYLING */
+  .unbutton {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    text-shadow: none;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+  }
+  .intro__included-toggle,
+  .annual__included-toggle {
+    position: relative;
+    height: 38px;
+    width: 100%;
+  }
+  .intro__included-toggle::after,
+  .annual__included-toggle::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 14vw;
+    bottom: 0;
+    width: 8px;
+    height: 8px;
+    margin: auto;
+    border: 0;
+    border-right: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    transform: rotate(45deg);
+  }
+  .intro__package-expanded .intro__included-toggle,
+  .annual__package-expanded .annual__included-toggle {
+    transform: rotateX(180deg) rotateY(0deg);
+    margin-top: 5px;
+  }  
+  .expandable-list-function { 
+    margin-top: -33px;
+    display: flex; 
+    flex-direction: column;
+  }
+  .subs-card__secondary-header h3 { 
+    margin-right: 15px;
+  }
+  .nb-subscribers {
+    display: flex;
+  	background: #f7fbf6; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+  	justify-content: center; 
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .nb-subscribers h3 {
+    text-align: center; 
+  	font-size: 11px;
+ 	line-height: 1.1;
+ 	font-family: 'open sans';
+  	}
+  
+  
+    /* EXPANDABLE FUNCTION */
+  .intro__package-expanded .subs-card__included-list__intro,
+  .annual__package-expanded .subs-card__included-list__annual { 
+    display: block;
+    padding: 2px 10px 12px;   
+  }
+}
+
+@media screen and (max-width: 600px) {  
+  .intro__included-toggle::after,
+  .annual__included-toggle::after { 
+    right: 17vw;
+  }
+}
+@media screen and (max-width: 480px) { 
+  .intro__included-toggle::after,
+  .annual__included-toggle::after { 
+    right: 16vw;
+  }
+}
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+
+<div class="pn-gw__print-subs-page">
+  <section>
+    <div class="gw-info-banner">
+      <div class="gw-info-format">
+     <h1>
+       Subscribe to <em>BBC Gardeners' World</em> Magazine
+      </h1>
+      <h2>
+        We bring you the best in Gardening. Practical advice from your favourite gardening experts, inspiring images of beautiful gardens and unbeatable offers and discounts.
+      </h2>
+      </div>
+    </div>
+  </section>
+  <section>
+  <div class="subs-card__billing-section">
+    <div class="plan-cards__gw-immediate">
+      <div class="plan-card">
+        <div class="plan-card__content first">
+          <div class="package-info-subs-section">
+            <div class="package-info-section">
+              <h2 class="plan-package-title">
+                Summer Days Out
+            </h2>
+              <h4 class="package-offer">
+                6 issues for <span class="pink-font">£19.99</span>
+            </h4>
+              <div class="image-assets first">
+                <img src="https://media.immediate.co.uk/volatile/sites/10/2024/06/1718182786053-206fa0f7-28ce-420a-b05f-cf50c77678f61-0a10916.jpg" class="magazine-cover first">
+                <img src="https://media.immediate.co.uk/volatile/sites/10/2024/05/Von-Shef-Picnic-blanket-4-7f90ab3.jpg" class="addit-asset-one first">
+                <img src="https://media.immediate.co.uk/volatile/sites/10/2024/05/2-for-1-CARD2024-b6dc0af.jpg" class="addit-asset-two first">
+              </div>
+              <p class="package-details">
+                Try a BBC <em>Gardeners' World Magazine</em> subscription  for only £19.99 with this special introductory&nbsp;offer.
+              </p>
+            </div>
+            <div class="subs-card__subs-section">
+              <a type="button" class="pn-gw-immediate-term__cta-btn" href="https://www.buysubscriptions.com/print/bbc-gardeners-world-magazine-subscription?promo=GWBS524&utm_medium=brandsite&utm_source=gardenersworld.com&utm_campaign=may-campaign-2024_gwbs524&utm_content=subscribe-ns-page&style=brand&" target="_parent"
+				external-event-component-variant="primary"
+				external-event-template-params="{{params}}"
+			  >Subscribe now</a>
+        	  <h3 class="bau-price">
+            	then billed £19.99 every 6 issues - saving 51%
+              </h3>
+            </div>
+          </div>
+          <div class="benefits-section">
+     		  <div class="subs-card__secondary-header">
+   			 <h3>What's included<span class="question-mark">?</span></h3>
+        	 </div>
+             <div class="expandable-list-function">
+          		<button class="intro__included-toggle unbutton" type="button" external-event="more-info-close">
+   			    </button>
+         	<div class="subs-card__included-list__intro">
+    			<ul>
+     			    <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 10" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#368528" stroke="#368528"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>Enjoy practical tips and advice from your favourite TV gardeners</li>
+    	         	<li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 10" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#368528" stroke="#368528"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>Free Delivery – direct to your door, so you never miss an issue</li>
+    	         	<li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 10" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#368528" stroke="#368528"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>Enjoy unlimited Premium access to our subscriber-only area of GardenersWorld.com</li>
+   		        	<li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 10" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#368528" stroke="#368528"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>Rewards pages – sharing extra and exclusive content in every issue</li>
+   			    </ul>
+           </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-card__content second">
+          <div class="package-info-subs-section">
+            <div class="package-info-section">
+              <h2 class="plan-package-title">
+                Summer Offer
+              </h2>
+              <h4 class="package-offer">
+                 6 issues for <s1></s1> <span class="pink-font">£9.99</span>
+              </h4>
+              <div class="image-assets second">
+                <img src="https://media.immediate.co.uk/volatile/sites/10/2024/06/1718182786053-206fa0f7-28ce-420a-b05f-cf50c77678f61-0a10916.jpg" class="magazine-cover second">
+              </div>
+              <p class="package-details">
+                 Subscribe to&nbsp;BBC <em>Gardeners' World Magazine</em>&nbsp;get 6 issues for £9.99
+              </p>
+            </div>
+            <div class="subs-card__subs-section">
+              <a type="button" class="pn-gw-immediate-term__cta-btn" href="[%% card2 cta url %%]" target="_parent"
+				external-event-component-variant="primary"
+				external-event-template-params="{{params}}"
+			  >Subscribe now</a>
+        	  <h3 class="bau-price">
+            	 Subscribe to&nbsp;BBC <em>Gardeners' World Magazine</em>&nbsp;get 6 issues for £9.99
+              </h3>
+            </div>
+          </div>
+          <div class="benefits-section">
+     		  <div class="subs-card__secondary-header">
+   			 <h3>What's included<span class="question-mark">?</span></h3>
+        	 </div>
+             <div class="expandable-list-function">
+          		<button class="annual__included-toggle unbutton" type="button" external-event="more-info-close">
+   			    </button>
+         	<div class="subs-card__included-list__annual">
+    			<ul>
+     			    <li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 10" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#368528" stroke="#368528"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>Receive a 2 for 1 Gardens entry card and guide and a Von Shef Picnic blanket worth £19.99</li>
+    	         	<li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 10" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#368528" stroke="#368528"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>Free delivery - direct to your door so you never miss an issue</li>
+    	         	<li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 10" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#368528" stroke="#368528"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>Enjoy unlimited Premium digital access to our subscriber-only area of GardenersWorld.com</li>
+   		        	<li><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 10" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="#368528" stroke="#368528"/>
+<mask id="mask0_2499_856" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="12" height="8">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.2849 9.27501L2.76263 6.82501L1.92188 7.64167L5.2849 10.9083L12.4914 3.90834L11.6506 3.09167L5.2849 9.27501Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2499_856)">
+</g>
+</svg>Rewards pages – sharing extra and exclusive content in every issue</li>
+   			    </ul>
+           </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>  
+  <section>
+  <div class="nb-subscribers">
+    <h3>
+      <em>†Please be aware that if your subscription includes an Added Extra such as gardening guide will only be available if paying via Direct Debit. Subscriber Club benefits are available for all UK mainland subscribers.</em>
+    </h3>
+   </div>
+  </section> 
+</div>
+
+
+
+<script>
+	document.querySelector('.intro__included-toggle').addEventListener('click', event => {
+		event.target.parentNode.classList.toggle('intro__package-expanded');
+	});
+  
+    document.querySelector('.annual__included-toggle').addEventListener('click', event => {
+		event.target.parentNode.classList.toggle('annual__package-expanded');
+	});
+      function myFunction() {
+  	console.log('this worked');
+  }
+</script>
+</body>
+</html>
