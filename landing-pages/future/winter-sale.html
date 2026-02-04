@@ -21,6 +21,13 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+.header-banner { 
+    padding: 8px;
+    background-color: #DF0A14;
+    height: auto;
+    display: flex; 
+    justify-content: center;
+}
 .header__title.mainbC { 
     text-align: center;
     margin: 33px auto 10px;
@@ -89,9 +96,6 @@ h1.winter-title span.price-span {
 .plan-card h4 { 
     font-weight: 400;
     font-size: 16px;
-}
-.product-opt-ben {
-  padding: 25px 0px 0px;
 }
 .product-select { 
   display: flex; 
@@ -285,6 +289,7 @@ h6.cancel-footnote {
   gap: 40px;
   width: 100%;
   margin: 36px auto;
+  max-width: 1177px;
 }
 .product-pack-img {
   width: 100%; 
@@ -312,6 +317,7 @@ img.i-three
 .subs-bullet {
   display: flex; 
   align-items: center;
+  flex: 1.8;
 }
 
 .subs-bullet ul {
@@ -324,7 +330,7 @@ img.i-three
     display: block;
     padding-left: 30px; /* space for tick */
     margin-bottom: 8px;
-    font-size: 20px;
+    font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
     white-space: normal;
@@ -722,12 +728,21 @@ svg.left-quote {
     </style>
 <div class="clear-both widget widget-contentparsed widget-content widget-contentparsed-content widget-content-parsed widget-content-parsed-default bcContentDialogue" data-widget-type="contentparsed" id="content">
     <div class="wcp-item-content">
+        <div class="header-banner">
+        <div class="container-week">
+          <a
+            target="_blank"
+            href="https://theweek.com/?_gl=1*1d9j68t*_gcl_au*MzcwNDY4MDgzLjE3NDQxOTcyNzIuMTM5ODQ5Mjk1LjE3NDc5OTEwMDIuMTc0Nzk5MTAwMg..*_ga*MjEyNDM0MTA4My4xNzQ0MTk3Mjcy*_ga_N7FFZKR5JW*czE3NDgwMDAxMDAkbzM0JGcxJHQxNzQ4MDAxMjgwJGo1NSRsMCRoMCRkSUtGNHRzaFpfY2w5T3UyenJTdkVTNjB6U2FEbTFKbjF2Zw.."
+            title="The Week"
+            ><img
+              alt="The Week"
+              src="https://subscribe.theweek.com/pubs/W0/TWE/images/global/logo.png"
+              class="logo"
+          /></a>
+        </div>
+      </div>
         <section class="article-wrapper">
-            <aside class="article__disclaimer">
-                <p></p>
-            </aside>
             <div class="article__topcontainer">
-                <div class="leaderboard__container"></div>
                 <div class="article__container ">
                     <div class="article__body " id="article-body">
                         <section class="product-opt-ben bcContentDialogue">

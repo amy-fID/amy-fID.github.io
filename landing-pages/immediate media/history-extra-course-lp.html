@@ -13,6 +13,16 @@ h1, h2, h3, h4, h5, h6, p, span {
     margin: 0; 
     padding: 0;
 }
+.header-logo { 
+  display: flex; 
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px 0 10px;
+  position: relative;
+}
+.header-logo img { 
+  max-width: 160px;
+}
 .pn-he_academy-page { 
     background: #FEFBF6;
 }
@@ -383,7 +393,6 @@ h3.period_label {
   font-weight: 700;
   line-height: normal;
   border-radius: 4px;
-  margin-bottom: 1vw;
 }
 .plan-card__content { 
   padding: 1vw 1.7vw 1vw;
@@ -429,6 +438,7 @@ h3.period_label {
   margin: 0 auto; 
   width: 65%;
   padding: 0.8vw 1.6vw;
+  max-width: 800px; 
 }
 .plan-card__offer { 
   display: flex;
@@ -447,7 +457,6 @@ h3.bau-price {
   font-size: clamp(14.5px, 1.6vw, 20px);
   line-height: 1.2;
   font-family: "noto serif HK";
-  height: 3vw;
 }
 s1 {
   text-decoration:line-through;
@@ -519,6 +528,7 @@ a.cta-btn__immediate:hover {
   width: 88%; 
   margin: 0 auto;
   font-weight: 500;
+  max-width: 900px;
 }
 .links-section a { 
   color: #fff;
@@ -813,6 +823,9 @@ button.log-in {
 }
 
 @media screen and (max-width: 440px) { 
+  .header-logo img {
+    width: 135px;
+  }
   .subs-section { 
     flex-direction: column; 
     gap: 12px;
@@ -841,6 +854,11 @@ button.log-in {
 <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
 
+    <div class="header-logo">
+  <a href="https://www.historyextra.com/">
+  <img src="https://images.immediate.co.uk/production/volatile/sites/7/2025/11/HeX-logo-primary-8afe9c3.png?quality=90&resize=600,155" alt="History Extra Logo">
+  </a>
+</div>
 <div class="pn-he_academy-page">
 <section> 
 <div class="pn__immediate-intro-section" >

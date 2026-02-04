@@ -17,6 +17,16 @@ h1, h2, h3, h4, h5, h6, p, span {
     margin: 0;
     padding: 0;
 }
+.header-logo { 
+  display: flex; 
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px 0 10px;
+  margin-bottom: 20px;
+}
+.header-logo img { 
+  max-width: 160px;
+}
 .pn-opinion-subscription-page { 
   margin-bottom: 10px;
   display: flex;
@@ -611,6 +621,11 @@ svg.cross {
 }
 
     </style>
+    <div class="header-logo">
+  <a href="https://www.lopinion.fr/">
+  <img src="https://beymedias.brightspotcdn.com/dims4/default/71ae7d3/2147483647/strip/true/crop/813x197+0+0/resize/813x197!/quality/90/?url=http%3A%2F%2Fl-opinion-brightspot.s3.amazonaws.com%2F2b%2Fff%2F6bb0da2f4903a03fceaf4f9ad4ef%2Fmicrosoftteams-image-3.png" alt="L'Opinion Logo">
+  </a>
+</div>
     <div class="pn-opinion-subscription-page" ng-init="termId = terms[1].termId">
           <div class="pn-opinion-boutique-header">
     <div class="boutique-select tab-one">
