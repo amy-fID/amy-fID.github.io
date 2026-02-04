@@ -32,7 +32,7 @@ section {
   gap: 2vw; 
 }
 .hex-main-image img { 
-  width: 15vw; 
+  width: 13vw; 
 }
 .hex-main-image svg {
   width: 23.5vw;
@@ -48,7 +48,7 @@ section {
   gap: 15px;
 }
 .intro-copy h1 { 
-  font-size: 4.2vw;
+  font-size: 3.2vw;
   line-height: normal; 
   margin: 0;
   font-weight: 700;
@@ -124,9 +124,11 @@ a.vikings_subs-button:hover {
 }
 .course-boxes { 
   display: flex; 
-  justify-content: space-around;
+  justify-content: center;
   margin: 8vw 0 4vw;
   flex-wrap: wrap;
+  position: relative;
+  gap: 4vw;
 }
 .course-box { 
   border: 2.5px solid black;
@@ -163,14 +165,15 @@ a.vikings_subs-button:hover {
   font-size: clamp( 15px, 1.8vw, 22px);
   line-height: normal;
   text-align: center;
-  margin-top: -42%;
-  height: 50%;
   font-weight: 700;
-  width: 110%;
+  height: 50%;
+}
+p.course-title { 
+  margin-top: -42%;
 }
 p.date {
   position: relative;
-  top: 23vw;
+  margin-top: 160%;
 }
 button.course-preview-btn { 
   position: relative; 
@@ -905,7 +908,7 @@ button.log-in {
     </div>
   <div class="course-boxes">
     <div class="course-box">
-      <p>
+      <p class="course-title">
         The Court of Elizabeth I
       </p>
       <p class="date">
@@ -913,7 +916,7 @@ button.log-in {
       </p>
     </div>
     <div class="course-box">
-      <p>
+      <p class="course-title">
         Everyday Life
       </p>
       <p class="date">
@@ -921,7 +924,7 @@ button.log-in {
       </p>
     </div>
     <div class="course-box">
-      <p>
+      <p class="course-title">
         Plots and Rebellions
       </p>
       <p class="date">
@@ -929,7 +932,7 @@ button.log-in {
       </p>
     </div>
     <div class="course-box">
-      <p>
+      <p class="course-title">
         The Succession
       </p>
       <p class="date">
